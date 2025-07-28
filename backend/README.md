@@ -1,6 +1,6 @@
 # SmartPOS Backend
 
-This is the backend for the SmartPOS (Point of Sale) system, built with Node.js, Express, and Supabase.
+This is the backend for the SmartPOS (Point of Sale) system, built with Node.js, Express, and PostgreSQL.
 
 ## Features
 
@@ -16,7 +16,7 @@ This is the backend for the SmartPOS (Point of Sale) system, built with Node.js,
 
 - Node.js (v14 or higher)
 - npm (v6 or higher)
-- Supabase account and project
+- PostgreSQL database (local or Neon PostgreSQL)
 
 ## Setup
 
@@ -32,32 +32,64 @@ This is the backend for the SmartPOS (Point of Sale) system, built with Node.js,
    ```
 
 3. **Environment variables**
-   Create a `.env` file in the root directory with the following variables:
+   Copy the `.env.example` file to `.env` and update the values:
+   ```bash
+   cp .env.example .env
+   ```
+   
+   Update the `.env` file with your database configuration:
    ```env
    # Server Configuration
-   PORT=5000
    NODE_ENV=development
+   PORT=5000
+
+   # Database Configuration (Development)
+   DB_NAME=smartpos_dev
+   DB_USER=postgres
+   DB_PASSWORD=your_secure_password
+   DB_HOST=localhost
+   DB_PORT=5432
+
+   # For production (Neon PostgreSQL)
+   # DATABASE_URL=postgres://user:password@host:port/database?options=param
 
    # JWT Configuration
-   JWT_SECRET=your_jwt_secret_key_here
+   JWT_SECRET=your_jwt_secret_key
    JWT_EXPIRES_IN=30d
    JWT_COOKIE_EXPIRES=30
 
-   # Database Configuration (Supabase)
-   SUPABASE_URL=your_supabase_url
-   SUPABASE_KEY=your_supabase_anon_key
-   SUPABASE_SERVICE_ROLE=your_supabase_service_role_key
-
    # CORS Configuration
-   FRONTEND_URL=http://localhost:3000
+   CORS_ORIGIN=http://localhost:3000
+   RATE_LIMIT_WINDOW_MS=15*60*1000
+   RATE_LIMIT_MAX=100
    ```
 
-4. **Start the development server**
+4. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+5. **Initialize the database**
+   ```bash
+   npm run db:init
+   ```
+   This will:
+   - Run all database migrations
+   - Seed the database with initial data (admin user)
+
+6. **Start the development server**
    ```bash
    npm run dev
    ```
-
    The server will start on `http://localhost:5000` by default.
+
+## Database Management
+
+- `npm run db:migrate` - Run pending migrations
+- `npm run db:migrate:undo` - Revert the last migration
+- `npm run db:seed` - Run all seeders
+- `npm run db:seed:undo` - Undo all seeders
+- `npm run db:init` - Initialize database (migrations + seeders)
 
 ## Available Scripts
 
@@ -97,7 +129,22 @@ This is the backend for the SmartPOS (Point of Sale) system, built with Node.js,
 
 ## Database Schema
 
-### Users
+### Users Table
+```sql
+CREATE TABLE users (
+  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  email VARCHAR(255) UNIQUE NOT NULL,
+  password VARCHAR(255) NOT NULL,
+  full_name VARCHAR(255) NOT NULL,
+  role VARCHAR(20) NOT NULL DEFAULT 'staff' CHECK (role IN ('admin', 'staff')),
+  is_active BOOLEAN DEFAULT true,
+  last_login TIMESTAMP WITH TIME ZONE,
+  created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE INDEX users_email_idx ON users(email);
+```
 - `id` - UUID (Primary Key)
 - `email` - String (Unique)
 - `password` - String (Hashed)
@@ -146,6 +193,68 @@ All error responses follow this format:
 - Rate limiting to prevent brute force attacks
 - CORS enabled for frontend URL only
 - Input validation using express-validator
+
+## Deployment
+
+### Docker
+
+1. Build the Docker image:
+   ```bash
+   docker build -t smartpos-backend .
+   ```
+
+2. Run the Docker container:
+   ```bash
+   docker run -p 5000:5000 smartpos-backend
+   ```
+
+### Kubernetes
+
+1. Create a Kubernetes deployment YAML file:
+   ```yml
+   apiVersion: apps/v1
+   kind: Deployment
+   metadata:
+     name: smartpos-backend
+   spec:
+     replicas: 1
+     selector:
+       matchLabels:
+         app: smartpos-backend
+     template:
+       metadata:
+         labels:
+           app: smartpos-backend
+       spec:
+         containers:
+         - name: smartpos-backend
+           image: smartpos-backend:latest
+           ports:
+           - containerPort: 5000
+   ```
+
+2. Apply the YAML file:
+   ```bash
+   kubectl apply -f deployment.yaml
+   ```
+
+### Heroku
+
+1. Create a Heroku app:
+   ```bash
+   heroku create
+   ```
+
+2. Set the Heroku environment variables:
+   ```bash
+   heroku config:set NODE_ENV=production
+   heroku config:set PORT=5000
+   ```
+
+3. Deploy to Heroku:
+   ```bash
+   git push heroku main
+   ```
 
 ## Contributing
 
