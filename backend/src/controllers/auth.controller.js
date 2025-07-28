@@ -1,49 +1,40 @@
-const jwt = require('jsonwebtoken');
-const User = require('../models/User');
-const ApiError = require('../utils/ApiError');
-
-// Generate JWT Token
-const generateToken = (id) => {
-  return jwt.sign({ id }, process.env.JWT_SECRET, {
-    expiresIn: process.env.JWT_EXPIRES_IN,
-  });
-};
+import { generateToken } from '../utils/jwt.js';
+import User from '../models/user.model.js';
+import ApiError from '../utils/ApiError.js';
 
 // Create and send token
 const createSendToken = (user, statusCode, res) => {
-  const token = generateToken(user.id);
+  const token = generateToken({ 
+    id: user.id,
+    email: user.email,
+    role: user.role,
+    full_name: user.full_name
+  });
   
-  // Cookie options
-  const cookieOptions = {
-    expires: new Date(
-      Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
-    ),
-    httpOnly: true,
-    secure: process.env.NODE_ENV === 'production',
-    sameSite: 'lax'
-  };
-
   // Remove password from output
-  user.password = undefined;
+  const userObj = user.get({ plain: true });
+  delete userObj.password;
 
   res.status(statusCode).json({
-    status: 'success',
+    success: true,
     token,
     data: {
-      user
+      user: userObj
     }
   });
 };
 
-// @desc    Register a new user
-// @route   POST /api/v1/auth/register
-// @access  Public
-exports.register = async (req, res, next) => {
+/**
+ * @desc    Register a new user
+ * @route   POST /api/v1/auth/register
+ * @access  Public
+ */
+export const register = async (req, res, next) => {
   try {
     const { email, password, full_name, role } = req.body;
 
     // Check if user already exists
-    const existingUser = await User.findByEmail(email);
+    const existingUser = await User.findOne({ where: { email } });
     if (existingUser) {
       return next(new ApiError(400, 'Email already in use'));
     }
@@ -53,19 +44,22 @@ exports.register = async (req, res, next) => {
       email,
       password,
       full_name,
-      role: role || 'cashier'
+      role: role || 'staff',
+      is_active: true
     });
 
     createSendToken(user, 201, res);
   } catch (error) {
-    next(error);
+    next(new ApiError(400, error.message));
   }
 };
 
-// @desc    Login user
-// @route   POST /api/v1/auth/login
-// @access  Public
-exports.login = async (req, res, next) => {
+/**
+ * @desc    Login user
+ * @route   POST /api/v1/auth/login
+ * @access  Public
+ */
+export const login = async (req, res, next) => {
   try {
     const { email, password } = req.body;
 
@@ -74,92 +68,130 @@ exports.login = async (req, res, next) => {
       return next(new ApiError(400, 'Please provide email and password'));
     }
 
-    // 2) Check if user exists && password is correct
-    const user = await User.findByEmail(email);
+    // 2) Check if user exists
+    const user = await User.findOne({ where: { email } });
     
-    if (!user || !(await User.isPasswordMatch(user, password))) {
+    if (!user) {
       return next(new ApiError(401, 'Incorrect email or password'));
     }
 
-    // 3) If everything ok, send token to client
+    // 3) Check if password is correct
+    const isMatch = await user.validPassword(password);
+    if (!isMatch) {
+      return next(new ApiError(401, 'Incorrect email or password'));
+    }
+
+    // 4) Check if user is active
+    if (!user.is_active) {
+      return next(new ApiError(403, 'Your account has been deactivated. Please contact an administrator.'));
+    }
+
+    // 5) If everything ok, send token to client
     createSendToken(user, 200, res);
   } catch (error) {
-    next(error);
+    next(new ApiError(500, error.message));
   }
 };
 
-// @desc    Get current logged in user
-// @route   GET /api/v1/auth/me
-// @access  Private
-exports.getMe = async (req, res, next) => {
+/**
+ * @desc    Get current logged in user
+ * @route   GET /api/v1/auth/me
+ * @access  Private
+ */
+export const getMe = async (req, res, next) => {
   try {
-    const user = await User.findById(req.user.id);
+    const user = await User.findByPk(req.user.id, {
+      attributes: { exclude: ['password'] }
+    });
+    
+    if (!user) {
+      return next(new ApiError(404, 'User not found'));
+    }
+
     res.status(200).json({
-      status: 'success',
-      data: {
-        user
-      }
+      success: true,
+      data: { user }
     });
   } catch (error) {
-    next(error);
+    next(new ApiError(500, error.message));
   }
 };
 
-// @desc    Update user details
-// @route   PUT /api/v1/auth/updatedetails
-// @access  Private
-exports.updateDetails = async (req, res, next) => {
+/**
+ * @desc    Update user details
+ * @route   PUT /api/v1/auth/me
+ * @access  Private
+ */
+export const updateMe = async (req, res, next) => {
   try {
     const { full_name, email } = req.body;
-    const user = await User.update(req.user.id, { full_name, email });
+    const user = await User.findByPk(req.user.id);
     
+    if (!user) {
+      return next(new ApiError(404, 'User not found'));
+    }
+
+    // Update user details
+    user.full_name = full_name || user.full_name;
+    user.email = email || user.email;
+    
+    await user.save();
+
+    // Get user without password
+    const userData = user.get({ plain: true });
+    delete userData.password;
+
     res.status(200).json({
-      status: 'success',
-      data: {
-        user
-      }
+      success: true,
+      data: { user: userData }
     });
   } catch (error) {
-    next(error);
+    next(new ApiError(400, error.message));
   }
 };
 
-// @desc    Update password
-// @route   PUT /api/v1/auth/updatepassword
-// @access  Private
-exports.updatePassword = async (req, res, next) => {
+/**
+ * @desc    Update password
+ * @route   PUT /api/v1/auth/update-password
+ * @access  Private
+ */
+export const updatePassword = async (req, res, next) => {
   try {
     const { currentPassword, newPassword } = req.body;
+    const user = await User.findByPk(req.user.id);
     
-    // 1) Get user from collection
-    const user = await User.findById(req.user.id);
-    
-    // 2) Check if posted current password is correct
-    if (!(await User.isPasswordMatch(user, currentPassword))) {
-      return next(new ApiError(401, 'Your current password is incorrect'));
+    if (!user) {
+      return next(new ApiError(404, 'User not found'));
     }
-    
-    // 3) If so, update password
-    await User.update(req.user.id, { password: newPassword });
-    
-    // 4) Log user in, send JWT
-    createSendToken(user, 200, res);
+
+    // Check current password
+    const isMatch = await user.validPassword(currentPassword);
+    if (!isMatch) {
+      return next(new ApiError(401, 'Current password is incorrect'));
+    }
+
+    // Update password
+    user.password = newPassword;
+    await user.save();
+
+    res.status(200).json({
+      success: true,
+      message: 'Password updated successfully'
+    });
   } catch (error) {
-    next(error);
+    next(new ApiError(400, error.message));
   }
 };
 
-// @desc    Logout user / clear cookie
-// @route   GET /api/v1/auth/logout
-// @access  Private
-exports.logout = (req, res) => {
-  res.cookie('token', 'none', {
-    expires: new Date(Date.now() + 10 * 1000),
-    httpOnly: true,
-  });
-  
-  res.status(200).json({
-    status: 'success',
-    message: 'User logged out successfully',
+/**
+ * @desc    Logout user
+ * @route   POST /api/v1/auth/logout
+ * @access  Private
+ */
+export const logout = (req, res) => {
+  // Client-side should remove the token
+  res.status(200).json({ 
+    success: true, 
+    message: 'Logged out successfully' 
   });
 };

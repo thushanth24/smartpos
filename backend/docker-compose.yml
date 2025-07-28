@@ -1,0 +1,60 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: smartpos-backend
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    environment:
+      - NODE_ENV=development
+      - PORT=5000
+      - DATABASE_URL=postgres://postgres:postgres@db:5432/smartpos_dev
+      - JWT_SECRET=your_jwt_secret_key_change_this_in_production
+      - JWT_EXPIRES_IN=30d
+      - JWT_COOKIE_EXPIRES=30
+      - CORS_ORIGIN=http://localhost:3000
+    depends_on:
+      - db
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    networks:
+      - smartpos-network
+
+  db:
+    image: postgres:15-alpine
+    container_name: smartpos-db
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=smartpos_dev
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - smartpos-network
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: pgadmin
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@admin.com
+      - PGADMIN_DEFAULT_PASSWORD=admin
+    ports:
+      - "5050:80"
+    depends_on:
+      - db
+    networks:
+      - smartpos-network
+
+networks:
+  smartpos-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+    driver: local

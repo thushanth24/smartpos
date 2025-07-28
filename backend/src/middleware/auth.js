@@ -1,66 +1,130 @@
-const jwt = require('jsonwebtoken');
-const ApiError = require('../utils/ApiError');
-const { User } = require('../models');
+import { verifyToken } from '../utils/jwt.js';
+import ApiError from '../utils/ApiError.js';
+import User from '../models/user.model.js';
 
 /**
- * Protect routes with JWT authentication
+ * Middleware to authenticate requests using JWT
+ * @param {Object} req - Express request object
+ * @param {Object} res - Express response object
+ * @param {Function} next - Next middleware function
  */
-const protect = async (req, res, next) => {
+export const authenticate = async (req, res, next) => {
   try {
-    let token;
+    // Get token from Authorization header
+    const authHeader = req.headers.authorization;
+    if (!authHeader || !authHeader.startsWith('Bearer ')) {
+      return res.status(401).json({ 
+        success: false, 
+        message: 'Authentication required' 
+      });
+    }
+
+    const token = authHeader.split(' ')[1];
     
-    // Get token from header or cookies
-    if (
-      req.headers.authorization &&
-      req.headers.authorization.startsWith('Bearer')
-    ) {
-      // Get token from header
-      token = req.headers.authorization.split(' ')[1];
-    } else if (req.cookies?.token) {
-      // Get token from cookie
-      token = req.cookies.token;
+    // Verify token
+    const decoded = verifyToken(token);
+    
+    // Get user from the token
+    const user = await User.findByPk(decoded.id, {
+      attributes: { exclude: ['password'] }
+    });
+
+    if (!user) {
+      return res.status(401).json({ 
+        success: false, 
+        message: 'User not found' 
+      });
     }
 
-    // Check if token exists
-    if (!token) {
-      return next(
-        new ApiError(401, 'Not authorized to access this route')
-      );
+    // Check if user is active
+    if (!user.is_active) {
+      return res.status(403).json({ 
+        success: false, 
+        message: 'Your account has been deactivated' 
+      });
     }
 
-    try {
-      // Verify token
-      const decoded = jwt.verify(token, process.env.JWT_SECRET);
-
-      // Get user from the token
-      req.user = await User.findById(decoded.id).select('-password');
-      next();
-    } catch (err) {
-      return next(new ApiError(401, 'Not authorized, token failed'));
-    }
-  } catch (err) {
-    return next(new ApiError(401, 'Not authorized, no token'));
+    // Attach user to request object
+    req.user = user;
+    next();
+  } catch (error) {
+    return res.status(401).json({ 
+      success: false, 
+      message: error.message || 'Invalid or expired token' 
+    });
   }
 };
 
 /**
- * Authorize roles
+ * Middleware to authorize user roles
+ * @param {...string} roles - Allowed roles
+ * @returns {Function} Express middleware function
  */
-const authorize = (...roles) => {
+export const authorize = (...roles) => {
   return (req, res, next) => {
-    if (!roles.includes(req.user.role)) {
-      return next(
-        new ApiError(
-          403,
-          `User role ${req.user.role} is not authorized to access this route`
-        )
-      );
+    if (!req.user) {
+      return res.status(401).json({ 
+        success: false, 
+        message: 'Authentication required' 
+      });
     }
+
+    if (roles.length && !roles.includes(req.user.role)) {
+      return res.status(403).json({ 
+        success: false, 
+        message: 'You do not have permission to perform this action' 
+      });
+    }
+
     next();
   };
 };
 
-module.exports = {
-  protect,
+/**
+ * Middleware to check if user is the owner of the resource
+ * @param {string} modelName - Name of the model to check ownership
+ * @param {string} [idParam='id'] - Name of the route parameter containing the resource ID
+ * @returns {Function} Express middleware function
+ */
+export const checkOwnership = (modelName, idParam = 'id') => {
+  return async (req, res, next) => {
+    try {
+      const Model = (await import(`../models/${modelName}.model.js`)).default;
+      const resource = await Model.findByPk(req.params[idParam]);
+
+      if (!resource) {
+        return res.status(404).json({
+          success: false,
+          message: 'Resource not found'
+        });
+      }
+
+      // Allow admins to access any resource
+      if (req.user.role === 'admin') {
+        return next();
+      }
+
+      // Check if the user is the owner of the resource
+      if (resource.userId !== req.user.id) {
+        return res.status(403).json({
+          success: false,
+          message: 'You do not have permission to access this resource'
+        });
+      }
+
+      next();
+    } catch (error) {
+      console.error('Ownership check error:', error);
+      return res.status(500).json({
+        success: false,
+        message: 'Error checking resource ownership'
+      });
+    }
+  };
+};
+
+export default {
+  authenticate,
   authorize,
+  checkOwnership
 };
