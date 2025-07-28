@@ -111,8 +111,6 @@ export function AuthProvider({ children }) {
     setToken(null);
     setError(null);
   }, []);
-  
-
 
   // Login function
   const login = useCallback(async (email, password) => {
@@ -143,18 +141,6 @@ export function AuthProvider({ children }) {
       setLoading(false);
     }
   }, [navigate, location.state]);
-  
-  // Logout function
-  const logout = useCallback(async () => {
-    try {
-      await authService.logout();
-    } catch (error) {
-      console.error('Logout error:', error);
-    } finally {
-      clearAuth();
-      navigate('/login');
-    }
-  }, [clearAuth, navigate]);
   
   // Register function
   const register = useCallback(async (userData) => {
@@ -200,6 +186,18 @@ export function AuthProvider({ children }) {
       setLoading(false);
     }
   }, [login]);
+  
+  // Logout function
+  const logout = useCallback(async () => {
+    try {
+      await authService.logout();
+    } catch (error) {
+      console.error('Logout error:', error);
+    } finally {
+      clearAuth();
+      navigate('/login');
+    }
+  }, [clearAuth, navigate]);
   
   // Update user profile
   const updateProfile = useCallback(async (updates) => {

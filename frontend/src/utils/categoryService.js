@@ -1,24 +1,15 @@
-import { supabase, handleSupabaseError } from '../lib/supabase';
+import api from './api';
 
 const categoryService = {
   // Get all active categories
   getCategories: async () => {
     try {
-      const { data, error } = await supabase
-        .from('product_categories')
-        .select('*')
-        .eq('active', true)
-        .order('name');
-      
-      if (error) {
-        return { success: false, error: handleSupabaseError(error), data: [] };
-      }
-      
-      return { success: true, data: data || [] };
+      const response = await api.get('/categories');
+      return { success: true, data: response.data };
     } catch (error) {
       return { 
         success: false, 
-        error: handleSupabaseError(error, 'Failed to fetch categories'),
+        error: error.response?.data?.message || 'Failed to fetch categories',
         data: [] 
       };
     }
@@ -27,21 +18,12 @@ const categoryService = {
   // Get category by ID
   getCategoryById: async (categoryId) => {
     try {
-      const { data, error } = await supabase
-        .from('product_categories')
-        .select('*')
-        .eq('id', categoryId)
-        .single();
-      
-      if (error) {
-        return { success: false, error: handleSupabaseError(error) };
-      }
-      
-      return { success: true, data };
+      const response = await api.get(`/categories/${categoryId}`);
+      return { success: true, data: response.data };
     } catch (error) {
       return { 
         success: false, 
-        error: handleSupabaseError(error, 'Failed to fetch category') 
+        error: error.response?.data?.message || 'Failed to fetch category' 
       };
     }
   },
@@ -49,21 +31,12 @@ const categoryService = {
   // Create category
   createCategory: async (categoryData) => {
     try {
-      const { data, error } = await supabase
-        .from('product_categories')
-        .insert([categoryData])
-        .select()
-        .single();
-      
-      if (error) {
-        return { success: false, error: handleSupabaseError(error) };
-      }
-      
-      return { success: true, data };
+      const response = await api.post('/categories', categoryData);
+      return { success: true, data: response.data };
     } catch (error) {
       return { 
         success: false, 
-        error: handleSupabaseError(error, 'Failed to create category') 
+        error: error.response?.data?.message || 'Failed to create category' 
       };
     }
   },
@@ -71,22 +44,12 @@ const categoryService = {
   // Update category
   updateCategory: async (categoryId, updates) => {
     try {
-      const { data, error } = await supabase
-        .from('product_categories')
-        .update(updates)
-        .eq('id', categoryId)
-        .select()
-        .single();
-      
-      if (error) {
-        return { success: false, error: handleSupabaseError(error) };
-      }
-      
-      return { success: true, data };
+      const response = await api.patch(`/categories/${categoryId}`, updates);
+      return { success: true, data: response.data };
     } catch (error) {
       return { 
         success: false, 
-        error: handleSupabaseError(error, 'Failed to update category') 
+        error: error.response?.data?.message || 'Failed to update category' 
       };
     }
   },
@@ -94,22 +57,12 @@ const categoryService = {
   // Delete category (soft delete)
   deleteCategory: async (categoryId) => {
     try {
-      const { data, error } = await supabase
-        .from('product_categories')
-        .update({ active: false })
-        .eq('id', categoryId)
-        .select()
-        .single();
-      
-      if (error) {
-        return { success: false, error: handleSupabaseError(error) };
-      }
-      
-      return { success: true, data };
+      const response = await api.delete(`/categories/${categoryId}`);
+      return { success: true, data: response.data };
     } catch (error) {
       return { 
         success: false, 
-        error: handleSupabaseError(error, 'Failed to delete category') 
+        error: error.response?.data?.message || 'Failed to delete category' 
       };
     }
   }
