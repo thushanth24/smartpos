@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../../contexts/AuthContext';
-import { Alert, AlertDescription } from '../../../components/ui/alert';
+import Alert from '../../../components/ui/Alert';
+import AlertDescription from '../../../components/ui/AlertDescription';
 import { AlertCircle, Loader2, Mail, Lock, Eye, EyeOff } from 'lucide-react';
-import { Button } from '../../../components/ui/button';
-import { Input } from '../../../components/ui/input';
-import { Label } from '../../../components/ui/label';
-import { Checkbox } from '../../../components/ui/checkbox';
+import Button from '../../../components/ui/Button';
+import Input from '../../../components/ui/Input';
+import Label from '../../../components/ui/Label';
+import { Checkbox } from '../../../components/ui/Checkbox';
 
 const LoginForm = () => {
   const navigate = useNavigate();

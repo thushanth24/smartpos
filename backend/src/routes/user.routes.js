@@ -1,19 +1,31 @@
-const express = require('express');
-const userController = require('../controllers/user.controller');
-const { protect, authorize } = require('../middleware/auth');
+import express from 'express';
+import * as userController from '../controllers/user.controller.js';
+import auth from '../middleware/auth.js';
+const { authenticate: protect, authorize } = auth;
 
 const router = express.Router();
 
-// All routes after this middleware are protected
+// Public routes
+router.post('/register', userController.register);
+router.post('/login', userController.login);
+router.post('/forgot-password', userController.forgotPassword);
+router.post('/reset-password/:token', userController.resetPassword);
+
+// Protected routes (require authentication)
 router.use(protect);
 
-// Admin only routes
+// Routes for the currently authenticated user
+router.get('/me', userController.getMe);
+router.put('/update-me', userController.updateMe);
+router.delete('/delete-me', userController.deleteMe);
+router.put('/update-password', userController.updatePassword);
+
+// Admin routes
 router.use(authorize('admin'));
 
 router.get('/', userController.getAllUsers);
 router.get('/:id', userController.getUser);
-router.post('/', userController.createUser);
 router.put('/:id', userController.updateUser);
 router.delete('/:id', userController.deleteUser);
 
-module.exports = router;
+export default router;

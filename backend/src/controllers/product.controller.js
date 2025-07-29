@@ -1,10 +1,10 @@
-const Product = require('../models/Product');
-const ApiError = require('../utils/ApiError');
+import Product from '../models/Product.js';
+import ApiError from '../utils/ApiError.js';
 
 // @desc    Get all products
 // @route   GET /api/v1/products
 // @access  Public
-exports.getProducts = async (req, res, next) => {
+export const getProducts = async (req, res, next) => {
   try {
     const { category, status, search } = req.query;
     const filters = {};
@@ -30,7 +30,7 @@ exports.getProducts = async (req, res, next) => {
 // @desc    Get single product
 // @route   GET /api/v1/products/:id
 // @access  Public
-exports.getProduct = async (req, res, next) => {
+export const getProduct = async (req, res, next) => {
   try {
     const product = await Product.findById(req.params.id);
     
@@ -48,7 +48,7 @@ exports.getProduct = async (req, res, next) => {
 // @desc    Create new product
 // @route   POST /api/v1/products
 // @access  Private/Admin
-exports.createProduct = async (req, res, next) => {
+export const createProduct = async (req, res, next) => {
   try {
     const product = await Product.create(req.body);
     
@@ -66,7 +66,7 @@ exports.createProduct = async (req, res, next) => {
 // @desc    Update product
 // @route   PUT /api/v1/products/:id
 // @access  Private/Admin
-exports.updateProduct = async (req, res, next) => {
+export const updateProduct = async (req, res, next) => {
   try {
     const product = await Product.update(req.params.id, req.body);
     
@@ -84,7 +84,7 @@ exports.updateProduct = async (req, res, next) => {
 // @desc    Delete product
 // @route   DELETE /api/v1/products/:id
 // @access  Private/Admin
-exports.deleteProduct = async (req, res, next) => {
+export const deleteProduct = async (req, res, next) => {
   try {
     await Product.delete(req.params.id);
     
@@ -100,7 +100,7 @@ exports.deleteProduct = async (req, res, next) => {
 // @desc    Update product stock
 // @route   PATCH /api/v1/products/:id/stock
 // @access  Private
-exports.updateProductStock = async (req, res, next) => {
+export const updateProductStock = async (req, res, next) => {
   try {
     const { quantity } = req.body;
     

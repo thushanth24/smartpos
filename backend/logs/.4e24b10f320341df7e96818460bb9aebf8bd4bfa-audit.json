@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 30
+    },
+    "auditLog": "E:\\Personal\\important\\smartpos\\backend\\logs\\.4e24b10f320341df7e96818460bb9aebf8bd4bfa-audit.json",
+    "files": [
+        {
+            "date": 1753781307245,
+            "name": "E:\\Personal\\important\\smartpos\\backend\\logs\\error-2025-07-29.log",
+            "hash": "107041f26b03e1b080bc97535d970597cc16ff9876c47a1db9bc00e15fa97c44"
+        }
+    ],
+    "hashType": "sha256"
+}

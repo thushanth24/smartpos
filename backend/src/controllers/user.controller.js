@@ -1,10 +1,10 @@
-const User = require('../models/User');
-const ApiError = require('../utils/ApiError');
+import User from '../models/User.js';
+import ApiError from '../utils/ApiError.js';
 
 // @desc    Get all users
 // @route   GET /api/v1/users
 // @access  Private/Admin
-exports.getAllUsers = async (req, res, next) => {
+export const getAllUsers = async (req, res, next) => {
   try {
     // In a real app, you would fetch users from the database
     // This is a simplified example
@@ -25,7 +25,7 @@ exports.getAllUsers = async (req, res, next) => {
 // @desc    Get single user
 // @route   GET /api/v1/users/:id
 // @access  Private/Admin
-exports.getUser = async (req, res, next) => {
+export const getUser = async (req, res, next) => {
   try {
     const user = await User.findById(req.params.id);
     
@@ -43,7 +43,7 @@ exports.getUser = async (req, res, next) => {
 // @desc    Create user
 // @route   POST /api/v1/users
 // @access  Private/Admin
-exports.createUser = async (req, res, next) => {
+export const createUser = async (req, res, next) => {
   try {
     const { email, password, full_name, role } = req.body;
     
@@ -69,7 +69,7 @@ exports.createUser = async (req, res, next) => {
 // @desc    Update user
 // @route   PUT /api/v1/users/:id
 // @access  Private/Admin
-exports.updateUser = async (req, res, next) => {
+export const updateUser = async (req, res, next) => {
   try {
     const { email, full_name, role, status } = req.body;
     
@@ -94,7 +94,7 @@ exports.updateUser = async (req, res, next) => {
 // @desc    Delete user
 // @route   DELETE /api/v1/users/:id
 // @access  Private/Admin
-exports.deleteUser = async (req, res, next) => {
+export const deleteUser = async (req, res, next) => {
   try {
     // Don't allow deleting your own account
     if (req.user.id === req.params.id) {
@@ -111,3 +111,68 @@ exports.deleteUser = async (req, res, next) => {
     next(error);
   }
 };
+
+export const register = async (req, res, next) => {
+  try {
+    res.status(201).json({ message: 'Register endpoint (not implemented)' });
+  } catch (err) {
+    next(err);
+  }
+};
+
+export const login = async (req, res, next) => {
+  try {
+    res.status(200).json({ message: 'Login endpoint (not implemented)' });
+  } catch (err) {
+    next(err);
+  }
+};
+
+export const forgotPassword = async (req, res, next) => {
+  try {
+    res.status(200).json({ message: 'Forgot Password endpoint (not implemented)' });
+  } catch (err) {
+    next(err);
+  }
+};
+
+export const resetPassword = async (req, res, next) => {
+  try {
+    res.status(200).json({ message: 'Reset Password endpoint (not implemented)' });
+  } catch (err) {
+    next(err);
+  }
+};
+
+export const getMe = async (req, res, next) => {
+  try {
+    res.status(200).json({ message: 'Get Me endpoint (not implemented)' });
+  } catch (err) {
+    next(err);
+  }
+};
+
+export const updateMe = async (req, res, next) => {
+  try {
+    res.status(200).json({ message: 'Update Me endpoint (not implemented)' });
+  } catch (err) {
+    next(err);
+  }
+};
+
+export const deleteMe = async (req, res, next) => {
+  try {
+    res.status(204).json({ message: 'Delete Me endpoint (not implemented)' });
+  } catch (err) {
+    next(err);
+  }
+};
+
+export const updatePassword = async (req, res, next) => {
+  try {
+    res.status(200).json({ message: 'Update Password endpoint (not implemented)' });
+  } catch (err) {
+    next(err);
+  }
+};
+

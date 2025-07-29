@@ -1,148 +1,292 @@
-const { supabase } = require('../config/db');
-const ApiError = require('../utils/ApiError');
+import { DataTypes } from 'sequelize';
+import ApiError from '../utils/ApiError.js';
+import sequelize from '../config/db.js';
 
-class Product {
+// Define the Product model
+const Product = sequelize.define('Product', {
+  id: {
+    type: DataTypes.UUID,
+    defaultValue: DataTypes.UUIDV4,
+    primaryKey: true,
+  },
+  name: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  description: {
+    type: DataTypes.TEXT,
+    allowNull: true,
+  },
+  sku: {
+    type: DataTypes.STRING,
+    unique: true,
+    allowNull: false,
+  },
+  barcode: {
+    type: DataTypes.STRING,
+    unique: true,
+    allowNull: true,
+  },
+  category: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  price: {
+    type: DataTypes.DECIMAL(10, 2),
+    allowNull: false,
+    validate: {
+      min: 0,
+    },
+  },
+  cost_price: {
+    type: DataTypes.DECIMAL(10, 2),
+    allowNull: false,
+    validate: {
+      min: 0,
+    },
+  },
+  stock_quantity: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    defaultValue: 0,
+    validate: {
+      min: 0,
+    },
+  },
+  min_stock_level: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    defaultValue: 5,
+  },
+  status: {
+    type: DataTypes.ENUM('active', 'inactive', 'discontinued'),
+    defaultValue: 'active',
+  },
+  image_url: {
+    type: DataTypes.STRING,
+    allowNull: true,
+    validate: {
+      isUrl: true,
+    },
+  },
+  created_at: {
+    type: DataTypes.DATE,
+    defaultValue: DataTypes.NOW,
+  },
+  updated_at: {
+    type: DataTypes.DATE,
+    defaultValue: DataTypes.NOW,
+  },
+  deleted_at: {
+    type: DataTypes.DATE,
+    allowNull: true,
+  },
+}, {
+  tableName: 'products',
+  timestamps: true,
+  createdAt: 'created_at',
+  updatedAt: 'updated_at',
+  paranoid: true, // Enable soft deletes
+  deletedAt: 'deleted_at',
+});
+
+// Add static methods to the Product model
+Object.assign(Product, {
   // Create a new product
-  static async create(productData) {
+  async createProduct(productData) {
     try {
-      const { data, error } = await supabase
-        .from('products')
-        .insert([productData])
-        .select();
-
-      if (error) throw error;
-      
-      return data[0];
+      const product = await this.create(productData);
+      return product.get({ plain: true });
     } catch (error) {
-      throw new ApiError(400, `Error creating product: ${error.message}`);
+      if (error.name === 'SequelizeUniqueConstraintError') {
+        if (error.fields.sku) {
+          throw new ApiError(400, 'SKU already in use');
+        }
+        if (error.fields.barcode) {
+          throw new ApiError(400, 'Barcode already in use');
+        }
+      }
+      throw new ApiError(500, `Error creating product: ${error.message}`);
     }
-  }
+  },
 
   // Get all products with optional filters
-  static async findAll(filters = {}) {
+  async findAllProducts(filters = {}) {
     try {
-      let query = supabase.from('products').select('*');
+      const where = {};
       
       // Apply filters
       if (filters.category) {
-        query = query.eq('category', filters.category);
+        where.category = filters.category;
       }
       
       if (filters.status) {
-        query = query.eq('status', filters.status);
+        where.status = filters.status;
+      }
+      
+      if (filters.minPrice) {
+        where.price = {
+          ...where.price,
+          [sequelize.Op.gte]: parseFloat(filters.minPrice),
+        };
+      }
+      
+      if (filters.maxPrice) {
+        where.price = {
+          ...where.price,
+          [sequelize.Op.lte]: parseFloat(filters.maxPrice),
+        };
       }
       
       if (filters.search) {
-        query = query.ilike('name', `%${filters.search}%`);
+        where[sequelize.Op.or] = [
+          { name: { [sequelize.Op.iLike]: `%${filters.search}%` } },
+          { description: { [sequelize.Op.iLike]: `%${filters.search}%` } },
+          { sku: { [sequelize.Op.iLike]: `%${filters.search}%` } },
+        ];
       }
       
-      // Execute query
-      const { data, error } = await query;
+      // Sorting
+      const order = [];
+      if (filters.sortBy) {
+        const [field, direction] = filters.sortBy.split(':');
+        order.push([field, direction.toUpperCase()]);
+      } else {
+        // Default sorting
+        order.push(['name', 'ASC']);
+      }
       
-      if (error) throw error;
+      // Pagination
+      const page = parseInt(filters.page, 10) || 1;
+      const limit = parseInt(filters.limit, 10) || 10;
+      const offset = (page - 1) * limit;
       
-      return data || [];
+      const { count, rows } = await this.findAndCountAll({
+        where,
+        order,
+        limit,
+        offset,
+        paranoid: filters.includeDeleted ? false : true, // Include soft-deleted if requested
+      });
+      
+      return {
+        data: rows.map(row => row.get({ plain: true })),
+        pagination: {
+          total: count,
+          page,
+          limit,
+          totalPages: Math.ceil(count / limit),
+        },
+      };
     } catch (error) {
       throw new ApiError(500, `Error fetching products: ${error.message}`);
     }
-  }
+  },
 
-  // Get product by ID
-  static async findById(id) {
+  // Find product by ID
+  async findProductById(id, options = {}) {
     try {
-      const { data, error } = await supabase
-        .from('products')
-        .select('*')
-        .eq('id', id)
-        .single();
+      const product = await this.findByPk(id, {
+        paranoid: options.includeDeleted ? false : true,
+      });
       
-      if (error) {
-        if (error.code === 'PGRST116') { // Not found
-          throw new ApiError(404, 'Product not found');
-        }
-        throw error;
+      if (!product) {
+        throw new ApiError(404, 'Product not found');
       }
       
-      return data;
+      return product.get({ plain: true });
     } catch (error) {
       if (error instanceof ApiError) throw error;
       throw new ApiError(500, `Error fetching product: ${error.message}`);
     }
-  }
+  },
 
   // Update product
-  static async update(id, updateData) {
+  async updateProduct(id, updateData) {
+    const transaction = await sequelize.transaction();
+    
     try {
-      const { data, error } = await supabase
-        .from('products')
-        .update(updateData)
-        .eq('id', id)
-        .select();
+      const product = await this.findByPk(id, { transaction });
       
-      if (error) throw error;
-      
-      if (!data || data.length === 0) {
+      if (!product) {
+        await transaction.rollback();
         throw new ApiError(404, 'Product not found');
       }
       
-      return data[0];
+      // Update product
+      await product.update(updateData, { transaction });
+      await transaction.commit();
+      
+      return product.get({ plain: true });
     } catch (error) {
+      await transaction.rollback();
+      
       if (error instanceof ApiError) throw error;
+      
+      if (error.name === 'SequelizeUniqueConstraintError') {
+        if (error.fields.sku) {
+          throw new ApiError(400, 'SKU already in use');
+        }
+        if (error.fields.barcode) {
+          throw new ApiError(400, 'Barcode already in use');
+        }
+      }
+      
       throw new ApiError(500, `Error updating product: ${error.message}`);
     }
-  }
+  },
 
-  // Delete product
-  static async delete(id) {
+  // Delete product (soft delete)
+  async deleteProduct(id) {
     try {
-      const { error } = await supabase
-        .from('products')
-        .delete()
-        .eq('id', id);
+      const product = await this.findByPk(id);
       
-      if (error) throw error;
+      if (!product) {
+        throw new ApiError(404, 'Product not found');
+      }
       
-      return true;
+      await product.destroy();
+      
+      return { message: 'Product deleted successfully' };
     } catch (error) {
+      if (error instanceof ApiError) throw error;
       throw new ApiError(500, `Error deleting product: ${error.message}`);
     }
-  }
-
+  },
+  
   // Update product stock
-  static async updateStock(id, quantityChange) {
+  async updateStock(id, quantity) {
+    const transaction = await sequelize.transaction();
+    
     try {
-      // First get current stock
-      const { data: product, error: fetchError } = await supabase
-        .from('products')
-        .select('stock')
-        .eq('id', id)
-        .single();
+      const product = await this.findByPk(id, { transaction, lock: true });
       
-      if (fetchError) throw fetchError;
-      if (!product) throw new ApiError(404, 'Product not found');
+      if (!product) {
+        await transaction.rollback();
+        throw new ApiError(404, 'Product not found');
+      }
       
       // Calculate new stock
-      const newStock = (product.stock || 0) + quantityChange;
+      const newStock = product.stock_quantity + quantity;
       
       if (newStock < 0) {
+        await transaction.rollback();
         throw new ApiError(400, 'Insufficient stock');
       }
       
       // Update stock
-      const { data, error: updateError } = await supabase
-        .from('products')
-        .update({ stock: newStock })
-        .eq('id', id)
-        .select();
+      await product.update({ stock_quantity: newStock }, { transaction });
+      await transaction.commit();
       
-      if (updateError) throw updateError;
-      
-      return data[0];
+      return product.get({ plain: true });
     } catch (error) {
+      await transaction.rollback();
+      
       if (error instanceof ApiError) throw error;
       throw new ApiError(500, `Error updating product stock: ${error.message}`);
     }
-  }
-}
+  },
+});
 
-module.exports = Product;
+export default Product;
+

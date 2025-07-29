@@ -1,6 +1,7 @@
-const express = require('express');
-const productController = require('../controllers/product.controller');
-const { protect, authorize } = require('../middleware/auth');
+import express from 'express';
+import * as productController from '../controllers/product.controller.js';
+import auth from '../middleware/auth.js';
+const { authenticate: protect, authorize } = auth;
 
 const router = express.Router();
 
@@ -21,4 +22,4 @@ router.delete('/:id', productController.deleteProduct);
 // Stock management routes
 router.patch('/:id/stock', productController.updateProductStock);
 
-module.exports = router;
+export default router;

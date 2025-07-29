@@ -1,42 +1,67 @@
 import { Sequelize } from 'sequelize';
-import dotenv from 'dotenv';
+import envConfig from './env.js';
 import logger from '../utils/logger.js';
 
-dotenv.config();
+// Common configuration for all environments
+const commonConfig = {
+  define: {
+    timestamps: true,
+    underscored: true,
+    createdAt: 'created_at',
+    updatedAt: 'updated_at',
+    paranoid: true,
+    deletedAt: 'deleted_at',
+    defaultScope: {
+      attributes: {
+        exclude: ['deleted_at'],
+      },
+    },
+    scopes: {
+      withDeleted: {
+        paranoid: false,
+      },
+    },
+  },
+  dialect: 'postgres',
+  logging: envConfig.env === 'development' ? (msg) => logger.debug(msg) : false,
+  dialectOptions: {
+    ssl: envConfig.db.ssl ? {
+      require: true,
+      rejectUnauthorized: false,
+    } : false,
+  },
+  pool: {
+    max: envConfig.db.pool.max,
+    min: envConfig.db.pool.min,
+    acquire: envConfig.db.pool.acquire,
+    idle: envConfig.db.pool.idle,
+    evict: envConfig.db.pool.evict,
+  },
+};
 
-const env = process.env.NODE_ENV || 'development';
-
-// Database configuration for different environments
-const config = {
+// Environment-specific configurations
+const environmentConfigs = {
   development: {
-    url: process.env.DATABASE_URL || 'postgres://postgres:postgres@localhost:5432/smartpos_dev',
-    dialect: 'postgres',
-    logging: (msg) => logger.debug(msg),
-    define: {
-      timestamps: true,
-      underscored: true,
-      createdAt: 'created_at',
-      updatedAt: 'updated_at',
-    },
-    pool: {
-      max: 10,
-      min: 0,
-      acquire: 30000,
-      idle: 10000,
-    },
+    database: envConfig.db.name || 'smartpos_dev',
+    username: envConfig.db.user || 'postgres',
+    password: envConfig.db.password || 'postgres',
+    host: envConfig.db.host || 'localhost',
+    port: envConfig.db.port || 5432,
   },
   test: {
-    url: process.env.TEST_DATABASE_URL || 'postgres://postgres:postgres@localhost:5432/smartpos_test',
-    dialect: 'postgres',
+    database: envConfig.db.name || 'smartpos_test',
+    username: envConfig.db.user || 'postgres',
+    password: envConfig.db.password || 'postgres',
+    host: envConfig.db.host || 'localhost',
+    port: envConfig.db.port || 5432,
     logging: false,
-    define: {
-      timestamps: true,
-      underscored: true,
-    },
   },
   production: {
-    url: process.env.DATABASE_URL,
-    dialect: 'postgres',
+    database: envConfig.db.name,
+    username: envConfig.db.user,
+    password: envConfig.db.password,
+    host: envConfig.db.host,
+    port: envConfig.db.port,
     logging: false,
     dialectOptions: {
       ssl: {
@@ -44,30 +69,52 @@ const config = {
         rejectUnauthorized: false,
       },
     },
-    pool: {
-      max: 20,
-      min: 2,
-      acquire: 30000,
-      idle: 10000,
-    },
   },
 };
 
-// Validate required environment variables
-if (!config[env]) {
-  throw new Error(`Invalid NODE_ENV: ${env}. Must be one of: ${Object.keys(config).join(', ')}`);
-}
+// Combine common and environment-specific configurations
+const config = Object.entries(environmentConfigs).reduce((acc, [env, envConfig]) => {
+  acc[env] = {
+    ...commonConfig,
+    ...envConfig,
+  };
+  return acc;
+}, {});
 
-if (env === 'production' && !process.env.DATABASE_URL) {
-  throw new Error('DATABASE_URL is required in production environment');
+// Get the current environment configuration
+const currentEnv = envConfig.env;
+const currentConfig = config[currentEnv];
+
+if (!currentConfig) {
+  throw new Error(`Invalid NODE_ENV: ${currentEnv}. Must be one of: ${Object.keys(config).join(', ')}`);
 }
 
 // Initialize Sequelize with the appropriate configuration
-const sequelize = new Sequelize(config[env].url, {
-  ...config[env],
-  logging: config[env].logging,
-  define: config[env].define,
-  pool: config[env].pool,
-});
+let sequelize;
+
+if (envConfig.db.url) {
+  // Use connection string if provided
+  sequelize = new Sequelize(envConfig.db.url, {
+    ...commonConfig,
+    dialectOptions: {
+      ...commonConfig.dialectOptions,
+      ssl: envConfig.db.ssl ? {
+        require: true,
+        rejectUnauthorized: false,
+      } : false,
+    },
+  });
+} else {
+  // Use individual connection parameters
+  sequelize = new Sequelize(
+    currentConfig.database,
+    currentConfig.username,
+    currentConfig.password,
+    {
+      ...currentConfig,
+      ...commonConfig,
+    }
+  );
+}
 
 export default sequelize;

@@ -1,38 +1,7 @@
 import { Sequelize } from 'sequelize';
-import config from '../config';
-import logger from './logger.js';
-
-// Import models
-import User from '../models/user.model.js';
-// Import other models as needed
-
-// Initialize Sequelize with the appropriate configuration
-const { db: dbConfig } = config;
-
-const sequelize = new Sequelize(dbConfig.url, {
-  dialect: 'postgres',
-  logging: config.app.isDevelopment ? (msg) => logger.debug(msg) : false,
-  define: {
-    timestamps: true,
-    underscored: true,
-    createdAt: 'created_at',
-    updatedAt: 'updated_at',
-  },
-  pool: {
-    max: dbConfig.pool.max,
-    min: dbConfig.pool.min,
-    acquire: dbConfig.pool.acquire,
-    idle: dbConfig.pool.idle,
-  },
-  dialectOptions: config.app.isProduction
-    ? {
-        ssl: {
-          require: true,
-          rejectUnauthorized: false,
-        },
-      }
-    : {},
-});
+import sequelize from '../config/database.js'; // ✅ already initialized
+import User from '../models/User.js'; // ✅ fix missing import
+import logger from './logger.js'; // ✅ fix missing import
 
 // Initialize models
 const db = {
@@ -41,6 +10,7 @@ const db = {
   User,
   // Add other models here
 };
+
 
 // Associate models if needed
 Object.keys(db).forEach((modelName) => {
@@ -56,18 +26,10 @@ Object.keys(db).forEach((modelName) => {
 const testConnection = async () => {
   try {
     await sequelize.authenticate();
-    logger.info('✅ Database connection has been established successfully.');
-    
-    if (config.app.isDevelopment) {
-      // In development, sync database (create tables if they don't exist)
-      // In production, use migrations instead
-      await sequelize.sync({ alter: true });
-      logger.info('📊 Database synchronized');
-    }
-    
+    logger.info('Successfully connected to the database');
     return true;
   } catch (error) {
-    logger.error('❌ Unable to connect to the database:', error);
+    logger.error('Error connecting to the database:', error);
     return false;
   }
 };
@@ -107,6 +69,13 @@ const checkDatabaseConnection = async () => {
       activeConnections: parseInt(activeConnections[0]?.count || '0', 10),
       responseTime: `${responseTime}ms`,
       message: 'Database connection is healthy',
+      timestamp: new Date().toISOString(),
+      database: {
+        name: sequelize.config.database,
+        dialect: sequelize.getDialect(),
+        host: sequelize.config.host,
+        port: sequelize.config.port,
+      },
     };
   } catch (error) {
     return {
@@ -114,6 +83,7 @@ const checkDatabaseConnection = async () => {
       error: error.message,
       message: 'Unable to connect to the database',
       responseTime: `${Date.now() - startTime}ms`,
+      timestamp: new Date().toISOString(),
     };
   }
 };

@@ -1,141 +1,154 @@
-const { supabase } = require('../config/db');
-const ApiError = require('../utils/ApiError');
-const bcrypt = require('bcryptjs');
+import { DataTypes } from 'sequelize';
+import ApiError from '../utils/ApiError.js';
+import bcrypt from 'bcryptjs';
+import sequelize from '../config/db.js';
 
-class User {
-  // Create a new user
-  static async create(userData) {
-    try {
-      // Hash password
-      const salt = await bcrypt.genSalt(10);
-      const hashedPassword = await bcrypt.hash(userData.password, salt);
-      
-      const { data, error } = await supabase
-        .from('users')
-        .insert([
-          {
-            email: userData.email,
-            password: hashedPassword,
-            full_name: userData.full_name,
-            role: userData.role || 'cashier',
-            status: 'active'
-          }
-        ])
-        .select();
-
-      if (error) {
-        if (error.code === '23505') { // Unique violation
-          throw new ApiError(400, 'Email already in use');
-        }
-        throw error;
+// Define the User model
+const User = sequelize.define('User', {
+  id: {
+    type: DataTypes.UUID,
+    defaultValue: DataTypes.UUIDV4,
+    primaryKey: true,
+  },
+  email: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    unique: true,
+    validate: {
+      isEmail: true,
+    },
+  },
+  password: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  full_name: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  role: {
+    type: DataTypes.ENUM('admin', 'manager', 'cashier'),
+    defaultValue: 'cashier',
+  },
+  status: {
+    type: DataTypes.ENUM('active', 'inactive', 'suspended'),
+    defaultValue: 'active',
+  },
+  last_login: {
+    type: DataTypes.DATE,
+    allowNull: true,
+  },
+  created_at: {
+    type: DataTypes.DATE,
+    defaultValue: DataTypes.NOW,
+  },
+  updated_at: {
+    type: DataTypes.DATE,
+    defaultValue: DataTypes.NOW,
+  },
+}, {
+  tableName: 'users',
+  timestamps: true,
+  createdAt: 'created_at',
+  updatedAt: 'updated_at',
+  hooks: {
+    beforeCreate: async (user) => {
+      if (user.password) {
+        const salt = await bcrypt.genSalt(10);
+        user.password = await bcrypt.hash(user.password, salt);
       }
-      
-      // Remove password from returned data
-      const { password, ...userWithoutPassword } = data[0];
+    },
+    beforeUpdate: async (user) => {
+      if (user.changed('password')) {
+        const salt = await bcrypt.genSalt(10);
+        user.password = await bcrypt.hash(user.password, salt);
+      }
+    },
+  },
+});
+
+// Add instance method to check password
+User.prototype.isValidPassword = async function(password) {
+  return await bcrypt.compare(password, this.password);
+};
+
+// Add static methods to the User model
+Object.assign(User, {
+  // Create a new user
+  async createUser(userData) {
+    try {
+      const user = await this.create(userData);
+      const { password, ...userWithoutPassword } = user.get({ plain: true });
       return userWithoutPassword;
     } catch (error) {
-      if (error instanceof ApiError) throw error;
-      throw new ApiError(400, `Error creating user: ${error.message}`);
+      if (error.name === 'SequelizeUniqueConstraintError') {
+        throw new ApiError(400, 'Email already in use');
+      }
+      throw new ApiError(500, `Error creating user: ${error.message}`);
     }
-  }
+  },
 
   // Find user by email
-  static async findByEmail(email) {
+  async findByEmail(email) {
     try {
-      const { data, error } = await supabase
-        .from('users')
-        .select('*')
-        .eq('email', email)
-        .single();
-      
-      if (error) {
-        if (error.code === 'PGRST116') { // Not found
-          return null;
-        }
-        throw error;
-      }
-      
-      return data;
+      return await this.findOne({ where: { email } });
     } catch (error) {
       throw new ApiError(500, `Error finding user: ${error.message}`);
     }
-  }
+  },
 
   // Find user by ID
-  static async findById(id) {
+  async findById(id) {
     try {
-      const { data, error } = await supabase
-        .from('users')
-        .select('*')
-        .eq('id', id)
-        .single();
-      
-      if (error) {
-        if (error.code === 'PGRST116') { // Not found
-          throw new ApiError(404, 'User not found');
-        }
-        throw error;
+      const user = await this.findByPk(id);
+      if (!user) {
+        throw new ApiError(404, 'User not found');
       }
-      
-      // Remove password from returned data
-      const { password, ...userWithoutPassword } = data;
-      return userWithoutPassword;
+      return user;
     } catch (error) {
       if (error instanceof ApiError) throw error;
       throw new ApiError(500, `Error fetching user: ${error.message}`);
     }
-  }
+  },
 
   // Update user
-  static async update(id, updateData) {
+  async updateUser(id, updateData) {
     try {
-      // If password is being updated, hash it
-      if (updateData.password) {
-        const salt = await bcrypt.genSalt(10);
-        updateData.password = await bcrypt.hash(updateData.password, salt);
-      }
-      
-      const { data, error } = await supabase
-        .from('users')
-        .update(updateData)
-        .eq('id', id)
-        .select();
-      
-      if (error) throw error;
-      
-      if (!data || data.length === 0) {
+      const [updated] = await this.update(updateData, {
+        where: { id },
+        returning: true,
+        plain: true,
+      });
+
+      if (!updated) {
         throw new ApiError(404, 'User not found');
       }
-      
-      // Remove password from returned data
-      const { password, ...userWithoutPassword } = data[0];
+
+      const user = await this.findByPk(id);
+      const { password, ...userWithoutPassword } = user.get({ plain: true });
       return userWithoutPassword;
     } catch (error) {
       if (error instanceof ApiError) throw error;
+      if (error.name === 'SequelizeUniqueConstraintError') {
+        throw new ApiError(400, 'Email already in use');
+      }
       throw new ApiError(500, `Error updating user: ${error.message}`);
     }
-  }
+  },
 
   // Delete user
-  static async delete(id) {
+  async deleteUser(id) {
     try {
-      const { error } = await supabase
-        .from('users')
-        .delete()
-        .eq('id', id);
-      
-      if (error) throw error;
-      
-      return true;
+      const deleted = await this.destroy({ where: { id } });
+      if (!deleted) {
+        throw new ApiError(404, 'User not found');
+      }
+      return { message: 'User deleted successfully' };
     } catch (error) {
+      if (error instanceof ApiError) throw error;
       throw new ApiError(500, `Error deleting user: ${error.message}`);
     }
-  }
+  },
+});
 
-  // Check if password matches
-  static async isPasswordMatch(user, candidatePassword) {
-    return bcrypt.compare(candidatePassword, user.password);
-  }
-}
-
-module.exports = User;
+export default User;

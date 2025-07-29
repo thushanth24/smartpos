@@ -1,8 +1,10 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Button } from '../components/ui/button';
+import Button from '../components/ui/Button';
 import { AlertCircle } from 'lucide-react';
-import { Alert, AlertDescription, AlertTitle } from '../components/ui/alert';
+import Alert from '../components/ui/Alert';
+import AlertDescription from '../components/ui/AlertDescription';
+import AlertTitle from '../components/ui/AlertTitle';
 
 const Unauthorized = () => {
   const navigate = useNavigate();
