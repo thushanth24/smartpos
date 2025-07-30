@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import { AuthProvider } from './contexts/AuthContext';
+import { ToastProvider } from './components/ui/use-toast';
 import Routes from './Routes';
 import offlineService from './utils/offlineService';
 
@@ -12,9 +14,13 @@ function App() {
   }, []);
 
   return (
-    <AuthProvider>
-      <Routes />
-    </AuthProvider>
+    <BrowserRouter>
+      <AuthProvider>
+        <ToastProvider>
+          <Routes />
+        </ToastProvider>
+      </AuthProvider>
+    </BrowserRouter>
   );
 }
 

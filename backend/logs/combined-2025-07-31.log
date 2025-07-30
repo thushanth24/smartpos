@@ -1,0 +1,49 @@
+2025-07-31 00:07:26 [INFO]: ✅ Database connection has been established successfully.
+{
+  service: 'smartpos-backend',
+  env: 'development',
+  [Symbol(level)]: 'info',
+  [Symbol(message)]: '{"env":"development","level":"info","message":"✅ Database connection has been established successfully.","service":"smartpos-backend","timestamp":"2025-07-31 00:07:26"}'
+}
+2025-07-31 00:07:26 [WARN]: ⚠️  Altering database - this may cause data loss!
+{
+  service: 'smartpos-backend',
+  env: 'development',
+  [Symbol(level)]: 'warn',
+  [Symbol(message)]: '{"env":"development","level":"warn","message":"⚠️  Altering database - this may cause data loss!","service":"smartpos-backend","timestamp":"2025-07-31 00:07:26"}'
+}
+2025-07-31 00:07:29 [INFO]: 🔄 Database synchronized successfully
+{
+  service: 'smartpos-backend',
+  env: 'development',
+  [Symbol(level)]: 'info',
+  [Symbol(message)]: '{"env":"development","level":"info","message":"🔄 Database synchronized successfully","service":"smartpos-backend","timestamp":"2025-07-31 00:07:29"}'
+}
+2025-07-31 00:07:31 [INFO]: Application initialized successfully
+{
+  service: 'smartpos-backend',
+  env: 'development',
+  [Symbol(level)]: 'info',
+  [Symbol(message)]: '{"env":"development","level":"info","message":"Application initialized successfully","service":"smartpos-backend","timestamp":"2025-07-31 00:07:31"}'
+}
+2025-07-31 00:07:31 [INFO]: 🚀 Application initialized
+{
+  service: 'smartpos-backend',
+  env: 'development',
+  [Symbol(level)]: 'info',
+  [Symbol(message)]: '{"env":"development","level":"info","message":"🚀 Application initialized","service":"smartpos-backend","timestamp":"2025-07-31 00:07:31"}'
+}
+2025-07-31 00:07:31 [INFO]: 🚀 Server running in development mode at http://0.0.0.0:5000
+{
+  service: 'smartpos-backend',
+  env: 'development',
+  [Symbol(level)]: 'info',
+  [Symbol(message)]: '{"env":"development","level":"info","message":"🚀 Server running in development mode at http://0.0.0.0:5000","service":"smartpos-backend","timestamp":"2025-07-31 00:07:31"}'
+}
+2025-07-31 00:07:31 [INFO]: 📚 API Documentation available at http://0.0.0.0:5000/api-docs
+{
+  service: 'smartpos-backend',
+  env: 'development',
+  [Symbol(level)]: 'info',
+  [Symbol(message)]: '{"env":"development","level":"info","message":"📚 API Documentation available at http://0.0.0.0:5000/api-docs","service":"smartpos-backend","timestamp":"2025-07-31 00:07:31"}'
+}

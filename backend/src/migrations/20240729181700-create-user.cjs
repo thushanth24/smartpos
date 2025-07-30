@@ -1,13 +1,13 @@
-"use strict";
+'use strict';
 
-import { DataTypes } from 'sequelize';
+const { DataTypes } = require('sequelize');
 
 /**
  * @param {import('sequelize').QueryInterface} queryInterface
  * @param {import('sequelize').Sequelize} Sequelize
  * @returns {Promise<void>}
  */
-export async function up(queryInterface, Sequelize) {
+const up = async (queryInterface, Sequelize) => {
   await queryInterface.createTable('users', {
     id: {
       type: DataTypes.UUID,
@@ -53,6 +53,10 @@ export async function up(queryInterface, Sequelize) {
       allowNull: false,
       defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
     },
+    deleted_at: {
+      type: DataTypes.DATE,
+      allowNull: true,
+    },
   });
 
   // Add indexes
@@ -60,13 +64,15 @@ export async function up(queryInterface, Sequelize) {
     unique: true,
     name: 'users_email_unique',
   });
-}
+};
 
 /**
  * @param {import('sequelize').QueryInterface} queryInterface
  * @param {import('sequelize').Sequelize} Sequelize
  * @returns {Promise<void>}
  */
-export async function down(queryInterface) {
+const down = async (queryInterface, Sequelize) => {
   await queryInterface.dropTable('users');
-}
+};
+
+module.exports = { up, down };

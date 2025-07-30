@@ -13,6 +13,7 @@ const Checkbox = React.forwardRef(({
     description,
     error,
     size = "default",
+    onCheckedChange,
     ...props
 }, ref) => {
     // Generate unique ID if not provided
@@ -35,6 +36,7 @@ const Checkbox = React.forwardRef(({
                     checked={checked}
                     disabled={disabled}
                     required={required}
+                    onChange={(e) => onCheckedChange && onCheckedChange(e.target.checked)}
                     className="sr-only"
                     {...props}
                 />

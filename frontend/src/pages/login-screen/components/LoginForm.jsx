@@ -188,14 +188,7 @@ const LoginForm = () => {
         </div>
       </div>
 
-      {/* Demo credentials */}
-      <div className="mt-8 p-4 bg-muted/50 rounded-lg text-sm">
-        <h3 className="font-medium mb-2">Demo Credentials:</h3>
-        <div className="space-y-1">
-          <p>Email: <span className="font-mono">demo@example.com</span></p>
-          <p>Password: <span className="font-mono">password123</span></p>
-        </div>
-      </div>
+      
     </div>
   );
 };

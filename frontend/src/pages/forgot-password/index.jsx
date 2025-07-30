@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Mail, ArrowLeft, Loader2, CheckCircle } from 'lucide-react';
-import Button from '../components/ui/Button';
-import Input from '../components/ui/Input';
-import Label from '../components/ui/Label';
-import Card from '../components/ui/Card';
-import CardContent from '../components/ui/CardContent';
-import CardDescription from '../components/ui/CardDescription';
-import CardFooter from '../components/ui/CardFooter';
-import CardHeader from '../components/ui/CardHeader';
-import CardTitle from '../components/ui/CardTitle';
-import Alert from '../components/ui/Alert';
-import AlertDescription from '../components/ui/AlertDescription';
+import Button from '../../components/ui/Button';
+import Input from '../../components/ui/Input';
+import Label from '../../components/ui/Label';
+import Card from '../../components/ui/Card';
+import CardContent from '../../components/ui/CardContent';
+import CardDescription from '../../components/ui/CardDescription';
+import CardFooter from '../../components/ui/CardFooter';
+import CardHeader from '../../components/ui/CardHeader';
+import CardTitle from '../../components/ui/CardTitle';
+import Alert from '../../components/ui/Alert';
+import AlertDescription from '../../components/ui/AlertDescription';
 
 const ForgotPassword = () => {
   const navigate = useNavigate();

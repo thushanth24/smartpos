@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes as RouterRoutes, Route, Navigate } from 'react-router-dom';
+import { Routes as RouterRoutes, Route, Navigate } from 'react-router-dom';
 import ErrorBoundary from './components/ErrorBoundary';
 import ScrollToTop from './components/ScrollToTop';
 import ProtectedRoute from './components/ProtectedRoute';
@@ -27,76 +27,74 @@ const AuthenticatedLayout = ({ children }) => (
 
 const AppRoutes = () => {
   return (
-    <BrowserRouter>
-      <ErrorBoundary>
-        <ScrollToTop />
-        <RouterRoutes>
-          {/* Public routes */}
-          <Route path="/login" element={<LoginScreen />} />
-          <Route path="/forgot-password" element={<ForgotPassword />} />
-          <Route path="/reset-password" element={<ResetPassword />} />
-          <Route path="/unauthorized" element={<Unauthorized />} />
-          
-          {/* Protected routes - require authentication */}
-          <Route path="/" element={
-            <ProtectedRoute>
-              <AuthenticatedLayout>
-                <SalesDashboard />
-              </AuthenticatedLayout>
-            </ProtectedRoute>
-          } />
-          
-          <Route path="/sales-dashboard" element={
-            <ProtectedRoute>
-              <AuthenticatedLayout>
-                <SalesDashboard />
-              </AuthenticatedLayout>
-            </ProtectedRoute>
-          } />
-          
-          <Route path="/point-of-sale-terminal" element={
-            <ProtectedRoute requiredRoles={['cashier', 'admin']}>
-              <AuthenticatedLayout>
-                <PointOfSaleTerminal />
-              </AuthenticatedLayout>
-            </ProtectedRoute>
-          } />
-          
-          <Route path="/product-management" element={
-            <ProtectedRoute requiredRoles={['inventory_manager', 'admin']}>
-              <AuthenticatedLayout>
-                <ProductManagement />
-              </AuthenticatedLayout>
-            </ProtectedRoute>
-          } />
-          
-          <Route path="/inventory-management" element={
-            <ProtectedRoute requiredRoles={['inventory_manager', 'admin']}>
-              <AuthenticatedLayout>
-                <InventoryManagement />
-              </AuthenticatedLayout>
-            </ProtectedRoute>
-          } />
-          
-          <Route path="/user-management" element={
-            <ProtectedRoute requireAdmin>
-              <AuthenticatedLayout>
-                <UserManagement />
-              </AuthenticatedLayout>
-            </ProtectedRoute>
-          } />
-          
-          {/* Redirect old login path to new one */}
-          <Route path="/login-screen" element={<Navigate to="/login" replace />} />
-          
-          {/* Catch all route */}
-          <Route path="*" element={<NotFound />} />
-        </RouterRoutes>
+    <ErrorBoundary>
+      <ScrollToTop />
+      <RouterRoutes>
+        {/* Public routes */}
+        <Route path="/login" element={<LoginScreen />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path="/unauthorized" element={<Unauthorized />} />
         
-        {/* Toast notifications */}
-        <Toaster />
-      </ErrorBoundary>
-    </BrowserRouter>
+        {/* Protected routes - require authentication */}
+        <Route path="/" element={
+          <ProtectedRoute>
+            <AuthenticatedLayout>
+              <SalesDashboard />
+            </AuthenticatedLayout>
+          </ProtectedRoute>
+        } />
+        
+        <Route path="/sales-dashboard" element={
+          <ProtectedRoute>
+            <AuthenticatedLayout>
+              <SalesDashboard />
+            </AuthenticatedLayout>
+          </ProtectedRoute>
+        } />
+        
+        <Route path="/pos-terminal" element={
+          <ProtectedRoute requiredRoles={['cashier', 'admin']}>
+            <AuthenticatedLayout>
+              <PointOfSaleTerminal />
+            </AuthenticatedLayout>
+          </ProtectedRoute>
+        } />
+        
+        <Route path="/products" element={
+          <ProtectedRoute requiredRoles={['inventory_manager', 'admin']}>
+            <AuthenticatedLayout>
+              <ProductManagement />
+            </AuthenticatedLayout>
+          </ProtectedRoute>
+        } />
+        
+        <Route path="/inventory" element={
+          <ProtectedRoute requiredRoles={['inventory_manager', 'admin']}>
+            <AuthenticatedLayout>
+              <InventoryManagement />
+            </AuthenticatedLayout>
+          </ProtectedRoute>
+        } />
+        
+        <Route path="/users" element={
+          <ProtectedRoute requireAdmin>
+            <AuthenticatedLayout>
+              <UserManagement />
+            </AuthenticatedLayout>
+          </ProtectedRoute>
+        } />
+        
+        {/* Redirect old login path to new one */}
+        <Route path="/login-screen" element={<Navigate to="/login" replace />} />
+        
+        {/* 404 - Not Found */}
+        <Route path="*" element={<NotFound />} />
+      </RouterRoutes>
+      
+      {/* Toast notifications */}
+      <Toaster />
+    </ErrorBoundary>
   );
 };
 

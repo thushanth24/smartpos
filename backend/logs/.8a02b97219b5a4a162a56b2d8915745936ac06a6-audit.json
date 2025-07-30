@@ -9,6 +9,16 @@
             "date": 1753781307249,
             "name": "E:\\Personal\\important\\smartpos\\backend\\logs\\combined-2025-07-29.log",
             "hash": "83f45a41216777b559b7b7d67383fa33dc10970837ee9c3fab51d9590fa82a3a"
+        },
+        {
+            "date": 1753877284351,
+            "name": "E:\\Personal\\important\\smartpos\\backend\\logs\\combined-2025-07-30.log",
+            "hash": "0b0797d836fb209c84212de243b75753b92ef6cda0d72c449d00e16ae681151e"
+        },
+        {
+            "date": 1753900644797,
+            "name": "E:\\Personal\\important\\smartpos\\backend\\logs\\combined-2025-07-31.log",
+            "hash": "9f0926400c11800c5ed8b5b9b8e73abecfd89a6c2156405865dbd5dfa7001c1b"
         }
     ],
     "hashType": "sha256"

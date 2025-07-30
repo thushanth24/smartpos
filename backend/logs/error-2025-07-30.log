@@ -1,0 +1,1431 @@
+2025-07-30 18:01:07 [ERROR]: Uncaught Exception: Cannot set headers after they are sent to the client
+{
+  service: 'smartpos-backend',
+  env: 'development',
+  code: 'ERR_HTTP_HEADERS_SENT',
+  [Symbol(level)]: 'error',
+  [Symbol(splat)]: [
+    Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+        at ServerResponse.setHeader (node:_http_outgoing:655:11)
+        at ServerResponse.<anonymous> (file:///E:/Personal/important/smartpos/backend/src/middleware/requestLogger.js:32:9)
+        at ServerResponse.emit (node:events:530:35)
+        at onFinish (node:_http_outgoing:1027:10)
+        at callback (node:internal/streams/writable:766:21)
+        at afterWrite (node:internal/streams/writable:710:5)
+        at afterWriteTick (node:internal/streams/writable:696:10)
+        at process.processTicksAndRejections (node:internal/process/task_queues:81:21) {
+      code: 'ERR_HTTP_HEADERS_SENT'
+    }
+  ],
+  [Symbol(message)]: '{"code":"ERR_HTTP_HEADERS_SENT","env":"development","level":"error","message":"Uncaught Exception: Cannot set headers after they are sent to the client","service":"smartpos-backend","stack":"Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client\\n    at ServerResponse.setHeader (node:_http_outgoing:655:11)\\n    at ServerResponse.<anonymous> (file:///E:/Personal/important/smartpos/backend/src/middleware/requestLogger.js:32:9)\\n    at ServerResponse.emit (node:events:530:35)\\n    at onFinish (node:_http_outgoing:1027:10)\\n    at callback (node:internal/streams/writable:766:21)\\n    at afterWrite (node:internal/streams/writable:710:5)\\n    at afterWriteTick (node:internal/streams/writable:696:10)\\n    at process.processTicksAndRejections (node:internal/process/task_queues:81:21)","timestamp":"2025-07-30 18:01:07"}'
+}
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (node:_http_outgoing:655:11)
+    at ServerResponse.<anonymous> (file:///E:/Personal/important/smartpos/backend/src/middleware/requestLogger.js:32:9)
+    at ServerResponse.emit (node:events:530:35)
+    at onFinish (node:_http_outgoing:1027:10)
+    at callback (node:internal/streams/writable:766:21)
+    at afterWrite (node:internal/streams/writable:710:5)
+    at afterWriteTick (node:internal/streams/writable:696:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:81:21)
+2025-07-30 18:02:32 [ERROR]: Uncaught Exception: Cannot set headers after they are sent to the client
+{
+  service: 'smartpos-backend',
+  env: 'development',
+  code: 'ERR_HTTP_HEADERS_SENT',
+  [Symbol(level)]: 'error',
+  [Symbol(splat)]: [
+    Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+        at ServerResponse.setHeader (node:_http_outgoing:655:11)
+        at ServerResponse.<anonymous> (file:///E:/Personal/important/smartpos/backend/src/middleware/requestLogger.js:32:9)
+        at ServerResponse.emit (node:events:530:35)
+        at onFinish (node:_http_outgoing:1027:10)
+        at callback (node:internal/streams/writable:766:21)
+        at afterWrite (node:internal/streams/writable:710:5)
+        at afterWriteTick (node:internal/streams/writable:696:10)
+        at process.processTicksAndRejections (node:internal/process/task_queues:81:21) {
+      code: 'ERR_HTTP_HEADERS_SENT'
+    }
+  ],
+  [Symbol(message)]: '{"code":"ERR_HTTP_HEADERS_SENT","env":"development","level":"error","message":"Uncaught Exception: Cannot set headers after they are sent to the client","service":"smartpos-backend","stack":"Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client\\n    at ServerResponse.setHeader (node:_http_outgoing:655:11)\\n    at ServerResponse.<anonymous> (file:///E:/Personal/important/smartpos/backend/src/middleware/requestLogger.js:32:9)\\n    at ServerResponse.emit (node:events:530:35)\\n    at onFinish (node:_http_outgoing:1027:10)\\n    at callback (node:internal/streams/writable:766:21)\\n    at afterWrite (node:internal/streams/writable:710:5)\\n    at afterWriteTick (node:internal/streams/writable:696:10)\\n    at process.processTicksAndRejections (node:internal/process/task_queues:81:21)","timestamp":"2025-07-30 18:02:32"}'
+}
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (node:_http_outgoing:655:11)
+    at ServerResponse.<anonymous> (file:///E:/Personal/important/smartpos/backend/src/middleware/requestLogger.js:32:9)
+    at ServerResponse.emit (node:events:530:35)
+    at onFinish (node:_http_outgoing:1027:10)
+    at callback (node:internal/streams/writable:766:21)
+    at afterWrite (node:internal/streams/writable:710:5)
+    at afterWriteTick (node:internal/streams/writable:696:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:81:21)
+2025-07-30 18:44:31 [ERROR]: [2025-07-30T13:14:31.262Z] ReferenceError: require is not defined
+    at file:///E:/Personal/important/smartpos/backend/src/app.js:44:5
+    at Layer.handle [as handle_request] (E:\Personal\important\smartpos\backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (E:\Personal\important\smartpos\backend\node_modules\express\lib\router\index.js:328:13)
+    at E:\Personal\important\smartpos\backend\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (E:\Personal\important\smartpos\backend\node_modules\express\lib\router\index.js:346:12)
+    at next (E:\Personal\important\smartpos\backend\node_modules\express\lib\router\index.js:280:10)
+    at expressInit (E:\Personal\important\smartpos\backend\node_modules\express\lib\middleware\init.js:40:5)
+    at Layer.handle [as handle_request] (E:\Personal\important\smartpos\backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (E:\Personal\important\smartpos\backend\node_modules\express\lib\router\index.js:328:13)
+    at E:\Personal\important\smartpos\backend\node_modules\express\lib\router\index.js:286:9
+{
+  service: 'smartpos-backend',
+  env: 'development',
+  [Symbol(level)]: 'error',
+  [Symbol(message)]: '{"env":"development","level":"error","message":"[2025-07-30T13:14:31.262Z] ReferenceError: require is not defined\\n    at file:///E:/Personal/important/smartpos/backend/src/app.js:44:5\\n    at Layer.handle [as handle_request] (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\express\\\\lib\\\\router\\\\layer.js:95:5)\\n    at trim_prefix (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\express\\\\lib\\\\router\\\\index.js:328:13)\\n    at E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\express\\\\lib\\\\router\\\\index.js:286:9\\n    at Function.process_params (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\express\\\\lib\\\\router\\\\index.js:346:12)\\n    at next (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\express\\\\lib\\\\router\\\\index.js:280:10)\\n    at expressInit (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\express\\\\lib\\\\middleware\\\\init.js:40:5)\\n    at Layer.handle [as handle_request] (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\express\\\\lib\\\\router\\\\layer.js:95:5)\\n    at trim_prefix (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\express\\\\lib\\\\router\\\\index.js:328:13)\\n    at E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\express\\\\lib\\\\router\\\\index.js:286:9","service":"smartpos-backend","timestamp":"2025-07-30 18:44:31"}'
+}
+2025-07-30 19:26:49 [ERROR]: Uncaught Exception: Cannot set headers after they are sent to the client
+{
+  service: 'smartpos-backend',
+  env: 'development',
+  code: 'ERR_HTTP_HEADERS_SENT',
+  [Symbol(level)]: 'error',
+  [Symbol(splat)]: [
+    Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+        at ServerResponse.setHeader (node:_http_outgoing:655:11)
+        at ServerResponse.<anonymous> (file:///E:/Personal/important/smartpos/backend/src/middleware/requestLogger.js:32:9)
+        at ServerResponse.emit (node:events:530:35)
+        at onFinish (node:_http_outgoing:1027:10)
+        at callback (node:internal/streams/writable:766:21)
+        at afterWrite (node:internal/streams/writable:710:5)
+        at afterWriteTick (node:internal/streams/writable:696:10)
+        at process.processTicksAndRejections (node:internal/process/task_queues:81:21) {
+      code: 'ERR_HTTP_HEADERS_SENT'
+    }
+  ],
+  [Symbol(message)]: '{"code":"ERR_HTTP_HEADERS_SENT","env":"development","level":"error","message":"Uncaught Exception: Cannot set headers after they are sent to the client","service":"smartpos-backend","stack":"Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client\\n    at ServerResponse.setHeader (node:_http_outgoing:655:11)\\n    at ServerResponse.<anonymous> (file:///E:/Personal/important/smartpos/backend/src/middleware/requestLogger.js:32:9)\\n    at ServerResponse.emit (node:events:530:35)\\n    at onFinish (node:_http_outgoing:1027:10)\\n    at callback (node:internal/streams/writable:766:21)\\n    at afterWrite (node:internal/streams/writable:710:5)\\n    at afterWriteTick (node:internal/streams/writable:696:10)\\n    at process.processTicksAndRejections (node:internal/process/task_queues:81:21)","timestamp":"2025-07-30 19:26:49"}'
+}
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (node:_http_outgoing:655:11)
+    at ServerResponse.<anonymous> (file:///E:/Personal/important/smartpos/backend/src/middleware/requestLogger.js:32:9)
+    at ServerResponse.emit (node:events:530:35)
+    at onFinish (node:_http_outgoing:1027:10)
+    at callback (node:internal/streams/writable:766:21)
+    at afterWrite (node:internal/streams/writable:710:5)
+    at afterWriteTick (node:internal/streams/writable:696:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:81:21)
+2025-07-30 19:28:31 [ERROR]: Uncaught Exception: Cannot set headers after they are sent to the client
+{
+  service: 'smartpos-backend',
+  env: 'development',
+  code: 'ERR_HTTP_HEADERS_SENT',
+  [Symbol(level)]: 'error',
+  [Symbol(splat)]: [
+    Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+        at ServerResponse.setHeader (node:_http_outgoing:655:11)
+        at ServerResponse.<anonymous> (file:///E:/Personal/important/smartpos/backend/src/middleware/requestLogger.js:32:9)
+        at ServerResponse.emit (node:events:530:35)
+        at onFinish (node:_http_outgoing:1027:10)
+        at callback (node:internal/streams/writable:766:21)
+        at afterWrite (node:internal/streams/writable:710:5)
+        at afterWriteTick (node:internal/streams/writable:696:10)
+        at process.processTicksAndRejections (node:internal/process/task_queues:81:21) {
+      code: 'ERR_HTTP_HEADERS_SENT'
+    }
+  ],
+  [Symbol(message)]: '{"code":"ERR_HTTP_HEADERS_SENT","env":"development","level":"error","message":"Uncaught Exception: Cannot set headers after they are sent to the client","service":"smartpos-backend","stack":"Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client\\n    at ServerResponse.setHeader (node:_http_outgoing:655:11)\\n    at ServerResponse.<anonymous> (file:///E:/Personal/important/smartpos/backend/src/middleware/requestLogger.js:32:9)\\n    at ServerResponse.emit (node:events:530:35)\\n    at onFinish (node:_http_outgoing:1027:10)\\n    at callback (node:internal/streams/writable:766:21)\\n    at afterWrite (node:internal/streams/writable:710:5)\\n    at afterWriteTick (node:internal/streams/writable:696:10)\\n    at process.processTicksAndRejections (node:internal/process/task_queues:81:21)","timestamp":"2025-07-30 19:28:31"}'
+}
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (node:_http_outgoing:655:11)
+    at ServerResponse.<anonymous> (file:///E:/Personal/important/smartpos/backend/src/middleware/requestLogger.js:32:9)
+    at ServerResponse.emit (node:events:530:35)
+    at onFinish (node:_http_outgoing:1027:10)
+    at callback (node:internal/streams/writable:766:21)
+    at afterWrite (node:internal/streams/writable:710:5)
+    at afterWriteTick (node:internal/streams/writable:696:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:81:21)
+2025-07-30 20:01:12 [ERROR]: [2025-07-30T14:31:12.718Z] Error: column "is_active" does not exist
+    at login (file:///E:/Personal/important/smartpos/backend/src/controllers/auth.controller.js:112:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+{
+  service: 'smartpos-backend',
+  env: 'development',
+  [Symbol(level)]: 'error',
+  [Symbol(message)]: '{"env":"development","level":"error","message":"[2025-07-30T14:31:12.718Z] Error: column \\"is_active\\" does not exist\\n    at login (file:///E:/Personal/important/smartpos/backend/src/controllers/auth.controller.js:112:10)\\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)","service":"smartpos-backend","timestamp":"2025-07-30 20:01:12"}'
+}
+2025-07-30 20:14:33 [ERROR]: [2025-07-30T14:44:33.597Z] Error: column "is_active" does not exist
+    at login (file:///E:/Personal/important/smartpos/backend/src/controllers/auth.controller.js:112:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+{
+  service: 'smartpos-backend',
+  env: 'development',
+  [Symbol(level)]: 'error',
+  [Symbol(message)]: '{"env":"development","level":"error","message":"[2025-07-30T14:44:33.597Z] Error: column \\"is_active\\" does not exist\\n    at login (file:///E:/Personal/important/smartpos/backend/src/controllers/auth.controller.js:112:10)\\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)","service":"smartpos-backend","timestamp":"2025-07-30 20:14:33"}'
+}
+2025-07-30 20:23:00 [ERROR]: [2025-07-30T14:53:00.570Z] Error: column User.deleted_at does not exist
+    at login (file:///E:/Personal/important/smartpos/backend/src/controllers/auth.controller.js:112:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+{
+  service: 'smartpos-backend',
+  env: 'development',
+  [Symbol(level)]: 'error',
+  [Symbol(message)]: '{"env":"development","level":"error","message":"[2025-07-30T14:53:00.570Z] Error: column User.deleted_at does not exist\\n    at login (file:///E:/Personal/important/smartpos/backend/src/controllers/auth.controller.js:112:10)\\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)","service":"smartpos-backend","timestamp":"2025-07-30 20:23:00"}'
+}
+2025-07-30 22:28:38 [ERROR]: [2025-07-30T16:58:38.045Z] Error: read ECONNRESET
+    at login (file:///E:/Personal/important/smartpos/backend/src/controllers/auth.controller.js:112:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+{
+  service: 'smartpos-backend',
+  env: 'development',
+  [Symbol(level)]: 'error',
+  [Symbol(message)]: '{"env":"development","level":"error","message":"[2025-07-30T16:58:38.045Z] Error: read ECONNRESET\\n    at login (file:///E:/Personal/important/smartpos/backend/src/controllers/auth.controller.js:112:10)\\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)","service":"smartpos-backend","timestamp":"2025-07-30 22:28:38"}'
+}
+2025-07-30 22:28:38 [ERROR]: Failed to create request log: Connection terminated unexpectedly
+{
+  service: 'smartpos-backend',
+  env: 'development',
+  name: 'SequelizeDatabaseError',
+  parent: Error: Connection terminated unexpectedly
+      at Connection.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:136:73)
+      at Object.onceWrapper (node:events:632:28)
+      at Connection.emit (node:events:518:28)
+      at Socket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:62:12)
+      at Socket.emit (node:events:530:35)
+      at TCP.<anonymous> (node:net:343:12) {
+    sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+    parameters: [
+      '01f3bfd0-643a-4601-a391-04bdc60977ee',
+      'error',
+      'POST /api/v1/auth/login - 500 (183.8751ms)',
+      '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":183.8751,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"0c52c0b2-29d3-4066-bd04-1b2314aab890","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+      '2025-07-30 16:58:38.047 +00:00',
+      '2025-07-30 16:58:38.047 +00:00',
+      '2025-07-30 16:58:38.047 +00:00'
+    ]
+  },
+  original: Error: Connection terminated unexpectedly
+      at Connection.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:136:73)
+      at Object.onceWrapper (node:events:632:28)
+      at Connection.emit (node:events:518:28)
+      at Socket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:62:12)
+      at Socket.emit (node:events:530:35)
+      at TCP.<anonymous> (node:net:343:12) {
+    sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+    parameters: [
+      '01f3bfd0-643a-4601-a391-04bdc60977ee',
+      'error',
+      'POST /api/v1/auth/login - 500 (183.8751ms)',
+      '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":183.8751,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"0c52c0b2-29d3-4066-bd04-1b2314aab890","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+      '2025-07-30 16:58:38.047 +00:00',
+      '2025-07-30 16:58:38.047 +00:00',
+      '2025-07-30 16:58:38.047 +00:00'
+    ]
+  },
+  sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+  parameters: [
+    '01f3bfd0-643a-4601-a391-04bdc60977ee',
+    'error',
+    'POST /api/v1/auth/login - 500 (183.8751ms)',
+    '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":183.8751,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"0c52c0b2-29d3-4066-bd04-1b2314aab890","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+    '2025-07-30 16:58:38.047 +00:00',
+    '2025-07-30 16:58:38.047 +00:00',
+    '2025-07-30 16:58:38.047 +00:00'
+  ],
+  [Symbol(level)]: 'error',
+  [Symbol(splat)]: [
+    Error
+        at Query.run (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+        at E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\sequelize.js:315:28
+        at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+        at async PostgresQueryInterface.insert (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+        at async model.save (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\model.js:2490:35)
+        at async Log.create (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\model.js:1362:12)
+        at async createRequestLog (file:///E:/Personal/important/smartpos/backend/src/services/loggingService.js:28:22) {
+      name: 'SequelizeDatabaseError',
+      parent: Error: Connection terminated unexpectedly
+          at Connection.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:136:73)
+          at Object.onceWrapper (node:events:632:28)
+          at Connection.emit (node:events:518:28)
+          at Socket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:62:12)
+          at Socket.emit (node:events:530:35)
+          at TCP.<anonymous> (node:net:343:12) {
+        sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+        parameters: [
+          '01f3bfd0-643a-4601-a391-04bdc60977ee',
+          'error',
+          'POST /api/v1/auth/login - 500 (183.8751ms)',
+          '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":183.8751,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"0c52c0b2-29d3-4066-bd04-1b2314aab890","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+          '2025-07-30 16:58:38.047 +00:00',
+          '2025-07-30 16:58:38.047 +00:00',
+          '2025-07-30 16:58:38.047 +00:00'
+        ]
+      },
+      original: Error: Connection terminated unexpectedly
+          at Connection.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:136:73)
+          at Object.onceWrapper (node:events:632:28)
+          at Connection.emit (node:events:518:28)
+          at Socket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:62:12)
+          at Socket.emit (node:events:530:35)
+          at TCP.<anonymous> (node:net:343:12) {
+        sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+        parameters: [
+          '01f3bfd0-643a-4601-a391-04bdc60977ee',
+          'error',
+          'POST /api/v1/auth/login - 500 (183.8751ms)',
+          '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":183.8751,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"0c52c0b2-29d3-4066-bd04-1b2314aab890","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+          '2025-07-30 16:58:38.047 +00:00',
+          '2025-07-30 16:58:38.047 +00:00',
+          '2025-07-30 16:58:38.047 +00:00'
+        ]
+      },
+      sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+      parameters: [
+        '01f3bfd0-643a-4601-a391-04bdc60977ee',
+        'error',
+        'POST /api/v1/auth/login - 500 (183.8751ms)',
+        '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":183.8751,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"0c52c0b2-29d3-4066-bd04-1b2314aab890","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+        '2025-07-30 16:58:38.047 +00:00',
+        '2025-07-30 16:58:38.047 +00:00',
+        '2025-07-30 16:58:38.047 +00:00'
+      ]
+    }
+  ],
+  [Symbol(message)]: '{"env":"development","level":"error","message":"Failed to create request log: Connection terminated unexpectedly","name":"SequelizeDatabaseError","original":{"parameters":["01f3bfd0-643a-4601-a391-04bdc60977ee","error","POST /api/v1/auth/login - 500 (183.8751ms)","{\\"method\\":\\"POST\\",\\"url\\":\\"/api/v1/auth/login\\",\\"status\\":500,\\"responseTime\\":183.8751,\\"user\\":null,\\"ip\\":\\"127.0.0.1\\",\\"userAgent\\":\\"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36\\",\\"referrer\\":\\"http://localhost:4028/login\\",\\"requestId\\":\\"0c52c0b2-29d3-4066-bd04-1b2314aab890\\",\\"body\\":{\\"email\\":\\"manothushanth@gmail.com\\",\\"password\\":\\"qwertyuiop\\"},\\"query\\":{},\\"params\\":{}}","2025-07-30 16:58:38.047 +00:00","2025-07-30 16:58:38.047 +00:00","2025-07-30 16:58:38.047 +00:00"],"sql":"INSERT INTO \\"logs\\" (\\"id\\",\\"level\\",\\"message\\",\\"meta\\",\\"timestamp\\",\\"created_at\\",\\"updated_at\\") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING \\"id\\",\\"level\\",\\"message\\",\\"meta\\",\\"timestamp\\",\\"created_at\\",\\"updated_at\\";"},"parameters":["01f3bfd0-643a-4601-a391-04bdc60977ee","error","POST /api/v1/auth/login - 500 (183.8751ms)","{\\"method\\":\\"POST\\",\\"url\\":\\"/api/v1/auth/login\\",\\"status\\":500,\\"responseTime\\":183.8751,\\"user\\":null,\\"ip\\":\\"127.0.0.1\\",\\"userAgent\\":\\"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36\\",\\"referrer\\":\\"http://localhost:4028/login\\",\\"requestId\\":\\"0c52c0b2-29d3-4066-bd04-1b2314aab890\\",\\"body\\":{\\"email\\":\\"manothushanth@gmail.com\\",\\"password\\":\\"qwertyuiop\\"},\\"query\\":{},\\"params\\":{}}","2025-07-30 16:58:38.047 +00:00","2025-07-30 16:58:38.047 +00:00","2025-07-30 16:58:38.047 +00:00"],"parent":{"parameters":["01f3bfd0-643a-4601-a391-04bdc60977ee","error","POST /api/v1/auth/login - 500 (183.8751ms)","{\\"method\\":\\"POST\\",\\"url\\":\\"/api/v1/auth/login\\",\\"status\\":500,\\"responseTime\\":183.8751,\\"user\\":null,\\"ip\\":\\"127.0.0.1\\",\\"userAgent\\":\\"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36\\",\\"referrer\\":\\"http://localhost:4028/login\\",\\"requestId\\":\\"0c52c0b2-29d3-4066-bd04-1b2314aab890\\",\\"body\\":{\\"email\\":\\"manothushanth@gmail.com\\",\\"password\\":\\"qwertyuiop\\"},\\"query\\":{},\\"params\\":{}}","2025-07-30 16:58:38.047 +00:00","2025-07-30 16:58:38.047 +00:00","2025-07-30 16:58:38.047 +00:00"],"sql":"INSERT INTO \\"logs\\" (\\"id\\",\\"level\\",\\"message\\",\\"meta\\",\\"timestamp\\",\\"created_at\\",\\"updated_at\\") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING \\"id\\",\\"level\\",\\"message\\",\\"meta\\",\\"timestamp\\",\\"created_at\\",\\"updated_at\\";"},"service":"smartpos-backend","sql":"INSERT INTO \\"logs\\" (\\"id\\",\\"level\\",\\"message\\",\\"meta\\",\\"timestamp\\",\\"created_at\\",\\"updated_at\\") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING \\"id\\",\\"level\\",\\"message\\",\\"meta\\",\\"timestamp\\",\\"created_at\\",\\"updated_at\\";","stack":"Error\\n    at Query.run (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\dialects\\\\postgres\\\\query.js:50:25)\\n    at E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\sequelize.js:315:28\\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\\n    at async PostgresQueryInterface.insert (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\dialects\\\\abstract\\\\query-interface.js:308:21)\\n    at async model.save (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\model.js:2490:35)\\n    at async Log.create (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\model.js:1362:12)\\n    at async createRequestLog (file:///E:/Personal/important/smartpos/backend/src/services/loggingService.js:28:22)","timestamp":"2025-07-30 22:28:38"}'
+}
+Error
+    at Query.run (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+    at E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async PostgresQueryInterface.insert (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+    at async model.save (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\model.js:2490:35)
+    at async Log.create (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\model.js:1362:12)
+    at async createRequestLog (file:///E:/Personal/important/smartpos/backend/src/services/loggingService.js:28:22)
+2025-07-30 22:28:38 [ERROR]: Unhandled Rejection: Connection terminated unexpectedly
+{
+  service: 'smartpos-backend',
+  env: 'development',
+  name: 'SequelizeDatabaseError',
+  parent: Error: Connection terminated unexpectedly
+      at Connection.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:136:73)
+      at Object.onceWrapper (node:events:632:28)
+      at Connection.emit (node:events:518:28)
+      at Socket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:62:12)
+      at Socket.emit (node:events:530:35)
+      at TCP.<anonymous> (node:net:343:12) {
+    sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+    parameters: [
+      '01f3bfd0-643a-4601-a391-04bdc60977ee',
+      'error',
+      'POST /api/v1/auth/login - 500 (183.8751ms)',
+      '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":183.8751,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"0c52c0b2-29d3-4066-bd04-1b2314aab890","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+      '2025-07-30 16:58:38.047 +00:00',
+      '2025-07-30 16:58:38.047 +00:00',
+      '2025-07-30 16:58:38.047 +00:00'
+    ]
+  },
+  original: Error: Connection terminated unexpectedly
+      at Connection.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:136:73)
+      at Object.onceWrapper (node:events:632:28)
+      at Connection.emit (node:events:518:28)
+      at Socket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:62:12)
+      at Socket.emit (node:events:530:35)
+      at TCP.<anonymous> (node:net:343:12) {
+    sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+    parameters: [
+      '01f3bfd0-643a-4601-a391-04bdc60977ee',
+      'error',
+      'POST /api/v1/auth/login - 500 (183.8751ms)',
+      '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":183.8751,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"0c52c0b2-29d3-4066-bd04-1b2314aab890","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+      '2025-07-30 16:58:38.047 +00:00',
+      '2025-07-30 16:58:38.047 +00:00',
+      '2025-07-30 16:58:38.047 +00:00'
+    ]
+  },
+  sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+  parameters: [
+    '01f3bfd0-643a-4601-a391-04bdc60977ee',
+    'error',
+    'POST /api/v1/auth/login - 500 (183.8751ms)',
+    '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":183.8751,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"0c52c0b2-29d3-4066-bd04-1b2314aab890","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+    '2025-07-30 16:58:38.047 +00:00',
+    '2025-07-30 16:58:38.047 +00:00',
+    '2025-07-30 16:58:38.047 +00:00'
+  ],
+  [Symbol(level)]: 'error',
+  [Symbol(splat)]: [
+    Error
+        at Query.run (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+        at E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\sequelize.js:315:28
+        at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+        at async PostgresQueryInterface.insert (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+        at async model.save (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\model.js:2490:35)
+        at async Log.create (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\model.js:1362:12)
+        at async createRequestLog (file:///E:/Personal/important/smartpos/backend/src/services/loggingService.js:28:22) {
+      name: 'SequelizeDatabaseError',
+      parent: Error: Connection terminated unexpectedly
+          at Connection.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:136:73)
+          at Object.onceWrapper (node:events:632:28)
+          at Connection.emit (node:events:518:28)
+          at Socket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:62:12)
+          at Socket.emit (node:events:530:35)
+          at TCP.<anonymous> (node:net:343:12) {
+        sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+        parameters: [
+          '01f3bfd0-643a-4601-a391-04bdc60977ee',
+          'error',
+          'POST /api/v1/auth/login - 500 (183.8751ms)',
+          '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":183.8751,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"0c52c0b2-29d3-4066-bd04-1b2314aab890","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+          '2025-07-30 16:58:38.047 +00:00',
+          '2025-07-30 16:58:38.047 +00:00',
+          '2025-07-30 16:58:38.047 +00:00'
+        ]
+      },
+      original: Error: Connection terminated unexpectedly
+          at Connection.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:136:73)
+          at Object.onceWrapper (node:events:632:28)
+          at Connection.emit (node:events:518:28)
+          at Socket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:62:12)
+          at Socket.emit (node:events:530:35)
+          at TCP.<anonymous> (node:net:343:12) {
+        sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+        parameters: [
+          '01f3bfd0-643a-4601-a391-04bdc60977ee',
+          'error',
+          'POST /api/v1/auth/login - 500 (183.8751ms)',
+          '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":183.8751,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"0c52c0b2-29d3-4066-bd04-1b2314aab890","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+          '2025-07-30 16:58:38.047 +00:00',
+          '2025-07-30 16:58:38.047 +00:00',
+          '2025-07-30 16:58:38.047 +00:00'
+        ]
+      },
+      sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+      parameters: [
+        '01f3bfd0-643a-4601-a391-04bdc60977ee',
+        'error',
+        'POST /api/v1/auth/login - 500 (183.8751ms)',
+        '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":183.8751,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"0c52c0b2-29d3-4066-bd04-1b2314aab890","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+        '2025-07-30 16:58:38.047 +00:00',
+        '2025-07-30 16:58:38.047 +00:00',
+        '2025-07-30 16:58:38.047 +00:00'
+      ]
+    }
+  ],
+  [Symbol(message)]: '{"env":"development","level":"error","message":"Unhandled Rejection: Connection terminated unexpectedly","name":"SequelizeDatabaseError","original":{"parameters":["01f3bfd0-643a-4601-a391-04bdc60977ee","error","POST /api/v1/auth/login - 500 (183.8751ms)","{\\"method\\":\\"POST\\",\\"url\\":\\"/api/v1/auth/login\\",\\"status\\":500,\\"responseTime\\":183.8751,\\"user\\":null,\\"ip\\":\\"127.0.0.1\\",\\"userAgent\\":\\"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36\\",\\"referrer\\":\\"http://localhost:4028/login\\",\\"requestId\\":\\"0c52c0b2-29d3-4066-bd04-1b2314aab890\\",\\"body\\":{\\"email\\":\\"manothushanth@gmail.com\\",\\"password\\":\\"qwertyuiop\\"},\\"query\\":{},\\"params\\":{}}","2025-07-30 16:58:38.047 +00:00","2025-07-30 16:58:38.047 +00:00","2025-07-30 16:58:38.047 +00:00"],"sql":"INSERT INTO \\"logs\\" (\\"id\\",\\"level\\",\\"message\\",\\"meta\\",\\"timestamp\\",\\"created_at\\",\\"updated_at\\") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING \\"id\\",\\"level\\",\\"message\\",\\"meta\\",\\"timestamp\\",\\"created_at\\",\\"updated_at\\";"},"parameters":["01f3bfd0-643a-4601-a391-04bdc60977ee","error","POST /api/v1/auth/login - 500 (183.8751ms)","{\\"method\\":\\"POST\\",\\"url\\":\\"/api/v1/auth/login\\",\\"status\\":500,\\"responseTime\\":183.8751,\\"user\\":null,\\"ip\\":\\"127.0.0.1\\",\\"userAgent\\":\\"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36\\",\\"referrer\\":\\"http://localhost:4028/login\\",\\"requestId\\":\\"0c52c0b2-29d3-4066-bd04-1b2314aab890\\",\\"body\\":{\\"email\\":\\"manothushanth@gmail.com\\",\\"password\\":\\"qwertyuiop\\"},\\"query\\":{},\\"params\\":{}}","2025-07-30 16:58:38.047 +00:00","2025-07-30 16:58:38.047 +00:00","2025-07-30 16:58:38.047 +00:00"],"parent":{"parameters":["01f3bfd0-643a-4601-a391-04bdc60977ee","error","POST /api/v1/auth/login - 500 (183.8751ms)","{\\"method\\":\\"POST\\",\\"url\\":\\"/api/v1/auth/login\\",\\"status\\":500,\\"responseTime\\":183.8751,\\"user\\":null,\\"ip\\":\\"127.0.0.1\\",\\"userAgent\\":\\"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36\\",\\"referrer\\":\\"http://localhost:4028/login\\",\\"requestId\\":\\"0c52c0b2-29d3-4066-bd04-1b2314aab890\\",\\"body\\":{\\"email\\":\\"manothushanth@gmail.com\\",\\"password\\":\\"qwertyuiop\\"},\\"query\\":{},\\"params\\":{}}","2025-07-30 16:58:38.047 +00:00","2025-07-30 16:58:38.047 +00:00","2025-07-30 16:58:38.047 +00:00"],"sql":"INSERT INTO \\"logs\\" (\\"id\\",\\"level\\",\\"message\\",\\"meta\\",\\"timestamp\\",\\"created_at\\",\\"updated_at\\") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING \\"id\\",\\"level\\",\\"message\\",\\"meta\\",\\"timestamp\\",\\"created_at\\",\\"updated_at\\";"},"service":"smartpos-backend","sql":"INSERT INTO \\"logs\\" (\\"id\\",\\"level\\",\\"message\\",\\"meta\\",\\"timestamp\\",\\"created_at\\",\\"updated_at\\") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING \\"id\\",\\"level\\",\\"message\\",\\"meta\\",\\"timestamp\\",\\"created_at\\",\\"updated_at\\";","stack":"Error\\n    at Query.run (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\dialects\\\\postgres\\\\query.js:50:25)\\n    at E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\sequelize.js:315:28\\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\\n    at async PostgresQueryInterface.insert (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\dialects\\\\abstract\\\\query-interface.js:308:21)\\n    at async model.save (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\model.js:2490:35)\\n    at async Log.create (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\model.js:1362:12)\\n    at async createRequestLog (file:///E:/Personal/important/smartpos/backend/src/services/loggingService.js:28:22)","timestamp":"2025-07-30 22:28:38"}'
+}
+Error
+    at Query.run (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+    at E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async PostgresQueryInterface.insert (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+    at async model.save (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\model.js:2490:35)
+    at async Log.create (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\model.js:1362:12)
+    at async createRequestLog (file:///E:/Personal/important/smartpos/backend/src/services/loggingService.js:28:22)
+2025-07-30 22:28:38 [ERROR]: Unhandled Rejection at: Connection terminated unexpectedly
+{
+  service: 'smartpos-backend',
+  env: 'development',
+  name: 'SequelizeDatabaseError',
+  parent: Error: Connection terminated unexpectedly
+      at Connection.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:136:73)
+      at Object.onceWrapper (node:events:632:28)
+      at Connection.emit (node:events:518:28)
+      at Socket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:62:12)
+      at Socket.emit (node:events:530:35)
+      at TCP.<anonymous> (node:net:343:12) {
+    sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+    parameters: [
+      '01f3bfd0-643a-4601-a391-04bdc60977ee',
+      'error',
+      'POST /api/v1/auth/login - 500 (183.8751ms)',
+      '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":183.8751,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"0c52c0b2-29d3-4066-bd04-1b2314aab890","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+      '2025-07-30 16:58:38.047 +00:00',
+      '2025-07-30 16:58:38.047 +00:00',
+      '2025-07-30 16:58:38.047 +00:00'
+    ]
+  },
+  original: Error: Connection terminated unexpectedly
+      at Connection.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:136:73)
+      at Object.onceWrapper (node:events:632:28)
+      at Connection.emit (node:events:518:28)
+      at Socket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:62:12)
+      at Socket.emit (node:events:530:35)
+      at TCP.<anonymous> (node:net:343:12) {
+    sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+    parameters: [
+      '01f3bfd0-643a-4601-a391-04bdc60977ee',
+      'error',
+      'POST /api/v1/auth/login - 500 (183.8751ms)',
+      '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":183.8751,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"0c52c0b2-29d3-4066-bd04-1b2314aab890","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+      '2025-07-30 16:58:38.047 +00:00',
+      '2025-07-30 16:58:38.047 +00:00',
+      '2025-07-30 16:58:38.047 +00:00'
+    ]
+  },
+  sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+  parameters: [
+    '01f3bfd0-643a-4601-a391-04bdc60977ee',
+    'error',
+    'POST /api/v1/auth/login - 500 (183.8751ms)',
+    '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":183.8751,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"0c52c0b2-29d3-4066-bd04-1b2314aab890","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+    '2025-07-30 16:58:38.047 +00:00',
+    '2025-07-30 16:58:38.047 +00:00',
+    '2025-07-30 16:58:38.047 +00:00'
+  ],
+  [Symbol(level)]: 'error',
+  [Symbol(splat)]: [
+    Error
+        at Query.run (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+        at E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\sequelize.js:315:28
+        at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+        at async PostgresQueryInterface.insert (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+        at async model.save (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\model.js:2490:35)
+        at async Log.create (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\model.js:1362:12)
+        at async createRequestLog (file:///E:/Personal/important/smartpos/backend/src/services/loggingService.js:28:22) {
+      name: 'SequelizeDatabaseError',
+      parent: Error: Connection terminated unexpectedly
+          at Connection.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:136:73)
+          at Object.onceWrapper (node:events:632:28)
+          at Connection.emit (node:events:518:28)
+          at Socket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:62:12)
+          at Socket.emit (node:events:530:35)
+          at TCP.<anonymous> (node:net:343:12) {
+        sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+        parameters: [
+          '01f3bfd0-643a-4601-a391-04bdc60977ee',
+          'error',
+          'POST /api/v1/auth/login - 500 (183.8751ms)',
+          '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":183.8751,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"0c52c0b2-29d3-4066-bd04-1b2314aab890","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+          '2025-07-30 16:58:38.047 +00:00',
+          '2025-07-30 16:58:38.047 +00:00',
+          '2025-07-30 16:58:38.047 +00:00'
+        ]
+      },
+      original: Error: Connection terminated unexpectedly
+          at Connection.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:136:73)
+          at Object.onceWrapper (node:events:632:28)
+          at Connection.emit (node:events:518:28)
+          at Socket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:62:12)
+          at Socket.emit (node:events:530:35)
+          at TCP.<anonymous> (node:net:343:12) {
+        sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+        parameters: [
+          '01f3bfd0-643a-4601-a391-04bdc60977ee',
+          'error',
+          'POST /api/v1/auth/login - 500 (183.8751ms)',
+          '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":183.8751,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"0c52c0b2-29d3-4066-bd04-1b2314aab890","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+          '2025-07-30 16:58:38.047 +00:00',
+          '2025-07-30 16:58:38.047 +00:00',
+          '2025-07-30 16:58:38.047 +00:00'
+        ]
+      },
+      sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+      parameters: [
+        '01f3bfd0-643a-4601-a391-04bdc60977ee',
+        'error',
+        'POST /api/v1/auth/login - 500 (183.8751ms)',
+        '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":183.8751,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"0c52c0b2-29d3-4066-bd04-1b2314aab890","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+        '2025-07-30 16:58:38.047 +00:00',
+        '2025-07-30 16:58:38.047 +00:00',
+        '2025-07-30 16:58:38.047 +00:00'
+      ]
+    }
+  ],
+  [Symbol(message)]: '{"env":"development","level":"error","message":"Unhandled Rejection at: Connection terminated unexpectedly","name":"SequelizeDatabaseError","original":{"parameters":["01f3bfd0-643a-4601-a391-04bdc60977ee","error","POST /api/v1/auth/login - 500 (183.8751ms)","{\\"method\\":\\"POST\\",\\"url\\":\\"/api/v1/auth/login\\",\\"status\\":500,\\"responseTime\\":183.8751,\\"user\\":null,\\"ip\\":\\"127.0.0.1\\",\\"userAgent\\":\\"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36\\",\\"referrer\\":\\"http://localhost:4028/login\\",\\"requestId\\":\\"0c52c0b2-29d3-4066-bd04-1b2314aab890\\",\\"body\\":{\\"email\\":\\"manothushanth@gmail.com\\",\\"password\\":\\"qwertyuiop\\"},\\"query\\":{},\\"params\\":{}}","2025-07-30 16:58:38.047 +00:00","2025-07-30 16:58:38.047 +00:00","2025-07-30 16:58:38.047 +00:00"],"sql":"INSERT INTO \\"logs\\" (\\"id\\",\\"level\\",\\"message\\",\\"meta\\",\\"timestamp\\",\\"created_at\\",\\"updated_at\\") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING \\"id\\",\\"level\\",\\"message\\",\\"meta\\",\\"timestamp\\",\\"created_at\\",\\"updated_at\\";"},"parameters":["01f3bfd0-643a-4601-a391-04bdc60977ee","error","POST /api/v1/auth/login - 500 (183.8751ms)","{\\"method\\":\\"POST\\",\\"url\\":\\"/api/v1/auth/login\\",\\"status\\":500,\\"responseTime\\":183.8751,\\"user\\":null,\\"ip\\":\\"127.0.0.1\\",\\"userAgent\\":\\"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36\\",\\"referrer\\":\\"http://localhost:4028/login\\",\\"requestId\\":\\"0c52c0b2-29d3-4066-bd04-1b2314aab890\\",\\"body\\":{\\"email\\":\\"manothushanth@gmail.com\\",\\"password\\":\\"qwertyuiop\\"},\\"query\\":{},\\"params\\":{}}","2025-07-30 16:58:38.047 +00:00","2025-07-30 16:58:38.047 +00:00","2025-07-30 16:58:38.047 +00:00"],"parent":{"parameters":["01f3bfd0-643a-4601-a391-04bdc60977ee","error","POST /api/v1/auth/login - 500 (183.8751ms)","{\\"method\\":\\"POST\\",\\"url\\":\\"/api/v1/auth/login\\",\\"status\\":500,\\"responseTime\\":183.8751,\\"user\\":null,\\"ip\\":\\"127.0.0.1\\",\\"userAgent\\":\\"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36\\",\\"referrer\\":\\"http://localhost:4028/login\\",\\"requestId\\":\\"0c52c0b2-29d3-4066-bd04-1b2314aab890\\",\\"body\\":{\\"email\\":\\"manothushanth@gmail.com\\",\\"password\\":\\"qwertyuiop\\"},\\"query\\":{},\\"params\\":{}}","2025-07-30 16:58:38.047 +00:00","2025-07-30 16:58:38.047 +00:00","2025-07-30 16:58:38.047 +00:00"],"sql":"INSERT INTO \\"logs\\" (\\"id\\",\\"level\\",\\"message\\",\\"meta\\",\\"timestamp\\",\\"created_at\\",\\"updated_at\\") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING \\"id\\",\\"level\\",\\"message\\",\\"meta\\",\\"timestamp\\",\\"created_at\\",\\"updated_at\\";"},"service":"smartpos-backend","sql":"INSERT INTO \\"logs\\" (\\"id\\",\\"level\\",\\"message\\",\\"meta\\",\\"timestamp\\",\\"created_at\\",\\"updated_at\\") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING \\"id\\",\\"level\\",\\"message\\",\\"meta\\",\\"timestamp\\",\\"created_at\\",\\"updated_at\\";","stack":"Error\\n    at Query.run (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\dialects\\\\postgres\\\\query.js:50:25)\\n    at E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\sequelize.js:315:28\\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\\n    at async PostgresQueryInterface.insert (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\dialects\\\\abstract\\\\query-interface.js:308:21)\\n    at async model.save (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\model.js:2490:35)\\n    at async Log.create (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\model.js:1362:12)\\n    at async createRequestLog (file:///E:/Personal/important/smartpos/backend/src/services/loggingService.js:28:22)","timestamp":"2025-07-30 22:28:38"}'
+}
+Error
+    at Query.run (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+    at E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async PostgresQueryInterface.insert (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+    at async model.save (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\model.js:2490:35)
+    at async Log.create (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\model.js:1362:12)
+    at async createRequestLog (file:///E:/Personal/important/smartpos/backend/src/services/loggingService.js:28:22)
+2025-07-30 22:28:38 [ERROR]: Unhandled Rejection at:
+{
+  service: 'smartpos-backend',
+  env: 'development',
+  [Symbol(level)]: 'error',
+  [Symbol(splat)]: [
+    Promise {
+      <rejected> Error
+          at Query.run (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+          at E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\sequelize.js:315:28
+          at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+          at async PostgresQueryInterface.insert (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+          at async model.save (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\model.js:2490:35)
+          at async Log.create (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\model.js:1362:12)
+          at async createRequestLog (file:///E:/Personal/important/smartpos/backend/src/services/loggingService.js:28:22) {
+        name: 'SequelizeDatabaseError',
+        parent: Error: Connection terminated unexpectedly
+            at Connection.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:136:73)
+            at Object.onceWrapper (node:events:632:28)
+            at Connection.emit (node:events:518:28)
+            at Socket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:62:12)
+            at Socket.emit (node:events:530:35)
+            at TCP.<anonymous> (node:net:343:12) {
+          sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+          parameters: [
+            '01f3bfd0-643a-4601-a391-04bdc60977ee',
+            'error',
+            'POST /api/v1/auth/login - 500 (183.8751ms)',
+            '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":183.8751,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"0c52c0b2-29d3-4066-bd04-1b2314aab890","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+            '2025-07-30 16:58:38.047 +00:00',
+            '2025-07-30 16:58:38.047 +00:00',
+            '2025-07-30 16:58:38.047 +00:00'
+          ]
+        },
+        original: Error: Connection terminated unexpectedly
+            at Connection.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:136:73)
+            at Object.onceWrapper (node:events:632:28)
+            at Connection.emit (node:events:518:28)
+            at Socket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:62:12)
+            at Socket.emit (node:events:530:35)
+            at TCP.<anonymous> (node:net:343:12) {
+          sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+          parameters: [
+            '01f3bfd0-643a-4601-a391-04bdc60977ee',
+            'error',
+            'POST /api/v1/auth/login - 500 (183.8751ms)',
+            '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":183.8751,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"0c52c0b2-29d3-4066-bd04-1b2314aab890","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+            '2025-07-30 16:58:38.047 +00:00',
+            '2025-07-30 16:58:38.047 +00:00',
+            '2025-07-30 16:58:38.047 +00:00'
+          ]
+        },
+        sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+        parameters: [
+          '01f3bfd0-643a-4601-a391-04bdc60977ee',
+          'error',
+          'POST /api/v1/auth/login - 500 (183.8751ms)',
+          '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":183.8751,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"0c52c0b2-29d3-4066-bd04-1b2314aab890","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+          '2025-07-30 16:58:38.047 +00:00',
+          '2025-07-30 16:58:38.047 +00:00',
+          '2025-07-30 16:58:38.047 +00:00'
+        ]
+      }
+    },
+    'reason:',
+    Error
+        at Query.run (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+        at E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\sequelize.js:315:28
+        at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+        at async PostgresQueryInterface.insert (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+        at async model.save (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\model.js:2490:35)
+        at async Log.create (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\model.js:1362:12)
+        at async createRequestLog (file:///E:/Personal/important/smartpos/backend/src/services/loggingService.js:28:22) {
+      name: 'SequelizeDatabaseError',
+      parent: Error: Connection terminated unexpectedly
+          at Connection.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:136:73)
+          at Object.onceWrapper (node:events:632:28)
+          at Connection.emit (node:events:518:28)
+          at Socket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:62:12)
+          at Socket.emit (node:events:530:35)
+          at TCP.<anonymous> (node:net:343:12) {
+        sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+        parameters: [
+          '01f3bfd0-643a-4601-a391-04bdc60977ee',
+          'error',
+          'POST /api/v1/auth/login - 500 (183.8751ms)',
+          '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":183.8751,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"0c52c0b2-29d3-4066-bd04-1b2314aab890","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+          '2025-07-30 16:58:38.047 +00:00',
+          '2025-07-30 16:58:38.047 +00:00',
+          '2025-07-30 16:58:38.047 +00:00'
+        ]
+      },
+      original: Error: Connection terminated unexpectedly
+          at Connection.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:136:73)
+          at Object.onceWrapper (node:events:632:28)
+          at Connection.emit (node:events:518:28)
+          at Socket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:62:12)
+          at Socket.emit (node:events:530:35)
+          at TCP.<anonymous> (node:net:343:12) {
+        sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+        parameters: [
+          '01f3bfd0-643a-4601-a391-04bdc60977ee',
+          'error',
+          'POST /api/v1/auth/login - 500 (183.8751ms)',
+          '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":183.8751,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"0c52c0b2-29d3-4066-bd04-1b2314aab890","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+          '2025-07-30 16:58:38.047 +00:00',
+          '2025-07-30 16:58:38.047 +00:00',
+          '2025-07-30 16:58:38.047 +00:00'
+        ]
+      },
+      sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+      parameters: [
+        '01f3bfd0-643a-4601-a391-04bdc60977ee',
+        'error',
+        'POST /api/v1/auth/login - 500 (183.8751ms)',
+        '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":183.8751,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"0c52c0b2-29d3-4066-bd04-1b2314aab890","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+        '2025-07-30 16:58:38.047 +00:00',
+        '2025-07-30 16:58:38.047 +00:00',
+        '2025-07-30 16:58:38.047 +00:00'
+      ]
+    }
+  ],
+  [Symbol(message)]: '{"env":"development","level":"error","message":"Unhandled Rejection at:","service":"smartpos-backend","timestamp":"2025-07-30 22:28:38"}'
+}
+2025-07-30 22:28:38 [ERROR]: Unhandled Rejection at:
+{
+  service: 'smartpos-backend',
+  env: 'development',
+  [Symbol(level)]: 'error',
+  [Symbol(splat)]: [
+    Promise {
+      <rejected> Error
+          at Query.run (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+          at E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\sequelize.js:315:28
+          at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+          at async PostgresQueryInterface.insert (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+          at async model.save (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\model.js:2490:35)
+          at async Log.create (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\model.js:1362:12)
+          at async createRequestLog (file:///E:/Personal/important/smartpos/backend/src/services/loggingService.js:28:22) {
+        name: 'SequelizeDatabaseError',
+        parent: Error: Connection terminated unexpectedly
+            at Connection.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:136:73)
+            at Object.onceWrapper (node:events:632:28)
+            at Connection.emit (node:events:518:28)
+            at Socket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:62:12)
+            at Socket.emit (node:events:530:35)
+            at TCP.<anonymous> (node:net:343:12) {
+          sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+          parameters: [
+            '01f3bfd0-643a-4601-a391-04bdc60977ee',
+            'error',
+            'POST /api/v1/auth/login - 500 (183.8751ms)',
+            '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":183.8751,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"0c52c0b2-29d3-4066-bd04-1b2314aab890","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+            '2025-07-30 16:58:38.047 +00:00',
+            '2025-07-30 16:58:38.047 +00:00',
+            '2025-07-30 16:58:38.047 +00:00'
+          ]
+        },
+        original: Error: Connection terminated unexpectedly
+            at Connection.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:136:73)
+            at Object.onceWrapper (node:events:632:28)
+            at Connection.emit (node:events:518:28)
+            at Socket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:62:12)
+            at Socket.emit (node:events:530:35)
+            at TCP.<anonymous> (node:net:343:12) {
+          sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+          parameters: [
+            '01f3bfd0-643a-4601-a391-04bdc60977ee',
+            'error',
+            'POST /api/v1/auth/login - 500 (183.8751ms)',
+            '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":183.8751,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"0c52c0b2-29d3-4066-bd04-1b2314aab890","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+            '2025-07-30 16:58:38.047 +00:00',
+            '2025-07-30 16:58:38.047 +00:00',
+            '2025-07-30 16:58:38.047 +00:00'
+          ]
+        },
+        sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+        parameters: [
+          '01f3bfd0-643a-4601-a391-04bdc60977ee',
+          'error',
+          'POST /api/v1/auth/login - 500 (183.8751ms)',
+          '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":183.8751,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"0c52c0b2-29d3-4066-bd04-1b2314aab890","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+          '2025-07-30 16:58:38.047 +00:00',
+          '2025-07-30 16:58:38.047 +00:00',
+          '2025-07-30 16:58:38.047 +00:00'
+        ]
+      }
+    },
+    'reason:',
+    Error
+        at Query.run (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+        at E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\sequelize.js:315:28
+        at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+        at async PostgresQueryInterface.insert (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+        at async model.save (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\model.js:2490:35)
+        at async Log.create (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\model.js:1362:12)
+        at async createRequestLog (file:///E:/Personal/important/smartpos/backend/src/services/loggingService.js:28:22) {
+      name: 'SequelizeDatabaseError',
+      parent: Error: Connection terminated unexpectedly
+          at Connection.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:136:73)
+          at Object.onceWrapper (node:events:632:28)
+          at Connection.emit (node:events:518:28)
+          at Socket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:62:12)
+          at Socket.emit (node:events:530:35)
+          at TCP.<anonymous> (node:net:343:12) {
+        sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+        parameters: [
+          '01f3bfd0-643a-4601-a391-04bdc60977ee',
+          'error',
+          'POST /api/v1/auth/login - 500 (183.8751ms)',
+          '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":183.8751,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"0c52c0b2-29d3-4066-bd04-1b2314aab890","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+          '2025-07-30 16:58:38.047 +00:00',
+          '2025-07-30 16:58:38.047 +00:00',
+          '2025-07-30 16:58:38.047 +00:00'
+        ]
+      },
+      original: Error: Connection terminated unexpectedly
+          at Connection.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:136:73)
+          at Object.onceWrapper (node:events:632:28)
+          at Connection.emit (node:events:518:28)
+          at Socket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:62:12)
+          at Socket.emit (node:events:530:35)
+          at TCP.<anonymous> (node:net:343:12) {
+        sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+        parameters: [
+          '01f3bfd0-643a-4601-a391-04bdc60977ee',
+          'error',
+          'POST /api/v1/auth/login - 500 (183.8751ms)',
+          '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":183.8751,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"0c52c0b2-29d3-4066-bd04-1b2314aab890","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+          '2025-07-30 16:58:38.047 +00:00',
+          '2025-07-30 16:58:38.047 +00:00',
+          '2025-07-30 16:58:38.047 +00:00'
+        ]
+      },
+      sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+      parameters: [
+        '01f3bfd0-643a-4601-a391-04bdc60977ee',
+        'error',
+        'POST /api/v1/auth/login - 500 (183.8751ms)',
+        '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":183.8751,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"0c52c0b2-29d3-4066-bd04-1b2314aab890","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+        '2025-07-30 16:58:38.047 +00:00',
+        '2025-07-30 16:58:38.047 +00:00',
+        '2025-07-30 16:58:38.047 +00:00'
+      ]
+    }
+  ],
+  [Symbol(message)]: '{"env":"development","level":"error","message":"Unhandled Rejection at:","service":"smartpos-backend","timestamp":"2025-07-30 22:28:38"}'
+}
+2025-07-30 22:29:51 [ERROR]: [2025-07-30T16:59:51.955Z] Error: column User.deleted_at does not exist
+    at login (file:///E:/Personal/important/smartpos/backend/src/controllers/auth.controller.js:112:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+{
+  service: 'smartpos-backend',
+  env: 'development',
+  [Symbol(level)]: 'error',
+  [Symbol(message)]: '{"env":"development","level":"error","message":"[2025-07-30T16:59:51.955Z] Error: column User.deleted_at does not exist\\n    at login (file:///E:/Personal/important/smartpos/backend/src/controllers/auth.controller.js:112:10)\\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)","service":"smartpos-backend","timestamp":"2025-07-30 22:29:51"}'
+}
+2025-07-30 22:31:32 [ERROR]: [2025-07-30T17:01:32.389Z] Error: Incorrect email or password
+    at login (file:///E:/Personal/important/smartpos/backend/src/controllers/auth.controller.js:91:19)
+{
+  service: 'smartpos-backend',
+  env: 'development',
+  [Symbol(level)]: 'error',
+  [Symbol(message)]: '{"env":"development","level":"error","message":"[2025-07-30T17:01:32.389Z] Error: Incorrect email or password\\n    at login (file:///E:/Personal/important/smartpos/backend/src/controllers/auth.controller.js:91:19)","service":"smartpos-backend","timestamp":"2025-07-30 22:31:32"}'
+}
+2025-07-30 22:32:13 [ERROR]: [2025-07-30T17:02:13.649Z] Error: Incorrect email or password
+    at login (file:///E:/Personal/important/smartpos/backend/src/controllers/auth.controller.js:91:19)
+{
+  service: 'smartpos-backend',
+  env: 'development',
+  [Symbol(level)]: 'error',
+  [Symbol(message)]: '{"env":"development","level":"error","message":"[2025-07-30T17:02:13.649Z] Error: Incorrect email or password\\n    at login (file:///E:/Personal/important/smartpos/backend/src/controllers/auth.controller.js:91:19)","service":"smartpos-backend","timestamp":"2025-07-30 22:32:13"}'
+}
+2025-07-30 22:35:16 [ERROR]: [2025-07-30T17:05:16.389Z] Error: Incorrect email or password
+    at login (file:///E:/Personal/important/smartpos/backend/src/controllers/auth.controller.js:91:19)
+{
+  service: 'smartpos-backend',
+  env: 'development',
+  [Symbol(level)]: 'error',
+  [Symbol(message)]: '{"env":"development","level":"error","message":"[2025-07-30T17:05:16.389Z] Error: Incorrect email or password\\n    at login (file:///E:/Personal/important/smartpos/backend/src/controllers/auth.controller.js:91:19)","service":"smartpos-backend","timestamp":"2025-07-30 22:35:16"}'
+}
+2025-07-30 23:51:49 [ERROR]: [2025-07-30T18:21:49.224Z] Error: read ECONNRESET
+    at login (file:///E:/Personal/important/smartpos/backend/src/controllers/auth.controller.js:135:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+{
+  service: 'smartpos-backend',
+  env: 'development',
+  [Symbol(level)]: 'error',
+  [Symbol(message)]: '{"env":"development","level":"error","message":"[2025-07-30T18:21:49.224Z] Error: read ECONNRESET\\n    at login (file:///E:/Personal/important/smartpos/backend/src/controllers/auth.controller.js:135:10)\\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)","service":"smartpos-backend","timestamp":"2025-07-30 23:51:49"}'
+}
+2025-07-30 23:51:49 [ERROR]: Failed to create request log: Connection terminated unexpectedly
+{
+  service: 'smartpos-backend',
+  env: 'development',
+  name: 'SequelizeDatabaseError',
+  parent: Error: Connection terminated unexpectedly
+      at Connection.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:136:73)
+      at Object.onceWrapper (node:events:632:28)
+      at Connection.emit (node:events:518:28)
+      at Socket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:62:12)
+      at Socket.emit (node:events:530:35)
+      at TCP.<anonymous> (node:net:343:12) {
+    sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+    parameters: [
+      '37950ece-583e-427a-a4fa-916f77b8e655',
+      'error',
+      'POST /api/v1/auth/login - 500 (200.481ms)',
+      '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":200.481,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"702488d6-0d75-4079-bd28-82f27f5fc34e","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+      '2025-07-30 18:21:49.228 +00:00',
+      '2025-07-30 18:21:49.228 +00:00',
+      '2025-07-30 18:21:49.228 +00:00'
+    ]
+  },
+  original: Error: Connection terminated unexpectedly
+      at Connection.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:136:73)
+      at Object.onceWrapper (node:events:632:28)
+      at Connection.emit (node:events:518:28)
+      at Socket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:62:12)
+      at Socket.emit (node:events:530:35)
+      at TCP.<anonymous> (node:net:343:12) {
+    sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+    parameters: [
+      '37950ece-583e-427a-a4fa-916f77b8e655',
+      'error',
+      'POST /api/v1/auth/login - 500 (200.481ms)',
+      '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":200.481,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"702488d6-0d75-4079-bd28-82f27f5fc34e","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+      '2025-07-30 18:21:49.228 +00:00',
+      '2025-07-30 18:21:49.228 +00:00',
+      '2025-07-30 18:21:49.228 +00:00'
+    ]
+  },
+  sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+  parameters: [
+    '37950ece-583e-427a-a4fa-916f77b8e655',
+    'error',
+    'POST /api/v1/auth/login - 500 (200.481ms)',
+    '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":200.481,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"702488d6-0d75-4079-bd28-82f27f5fc34e","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+    '2025-07-30 18:21:49.228 +00:00',
+    '2025-07-30 18:21:49.228 +00:00',
+    '2025-07-30 18:21:49.228 +00:00'
+  ],
+  [Symbol(level)]: 'error',
+  [Symbol(splat)]: [
+    Error
+        at Query.run (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+        at E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\sequelize.js:315:28
+        at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+        at async PostgresQueryInterface.insert (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+        at async model.save (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\model.js:2490:35)
+        at async Log.create (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\model.js:1362:12)
+        at async createRequestLog (file:///E:/Personal/important/smartpos/backend/src/services/loggingService.js:28:22) {
+      name: 'SequelizeDatabaseError',
+      parent: Error: Connection terminated unexpectedly
+          at Connection.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:136:73)
+          at Object.onceWrapper (node:events:632:28)
+          at Connection.emit (node:events:518:28)
+          at Socket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:62:12)
+          at Socket.emit (node:events:530:35)
+          at TCP.<anonymous> (node:net:343:12) {
+        sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+        parameters: [
+          '37950ece-583e-427a-a4fa-916f77b8e655',
+          'error',
+          'POST /api/v1/auth/login - 500 (200.481ms)',
+          '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":200.481,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"702488d6-0d75-4079-bd28-82f27f5fc34e","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+          '2025-07-30 18:21:49.228 +00:00',
+          '2025-07-30 18:21:49.228 +00:00',
+          '2025-07-30 18:21:49.228 +00:00'
+        ]
+      },
+      original: Error: Connection terminated unexpectedly
+          at Connection.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:136:73)
+          at Object.onceWrapper (node:events:632:28)
+          at Connection.emit (node:events:518:28)
+          at Socket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:62:12)
+          at Socket.emit (node:events:530:35)
+          at TCP.<anonymous> (node:net:343:12) {
+        sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+        parameters: [
+          '37950ece-583e-427a-a4fa-916f77b8e655',
+          'error',
+          'POST /api/v1/auth/login - 500 (200.481ms)',
+          '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":200.481,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"702488d6-0d75-4079-bd28-82f27f5fc34e","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+          '2025-07-30 18:21:49.228 +00:00',
+          '2025-07-30 18:21:49.228 +00:00',
+          '2025-07-30 18:21:49.228 +00:00'
+        ]
+      },
+      sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+      parameters: [
+        '37950ece-583e-427a-a4fa-916f77b8e655',
+        'error',
+        'POST /api/v1/auth/login - 500 (200.481ms)',
+        '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":200.481,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"702488d6-0d75-4079-bd28-82f27f5fc34e","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+        '2025-07-30 18:21:49.228 +00:00',
+        '2025-07-30 18:21:49.228 +00:00',
+        '2025-07-30 18:21:49.228 +00:00'
+      ]
+    }
+  ],
+  [Symbol(message)]: '{"env":"development","level":"error","message":"Failed to create request log: Connection terminated unexpectedly","name":"SequelizeDatabaseError","original":{"parameters":["37950ece-583e-427a-a4fa-916f77b8e655","error","POST /api/v1/auth/login - 500 (200.481ms)","{\\"method\\":\\"POST\\",\\"url\\":\\"/api/v1/auth/login\\",\\"status\\":500,\\"responseTime\\":200.481,\\"user\\":null,\\"ip\\":\\"127.0.0.1\\",\\"userAgent\\":\\"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36\\",\\"referrer\\":\\"http://localhost:4028/login\\",\\"requestId\\":\\"702488d6-0d75-4079-bd28-82f27f5fc34e\\",\\"body\\":{\\"email\\":\\"manothushanth@gmail.com\\",\\"password\\":\\"qwertyuiop\\"},\\"query\\":{},\\"params\\":{}}","2025-07-30 18:21:49.228 +00:00","2025-07-30 18:21:49.228 +00:00","2025-07-30 18:21:49.228 +00:00"],"sql":"INSERT INTO \\"logs\\" (\\"id\\",\\"level\\",\\"message\\",\\"meta\\",\\"timestamp\\",\\"created_at\\",\\"updated_at\\") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING \\"id\\",\\"level\\",\\"message\\",\\"meta\\",\\"timestamp\\",\\"created_at\\",\\"updated_at\\";"},"parameters":["37950ece-583e-427a-a4fa-916f77b8e655","error","POST /api/v1/auth/login - 500 (200.481ms)","{\\"method\\":\\"POST\\",\\"url\\":\\"/api/v1/auth/login\\",\\"status\\":500,\\"responseTime\\":200.481,\\"user\\":null,\\"ip\\":\\"127.0.0.1\\",\\"userAgent\\":\\"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36\\",\\"referrer\\":\\"http://localhost:4028/login\\",\\"requestId\\":\\"702488d6-0d75-4079-bd28-82f27f5fc34e\\",\\"body\\":{\\"email\\":\\"manothushanth@gmail.com\\",\\"password\\":\\"qwertyuiop\\"},\\"query\\":{},\\"params\\":{}}","2025-07-30 18:21:49.228 +00:00","2025-07-30 18:21:49.228 +00:00","2025-07-30 18:21:49.228 +00:00"],"parent":{"parameters":["37950ece-583e-427a-a4fa-916f77b8e655","error","POST /api/v1/auth/login - 500 (200.481ms)","{\\"method\\":\\"POST\\",\\"url\\":\\"/api/v1/auth/login\\",\\"status\\":500,\\"responseTime\\":200.481,\\"user\\":null,\\"ip\\":\\"127.0.0.1\\",\\"userAgent\\":\\"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36\\",\\"referrer\\":\\"http://localhost:4028/login\\",\\"requestId\\":\\"702488d6-0d75-4079-bd28-82f27f5fc34e\\",\\"body\\":{\\"email\\":\\"manothushanth@gmail.com\\",\\"password\\":\\"qwertyuiop\\"},\\"query\\":{},\\"params\\":{}}","2025-07-30 18:21:49.228 +00:00","2025-07-30 18:21:49.228 +00:00","2025-07-30 18:21:49.228 +00:00"],"sql":"INSERT INTO \\"logs\\" (\\"id\\",\\"level\\",\\"message\\",\\"meta\\",\\"timestamp\\",\\"created_at\\",\\"updated_at\\") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING \\"id\\",\\"level\\",\\"message\\",\\"meta\\",\\"timestamp\\",\\"created_at\\",\\"updated_at\\";"},"service":"smartpos-backend","sql":"INSERT INTO \\"logs\\" (\\"id\\",\\"level\\",\\"message\\",\\"meta\\",\\"timestamp\\",\\"created_at\\",\\"updated_at\\") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING \\"id\\",\\"level\\",\\"message\\",\\"meta\\",\\"timestamp\\",\\"created_at\\",\\"updated_at\\";","stack":"Error\\n    at Query.run (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\dialects\\\\postgres\\\\query.js:50:25)\\n    at E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\sequelize.js:315:28\\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\\n    at async PostgresQueryInterface.insert (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\dialects\\\\abstract\\\\query-interface.js:308:21)\\n    at async model.save (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\model.js:2490:35)\\n    at async Log.create (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\model.js:1362:12)\\n    at async createRequestLog (file:///E:/Personal/important/smartpos/backend/src/services/loggingService.js:28:22)","timestamp":"2025-07-30 23:51:49"}'
+}
+Error
+    at Query.run (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+    at E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async PostgresQueryInterface.insert (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+    at async model.save (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\model.js:2490:35)
+    at async Log.create (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\model.js:1362:12)
+    at async createRequestLog (file:///E:/Personal/important/smartpos/backend/src/services/loggingService.js:28:22)
+2025-07-30 23:51:49 [ERROR]: Unhandled Rejection: Connection terminated unexpectedly
+{
+  service: 'smartpos-backend',
+  env: 'development',
+  name: 'SequelizeDatabaseError',
+  parent: Error: Connection terminated unexpectedly
+      at Connection.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:136:73)
+      at Object.onceWrapper (node:events:632:28)
+      at Connection.emit (node:events:518:28)
+      at Socket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:62:12)
+      at Socket.emit (node:events:530:35)
+      at TCP.<anonymous> (node:net:343:12) {
+    sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+    parameters: [
+      '37950ece-583e-427a-a4fa-916f77b8e655',
+      'error',
+      'POST /api/v1/auth/login - 500 (200.481ms)',
+      '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":200.481,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"702488d6-0d75-4079-bd28-82f27f5fc34e","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+      '2025-07-30 18:21:49.228 +00:00',
+      '2025-07-30 18:21:49.228 +00:00',
+      '2025-07-30 18:21:49.228 +00:00'
+    ]
+  },
+  original: Error: Connection terminated unexpectedly
+      at Connection.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:136:73)
+      at Object.onceWrapper (node:events:632:28)
+      at Connection.emit (node:events:518:28)
+      at Socket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:62:12)
+      at Socket.emit (node:events:530:35)
+      at TCP.<anonymous> (node:net:343:12) {
+    sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+    parameters: [
+      '37950ece-583e-427a-a4fa-916f77b8e655',
+      'error',
+      'POST /api/v1/auth/login - 500 (200.481ms)',
+      '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":200.481,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"702488d6-0d75-4079-bd28-82f27f5fc34e","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+      '2025-07-30 18:21:49.228 +00:00',
+      '2025-07-30 18:21:49.228 +00:00',
+      '2025-07-30 18:21:49.228 +00:00'
+    ]
+  },
+  sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+  parameters: [
+    '37950ece-583e-427a-a4fa-916f77b8e655',
+    'error',
+    'POST /api/v1/auth/login - 500 (200.481ms)',
+    '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":200.481,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"702488d6-0d75-4079-bd28-82f27f5fc34e","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+    '2025-07-30 18:21:49.228 +00:00',
+    '2025-07-30 18:21:49.228 +00:00',
+    '2025-07-30 18:21:49.228 +00:00'
+  ],
+  [Symbol(level)]: 'error',
+  [Symbol(splat)]: [
+    Error
+        at Query.run (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+        at E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\sequelize.js:315:28
+        at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+        at async PostgresQueryInterface.insert (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+        at async model.save (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\model.js:2490:35)
+        at async Log.create (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\model.js:1362:12)
+        at async createRequestLog (file:///E:/Personal/important/smartpos/backend/src/services/loggingService.js:28:22) {
+      name: 'SequelizeDatabaseError',
+      parent: Error: Connection terminated unexpectedly
+          at Connection.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:136:73)
+          at Object.onceWrapper (node:events:632:28)
+          at Connection.emit (node:events:518:28)
+          at Socket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:62:12)
+          at Socket.emit (node:events:530:35)
+          at TCP.<anonymous> (node:net:343:12) {
+        sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+        parameters: [
+          '37950ece-583e-427a-a4fa-916f77b8e655',
+          'error',
+          'POST /api/v1/auth/login - 500 (200.481ms)',
+          '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":200.481,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"702488d6-0d75-4079-bd28-82f27f5fc34e","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+          '2025-07-30 18:21:49.228 +00:00',
+          '2025-07-30 18:21:49.228 +00:00',
+          '2025-07-30 18:21:49.228 +00:00'
+        ]
+      },
+      original: Error: Connection terminated unexpectedly
+          at Connection.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:136:73)
+          at Object.onceWrapper (node:events:632:28)
+          at Connection.emit (node:events:518:28)
+          at Socket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:62:12)
+          at Socket.emit (node:events:530:35)
+          at TCP.<anonymous> (node:net:343:12) {
+        sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+        parameters: [
+          '37950ece-583e-427a-a4fa-916f77b8e655',
+          'error',
+          'POST /api/v1/auth/login - 500 (200.481ms)',
+          '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":200.481,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"702488d6-0d75-4079-bd28-82f27f5fc34e","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+          '2025-07-30 18:21:49.228 +00:00',
+          '2025-07-30 18:21:49.228 +00:00',
+          '2025-07-30 18:21:49.228 +00:00'
+        ]
+      },
+      sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+      parameters: [
+        '37950ece-583e-427a-a4fa-916f77b8e655',
+        'error',
+        'POST /api/v1/auth/login - 500 (200.481ms)',
+        '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":200.481,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"702488d6-0d75-4079-bd28-82f27f5fc34e","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+        '2025-07-30 18:21:49.228 +00:00',
+        '2025-07-30 18:21:49.228 +00:00',
+        '2025-07-30 18:21:49.228 +00:00'
+      ]
+    }
+  ],
+  [Symbol(message)]: '{"env":"development","level":"error","message":"Unhandled Rejection: Connection terminated unexpectedly","name":"SequelizeDatabaseError","original":{"parameters":["37950ece-583e-427a-a4fa-916f77b8e655","error","POST /api/v1/auth/login - 500 (200.481ms)","{\\"method\\":\\"POST\\",\\"url\\":\\"/api/v1/auth/login\\",\\"status\\":500,\\"responseTime\\":200.481,\\"user\\":null,\\"ip\\":\\"127.0.0.1\\",\\"userAgent\\":\\"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36\\",\\"referrer\\":\\"http://localhost:4028/login\\",\\"requestId\\":\\"702488d6-0d75-4079-bd28-82f27f5fc34e\\",\\"body\\":{\\"email\\":\\"manothushanth@gmail.com\\",\\"password\\":\\"qwertyuiop\\"},\\"query\\":{},\\"params\\":{}}","2025-07-30 18:21:49.228 +00:00","2025-07-30 18:21:49.228 +00:00","2025-07-30 18:21:49.228 +00:00"],"sql":"INSERT INTO \\"logs\\" (\\"id\\",\\"level\\",\\"message\\",\\"meta\\",\\"timestamp\\",\\"created_at\\",\\"updated_at\\") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING \\"id\\",\\"level\\",\\"message\\",\\"meta\\",\\"timestamp\\",\\"created_at\\",\\"updated_at\\";"},"parameters":["37950ece-583e-427a-a4fa-916f77b8e655","error","POST /api/v1/auth/login - 500 (200.481ms)","{\\"method\\":\\"POST\\",\\"url\\":\\"/api/v1/auth/login\\",\\"status\\":500,\\"responseTime\\":200.481,\\"user\\":null,\\"ip\\":\\"127.0.0.1\\",\\"userAgent\\":\\"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36\\",\\"referrer\\":\\"http://localhost:4028/login\\",\\"requestId\\":\\"702488d6-0d75-4079-bd28-82f27f5fc34e\\",\\"body\\":{\\"email\\":\\"manothushanth@gmail.com\\",\\"password\\":\\"qwertyuiop\\"},\\"query\\":{},\\"params\\":{}}","2025-07-30 18:21:49.228 +00:00","2025-07-30 18:21:49.228 +00:00","2025-07-30 18:21:49.228 +00:00"],"parent":{"parameters":["37950ece-583e-427a-a4fa-916f77b8e655","error","POST /api/v1/auth/login - 500 (200.481ms)","{\\"method\\":\\"POST\\",\\"url\\":\\"/api/v1/auth/login\\",\\"status\\":500,\\"responseTime\\":200.481,\\"user\\":null,\\"ip\\":\\"127.0.0.1\\",\\"userAgent\\":\\"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36\\",\\"referrer\\":\\"http://localhost:4028/login\\",\\"requestId\\":\\"702488d6-0d75-4079-bd28-82f27f5fc34e\\",\\"body\\":{\\"email\\":\\"manothushanth@gmail.com\\",\\"password\\":\\"qwertyuiop\\"},\\"query\\":{},\\"params\\":{}}","2025-07-30 18:21:49.228 +00:00","2025-07-30 18:21:49.228 +00:00","2025-07-30 18:21:49.228 +00:00"],"sql":"INSERT INTO \\"logs\\" (\\"id\\",\\"level\\",\\"message\\",\\"meta\\",\\"timestamp\\",\\"created_at\\",\\"updated_at\\") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING \\"id\\",\\"level\\",\\"message\\",\\"meta\\",\\"timestamp\\",\\"created_at\\",\\"updated_at\\";"},"service":"smartpos-backend","sql":"INSERT INTO \\"logs\\" (\\"id\\",\\"level\\",\\"message\\",\\"meta\\",\\"timestamp\\",\\"created_at\\",\\"updated_at\\") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING \\"id\\",\\"level\\",\\"message\\",\\"meta\\",\\"timestamp\\",\\"created_at\\",\\"updated_at\\";","stack":"Error\\n    at Query.run (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\dialects\\\\postgres\\\\query.js:50:25)\\n    at E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\sequelize.js:315:28\\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\\n    at async PostgresQueryInterface.insert (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\dialects\\\\abstract\\\\query-interface.js:308:21)\\n    at async model.save (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\model.js:2490:35)\\n    at async Log.create (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\model.js:1362:12)\\n    at async createRequestLog (file:///E:/Personal/important/smartpos/backend/src/services/loggingService.js:28:22)","timestamp":"2025-07-30 23:51:49"}'
+}
+Error
+    at Query.run (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+    at E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async PostgresQueryInterface.insert (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+    at async model.save (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\model.js:2490:35)
+    at async Log.create (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\model.js:1362:12)
+    at async createRequestLog (file:///E:/Personal/important/smartpos/backend/src/services/loggingService.js:28:22)
+2025-07-30 23:51:49 [ERROR]: Unhandled Rejection at: Connection terminated unexpectedly
+{
+  service: 'smartpos-backend',
+  env: 'development',
+  name: 'SequelizeDatabaseError',
+  parent: Error: Connection terminated unexpectedly
+      at Connection.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:136:73)
+      at Object.onceWrapper (node:events:632:28)
+      at Connection.emit (node:events:518:28)
+      at Socket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:62:12)
+      at Socket.emit (node:events:530:35)
+      at TCP.<anonymous> (node:net:343:12) {
+    sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+    parameters: [
+      '37950ece-583e-427a-a4fa-916f77b8e655',
+      'error',
+      'POST /api/v1/auth/login - 500 (200.481ms)',
+      '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":200.481,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"702488d6-0d75-4079-bd28-82f27f5fc34e","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+      '2025-07-30 18:21:49.228 +00:00',
+      '2025-07-30 18:21:49.228 +00:00',
+      '2025-07-30 18:21:49.228 +00:00'
+    ]
+  },
+  original: Error: Connection terminated unexpectedly
+      at Connection.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:136:73)
+      at Object.onceWrapper (node:events:632:28)
+      at Connection.emit (node:events:518:28)
+      at Socket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:62:12)
+      at Socket.emit (node:events:530:35)
+      at TCP.<anonymous> (node:net:343:12) {
+    sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+    parameters: [
+      '37950ece-583e-427a-a4fa-916f77b8e655',
+      'error',
+      'POST /api/v1/auth/login - 500 (200.481ms)',
+      '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":200.481,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"702488d6-0d75-4079-bd28-82f27f5fc34e","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+      '2025-07-30 18:21:49.228 +00:00',
+      '2025-07-30 18:21:49.228 +00:00',
+      '2025-07-30 18:21:49.228 +00:00'
+    ]
+  },
+  sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+  parameters: [
+    '37950ece-583e-427a-a4fa-916f77b8e655',
+    'error',
+    'POST /api/v1/auth/login - 500 (200.481ms)',
+    '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":200.481,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"702488d6-0d75-4079-bd28-82f27f5fc34e","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+    '2025-07-30 18:21:49.228 +00:00',
+    '2025-07-30 18:21:49.228 +00:00',
+    '2025-07-30 18:21:49.228 +00:00'
+  ],
+  [Symbol(level)]: 'error',
+  [Symbol(splat)]: [
+    Error
+        at Query.run (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+        at E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\sequelize.js:315:28
+        at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+        at async PostgresQueryInterface.insert (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+        at async model.save (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\model.js:2490:35)
+        at async Log.create (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\model.js:1362:12)
+        at async createRequestLog (file:///E:/Personal/important/smartpos/backend/src/services/loggingService.js:28:22) {
+      name: 'SequelizeDatabaseError',
+      parent: Error: Connection terminated unexpectedly
+          at Connection.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:136:73)
+          at Object.onceWrapper (node:events:632:28)
+          at Connection.emit (node:events:518:28)
+          at Socket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:62:12)
+          at Socket.emit (node:events:530:35)
+          at TCP.<anonymous> (node:net:343:12) {
+        sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+        parameters: [
+          '37950ece-583e-427a-a4fa-916f77b8e655',
+          'error',
+          'POST /api/v1/auth/login - 500 (200.481ms)',
+          '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":200.481,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"702488d6-0d75-4079-bd28-82f27f5fc34e","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+          '2025-07-30 18:21:49.228 +00:00',
+          '2025-07-30 18:21:49.228 +00:00',
+          '2025-07-30 18:21:49.228 +00:00'
+        ]
+      },
+      original: Error: Connection terminated unexpectedly
+          at Connection.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:136:73)
+          at Object.onceWrapper (node:events:632:28)
+          at Connection.emit (node:events:518:28)
+          at Socket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:62:12)
+          at Socket.emit (node:events:530:35)
+          at TCP.<anonymous> (node:net:343:12) {
+        sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+        parameters: [
+          '37950ece-583e-427a-a4fa-916f77b8e655',
+          'error',
+          'POST /api/v1/auth/login - 500 (200.481ms)',
+          '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":200.481,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"702488d6-0d75-4079-bd28-82f27f5fc34e","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+          '2025-07-30 18:21:49.228 +00:00',
+          '2025-07-30 18:21:49.228 +00:00',
+          '2025-07-30 18:21:49.228 +00:00'
+        ]
+      },
+      sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+      parameters: [
+        '37950ece-583e-427a-a4fa-916f77b8e655',
+        'error',
+        'POST /api/v1/auth/login - 500 (200.481ms)',
+        '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":200.481,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"702488d6-0d75-4079-bd28-82f27f5fc34e","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+        '2025-07-30 18:21:49.228 +00:00',
+        '2025-07-30 18:21:49.228 +00:00',
+        '2025-07-30 18:21:49.228 +00:00'
+      ]
+    }
+  ],
+  [Symbol(message)]: '{"env":"development","level":"error","message":"Unhandled Rejection at: Connection terminated unexpectedly","name":"SequelizeDatabaseError","original":{"parameters":["37950ece-583e-427a-a4fa-916f77b8e655","error","POST /api/v1/auth/login - 500 (200.481ms)","{\\"method\\":\\"POST\\",\\"url\\":\\"/api/v1/auth/login\\",\\"status\\":500,\\"responseTime\\":200.481,\\"user\\":null,\\"ip\\":\\"127.0.0.1\\",\\"userAgent\\":\\"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36\\",\\"referrer\\":\\"http://localhost:4028/login\\",\\"requestId\\":\\"702488d6-0d75-4079-bd28-82f27f5fc34e\\",\\"body\\":{\\"email\\":\\"manothushanth@gmail.com\\",\\"password\\":\\"qwertyuiop\\"},\\"query\\":{},\\"params\\":{}}","2025-07-30 18:21:49.228 +00:00","2025-07-30 18:21:49.228 +00:00","2025-07-30 18:21:49.228 +00:00"],"sql":"INSERT INTO \\"logs\\" (\\"id\\",\\"level\\",\\"message\\",\\"meta\\",\\"timestamp\\",\\"created_at\\",\\"updated_at\\") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING \\"id\\",\\"level\\",\\"message\\",\\"meta\\",\\"timestamp\\",\\"created_at\\",\\"updated_at\\";"},"parameters":["37950ece-583e-427a-a4fa-916f77b8e655","error","POST /api/v1/auth/login - 500 (200.481ms)","{\\"method\\":\\"POST\\",\\"url\\":\\"/api/v1/auth/login\\",\\"status\\":500,\\"responseTime\\":200.481,\\"user\\":null,\\"ip\\":\\"127.0.0.1\\",\\"userAgent\\":\\"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36\\",\\"referrer\\":\\"http://localhost:4028/login\\",\\"requestId\\":\\"702488d6-0d75-4079-bd28-82f27f5fc34e\\",\\"body\\":{\\"email\\":\\"manothushanth@gmail.com\\",\\"password\\":\\"qwertyuiop\\"},\\"query\\":{},\\"params\\":{}}","2025-07-30 18:21:49.228 +00:00","2025-07-30 18:21:49.228 +00:00","2025-07-30 18:21:49.228 +00:00"],"parent":{"parameters":["37950ece-583e-427a-a4fa-916f77b8e655","error","POST /api/v1/auth/login - 500 (200.481ms)","{\\"method\\":\\"POST\\",\\"url\\":\\"/api/v1/auth/login\\",\\"status\\":500,\\"responseTime\\":200.481,\\"user\\":null,\\"ip\\":\\"127.0.0.1\\",\\"userAgent\\":\\"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36\\",\\"referrer\\":\\"http://localhost:4028/login\\",\\"requestId\\":\\"702488d6-0d75-4079-bd28-82f27f5fc34e\\",\\"body\\":{\\"email\\":\\"manothushanth@gmail.com\\",\\"password\\":\\"qwertyuiop\\"},\\"query\\":{},\\"params\\":{}}","2025-07-30 18:21:49.228 +00:00","2025-07-30 18:21:49.228 +00:00","2025-07-30 18:21:49.228 +00:00"],"sql":"INSERT INTO \\"logs\\" (\\"id\\",\\"level\\",\\"message\\",\\"meta\\",\\"timestamp\\",\\"created_at\\",\\"updated_at\\") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING \\"id\\",\\"level\\",\\"message\\",\\"meta\\",\\"timestamp\\",\\"created_at\\",\\"updated_at\\";"},"service":"smartpos-backend","sql":"INSERT INTO \\"logs\\" (\\"id\\",\\"level\\",\\"message\\",\\"meta\\",\\"timestamp\\",\\"created_at\\",\\"updated_at\\") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING \\"id\\",\\"level\\",\\"message\\",\\"meta\\",\\"timestamp\\",\\"created_at\\",\\"updated_at\\";","stack":"Error\\n    at Query.run (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\dialects\\\\postgres\\\\query.js:50:25)\\n    at E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\sequelize.js:315:28\\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\\n    at async PostgresQueryInterface.insert (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\dialects\\\\abstract\\\\query-interface.js:308:21)\\n    at async model.save (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\model.js:2490:35)\\n    at async Log.create (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\model.js:1362:12)\\n    at async createRequestLog (file:///E:/Personal/important/smartpos/backend/src/services/loggingService.js:28:22)","timestamp":"2025-07-30 23:51:49"}'
+}
+Error
+    at Query.run (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+    at E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async PostgresQueryInterface.insert (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+    at async model.save (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\model.js:2490:35)
+    at async Log.create (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\model.js:1362:12)
+    at async createRequestLog (file:///E:/Personal/important/smartpos/backend/src/services/loggingService.js:28:22)
+2025-07-30 23:51:49 [ERROR]: Unhandled Rejection at:
+{
+  service: 'smartpos-backend',
+  env: 'development',
+  [Symbol(level)]: 'error',
+  [Symbol(splat)]: [
+    Promise {
+      <rejected> Error
+          at Query.run (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+          at E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\sequelize.js:315:28
+          at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+          at async PostgresQueryInterface.insert (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+          at async model.save (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\model.js:2490:35)
+          at async Log.create (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\model.js:1362:12)
+          at async createRequestLog (file:///E:/Personal/important/smartpos/backend/src/services/loggingService.js:28:22) {
+        name: 'SequelizeDatabaseError',
+        parent: Error: Connection terminated unexpectedly
+            at Connection.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:136:73)
+            at Object.onceWrapper (node:events:632:28)
+            at Connection.emit (node:events:518:28)
+            at Socket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:62:12)
+            at Socket.emit (node:events:530:35)
+            at TCP.<anonymous> (node:net:343:12) {
+          sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+          parameters: [
+            '37950ece-583e-427a-a4fa-916f77b8e655',
+            'error',
+            'POST /api/v1/auth/login - 500 (200.481ms)',
+            '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":200.481,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"702488d6-0d75-4079-bd28-82f27f5fc34e","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+            '2025-07-30 18:21:49.228 +00:00',
+            '2025-07-30 18:21:49.228 +00:00',
+            '2025-07-30 18:21:49.228 +00:00'
+          ]
+        },
+        original: Error: Connection terminated unexpectedly
+            at Connection.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:136:73)
+            at Object.onceWrapper (node:events:632:28)
+            at Connection.emit (node:events:518:28)
+            at Socket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:62:12)
+            at Socket.emit (node:events:530:35)
+            at TCP.<anonymous> (node:net:343:12) {
+          sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+          parameters: [
+            '37950ece-583e-427a-a4fa-916f77b8e655',
+            'error',
+            'POST /api/v1/auth/login - 500 (200.481ms)',
+            '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":200.481,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"702488d6-0d75-4079-bd28-82f27f5fc34e","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+            '2025-07-30 18:21:49.228 +00:00',
+            '2025-07-30 18:21:49.228 +00:00',
+            '2025-07-30 18:21:49.228 +00:00'
+          ]
+        },
+        sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+        parameters: [
+          '37950ece-583e-427a-a4fa-916f77b8e655',
+          'error',
+          'POST /api/v1/auth/login - 500 (200.481ms)',
+          '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":200.481,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"702488d6-0d75-4079-bd28-82f27f5fc34e","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+          '2025-07-30 18:21:49.228 +00:00',
+          '2025-07-30 18:21:49.228 +00:00',
+          '2025-07-30 18:21:49.228 +00:00'
+        ]
+      }
+    },
+    'reason:',
+    Error
+        at Query.run (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+        at E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\sequelize.js:315:28
+        at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+        at async PostgresQueryInterface.insert (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+        at async model.save (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\model.js:2490:35)
+        at async Log.create (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\model.js:1362:12)
+        at async createRequestLog (file:///E:/Personal/important/smartpos/backend/src/services/loggingService.js:28:22) {
+      name: 'SequelizeDatabaseError',
+      parent: Error: Connection terminated unexpectedly
+          at Connection.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:136:73)
+          at Object.onceWrapper (node:events:632:28)
+          at Connection.emit (node:events:518:28)
+          at Socket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:62:12)
+          at Socket.emit (node:events:530:35)
+          at TCP.<anonymous> (node:net:343:12) {
+        sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+        parameters: [
+          '37950ece-583e-427a-a4fa-916f77b8e655',
+          'error',
+          'POST /api/v1/auth/login - 500 (200.481ms)',
+          '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":200.481,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"702488d6-0d75-4079-bd28-82f27f5fc34e","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+          '2025-07-30 18:21:49.228 +00:00',
+          '2025-07-30 18:21:49.228 +00:00',
+          '2025-07-30 18:21:49.228 +00:00'
+        ]
+      },
+      original: Error: Connection terminated unexpectedly
+          at Connection.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:136:73)
+          at Object.onceWrapper (node:events:632:28)
+          at Connection.emit (node:events:518:28)
+          at Socket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:62:12)
+          at Socket.emit (node:events:530:35)
+          at TCP.<anonymous> (node:net:343:12) {
+        sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+        parameters: [
+          '37950ece-583e-427a-a4fa-916f77b8e655',
+          'error',
+          'POST /api/v1/auth/login - 500 (200.481ms)',
+          '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":200.481,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"702488d6-0d75-4079-bd28-82f27f5fc34e","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+          '2025-07-30 18:21:49.228 +00:00',
+          '2025-07-30 18:21:49.228 +00:00',
+          '2025-07-30 18:21:49.228 +00:00'
+        ]
+      },
+      sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+      parameters: [
+        '37950ece-583e-427a-a4fa-916f77b8e655',
+        'error',
+        'POST /api/v1/auth/login - 500 (200.481ms)',
+        '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":200.481,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"702488d6-0d75-4079-bd28-82f27f5fc34e","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+        '2025-07-30 18:21:49.228 +00:00',
+        '2025-07-30 18:21:49.228 +00:00',
+        '2025-07-30 18:21:49.228 +00:00'
+      ]
+    }
+  ],
+  [Symbol(message)]: '{"env":"development","level":"error","message":"Unhandled Rejection at:","service":"smartpos-backend","timestamp":"2025-07-30 23:51:49"}'
+}
+2025-07-30 23:51:49 [ERROR]: Unhandled Rejection at:
+{
+  service: 'smartpos-backend',
+  env: 'development',
+  [Symbol(level)]: 'error',
+  [Symbol(splat)]: [
+    Promise {
+      <rejected> Error
+          at Query.run (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+          at E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\sequelize.js:315:28
+          at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+          at async PostgresQueryInterface.insert (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+          at async model.save (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\model.js:2490:35)
+          at async Log.create (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\model.js:1362:12)
+          at async createRequestLog (file:///E:/Personal/important/smartpos/backend/src/services/loggingService.js:28:22) {
+        name: 'SequelizeDatabaseError',
+        parent: Error: Connection terminated unexpectedly
+            at Connection.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:136:73)
+            at Object.onceWrapper (node:events:632:28)
+            at Connection.emit (node:events:518:28)
+            at Socket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:62:12)
+            at Socket.emit (node:events:530:35)
+            at TCP.<anonymous> (node:net:343:12) {
+          sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+          parameters: [
+            '37950ece-583e-427a-a4fa-916f77b8e655',
+            'error',
+            'POST /api/v1/auth/login - 500 (200.481ms)',
+            '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":200.481,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"702488d6-0d75-4079-bd28-82f27f5fc34e","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+            '2025-07-30 18:21:49.228 +00:00',
+            '2025-07-30 18:21:49.228 +00:00',
+            '2025-07-30 18:21:49.228 +00:00'
+          ]
+        },
+        original: Error: Connection terminated unexpectedly
+            at Connection.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:136:73)
+            at Object.onceWrapper (node:events:632:28)
+            at Connection.emit (node:events:518:28)
+            at Socket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:62:12)
+            at Socket.emit (node:events:530:35)
+            at TCP.<anonymous> (node:net:343:12) {
+          sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+          parameters: [
+            '37950ece-583e-427a-a4fa-916f77b8e655',
+            'error',
+            'POST /api/v1/auth/login - 500 (200.481ms)',
+            '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":200.481,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"702488d6-0d75-4079-bd28-82f27f5fc34e","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+            '2025-07-30 18:21:49.228 +00:00',
+            '2025-07-30 18:21:49.228 +00:00',
+            '2025-07-30 18:21:49.228 +00:00'
+          ]
+        },
+        sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+        parameters: [
+          '37950ece-583e-427a-a4fa-916f77b8e655',
+          'error',
+          'POST /api/v1/auth/login - 500 (200.481ms)',
+          '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":200.481,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"702488d6-0d75-4079-bd28-82f27f5fc34e","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+          '2025-07-30 18:21:49.228 +00:00',
+          '2025-07-30 18:21:49.228 +00:00',
+          '2025-07-30 18:21:49.228 +00:00'
+        ]
+      }
+    },
+    'reason:',
+    Error
+        at Query.run (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+        at E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\sequelize.js:315:28
+        at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+        at async PostgresQueryInterface.insert (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+        at async model.save (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\model.js:2490:35)
+        at async Log.create (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\model.js:1362:12)
+        at async createRequestLog (file:///E:/Personal/important/smartpos/backend/src/services/loggingService.js:28:22) {
+      name: 'SequelizeDatabaseError',
+      parent: Error: Connection terminated unexpectedly
+          at Connection.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:136:73)
+          at Object.onceWrapper (node:events:632:28)
+          at Connection.emit (node:events:518:28)
+          at Socket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:62:12)
+          at Socket.emit (node:events:530:35)
+          at TCP.<anonymous> (node:net:343:12) {
+        sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+        parameters: [
+          '37950ece-583e-427a-a4fa-916f77b8e655',
+          'error',
+          'POST /api/v1/auth/login - 500 (200.481ms)',
+          '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":200.481,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"702488d6-0d75-4079-bd28-82f27f5fc34e","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+          '2025-07-30 18:21:49.228 +00:00',
+          '2025-07-30 18:21:49.228 +00:00',
+          '2025-07-30 18:21:49.228 +00:00'
+        ]
+      },
+      original: Error: Connection terminated unexpectedly
+          at Connection.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:136:73)
+          at Object.onceWrapper (node:events:632:28)
+          at Connection.emit (node:events:518:28)
+          at Socket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:62:12)
+          at Socket.emit (node:events:530:35)
+          at TCP.<anonymous> (node:net:343:12) {
+        sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+        parameters: [
+          '37950ece-583e-427a-a4fa-916f77b8e655',
+          'error',
+          'POST /api/v1/auth/login - 500 (200.481ms)',
+          '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":200.481,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"702488d6-0d75-4079-bd28-82f27f5fc34e","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+          '2025-07-30 18:21:49.228 +00:00',
+          '2025-07-30 18:21:49.228 +00:00',
+          '2025-07-30 18:21:49.228 +00:00'
+        ]
+      },
+      sql: 'INSERT INTO "logs" ("id","level","message","meta","timestamp","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "id","level","message","meta","timestamp","created_at","updated_at";',
+      parameters: [
+        '37950ece-583e-427a-a4fa-916f77b8e655',
+        'error',
+        'POST /api/v1/auth/login - 500 (200.481ms)',
+        '{"method":"POST","url":"/api/v1/auth/login","status":500,"responseTime":200.481,"user":null,"ip":"127.0.0.1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36","referrer":"http://localhost:4028/login","requestId":"702488d6-0d75-4079-bd28-82f27f5fc34e","body":{"email":"manothushanth@gmail.com","password":"qwertyuiop"},"query":{},"params":{}}',
+        '2025-07-30 18:21:49.228 +00:00',
+        '2025-07-30 18:21:49.228 +00:00',
+        '2025-07-30 18:21:49.228 +00:00'
+      ]
+    }
+  ],
+  [Symbol(message)]: '{"env":"development","level":"error","message":"Unhandled Rejection at:","service":"smartpos-backend","timestamp":"2025-07-30 23:51:49"}'
+}

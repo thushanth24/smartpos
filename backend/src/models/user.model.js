@@ -28,9 +28,9 @@ const User = sequelize.define('User', {
     type: DataTypes.ENUM('admin', 'staff'),
     defaultValue: 'staff',
   },
-  is_active: {
-    type: DataTypes.BOOLEAN,
-    defaultValue: true,
+  status: {
+    type: DataTypes.ENUM('active', 'inactive'),
+    defaultValue: 'active',
   },
   last_login: {
     type: DataTypes.DATE,
@@ -39,6 +39,7 @@ const User = sequelize.define('User', {
   tableName: 'users',
   timestamps: true,
   underscored: true,
+  paranoid: false, // Explicitly disable paranoid mode
   hooks: {
     beforeCreate: async (user) => {
       if (user.password) {

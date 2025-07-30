@@ -23,7 +23,8 @@
     "docker:compose:logs": "docker-compose logs -f",
     "docker:compose:restart": "docker-compose restart",
     "docker:compose:ps": "docker-compose ps",
-    "docker:compose:exec": "docker-compose exec app sh"
+    "docker:compose:exec": "docker-compose exec app sh",
+    "create:superadmin": "node --experimental-json-modules scripts/create-superadmin.js"
   },
   "keywords": [
     "pos",

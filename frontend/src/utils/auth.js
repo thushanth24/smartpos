@@ -9,6 +9,9 @@ export const setToken = (token) => {
   }
 };
 
+// Alias for setToken for consistency
+export const setStoredToken = setToken;
+
 // Get token from localStorage
 export const getToken = () => {
   if (typeof window !== 'undefined') {

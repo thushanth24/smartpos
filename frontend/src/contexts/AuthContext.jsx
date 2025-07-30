@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useEffect, useState, useCallback } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import authService from '../utils/authService';
-import { getToken, getUser, setUser as setStoredUser, removeToken, removeUser } from '../utils/auth';
+import { getToken, getUser, setUser as setStoredUser, setToken as setStoredToken, removeToken, removeUser } from '../utils/auth';
 import { isTokenExpired, getTokenTimeRemaining } from '../utils/authUtils';
 
 const AuthContext = createContext();
@@ -115,34 +115,73 @@ export function AuthProvider({ children }) {
 
 
   // Login function
-  const login = useCallback(async (email, password) => {
-    try {
+  const login = useCallback(
+    async (email, password) => {
+      console.log('[AuthContext] Login initiated for email:', email);
       setLoading(true);
       setError(null);
-      
-      const response = await authService.login(email, password);
-      
-      if (response.success) {
-        const { user, token } = response.data;
-        setUser(user);
-        setToken(token);
-        setStoredUser(user);
+
+      try {
+        console.log('[AuthContext] Calling authService.signIn');
+        const result = await authService.signIn(email, password);
+        console.log('[AuthContext] authService.signIn result:', result);
+
+        if (result && result.success) {
+          console.log('[AuthContext] Login successful, updating state');
+          
+          const { token, user } = result;
+          
+          if (!token || !user) {
+            console.error('[AuthContext] Missing token or user in response');
+            throw new Error('Invalid response from server: Missing token or user data');
+          }
+          
+          // Update state
+          setUser(user);
+          setToken(token);
+          
+          // Store in local storage
+          setStoredToken(token);
+          setStoredUser(user);
+          
+          // Navigate to the originally requested page or home
+          const targetPath = location.state?.from?.pathname || '/';
+          console.log('[AuthContext] Navigating to:', targetPath);
+          navigate(targetPath, { replace: true });
+          
+          return { success: true };
+        } else {
+          // Handle API-level errors (e.g., invalid credentials)
+          const errorMessage = (result && result.error) || 'Login failed. Please try again.';
+          console.error('[AuthContext] Login failed:', errorMessage, { result });
+          setError(errorMessage);
+          return { 
+            success: false, 
+            error: errorMessage,
+            data: result?.data 
+          };
+        }
+      } catch (err) {
+        console.error('[AuthContext] Error during login:', {
+          message: err.message,
+          stack: err.stack,
+          response: err.response?.data,
+          status: err.response?.status
+        });
         
-        // Redirect to intended URL or home
-        const from = location.state?.from?.pathname || '/';
-        navigate(from, { replace: true });
+        const errorMessage = err.response?.data?.message || 
+                           err.message || 
+                           'Failed to log in. Please check your credentials.';
+        
+        setError(errorMessage);
+        return { success: false, error: errorMessage };
+      } finally {
+        console.log('[AuthContext] Login process completed');
+        setLoading(false);
       }
-      
-      return response;
-    } catch (err) {
-      console.error('Login error:', err);
-      const errorMessage = err.response?.data?.message || 'Failed to log in. Please check your credentials.';
-      setError(errorMessage);
-      return { success: false, error: errorMessage };
-    } finally {
-      setLoading(false);
-    }
-  }, [navigate, location.state]);
+    },
+    [navigate, location.state]
+  );
   
   // Logout function
   const logout = useCallback(async () => {

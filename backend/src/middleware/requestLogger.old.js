@@ -53,9 +53,7 @@ const requestLogger = (req, res, next) => {
         userAgent: req.get('user-agent') || '',
         referrer: req.get('referrer') || '',
         requestId: req.id,
-        body: req.body,
-        query: req.query,
-        params: req.params
+        body: req.body
       };
       
       // Create log entry
@@ -66,6 +64,31 @@ const requestLogger = (req, res, next) => {
   // Call next middleware
   next();
 };
+      query: req.query,
+      params: req.params,
+      // Don't log sensitive headers
+      headers: {
+        'content-type': req.get('content-type'),
+        'accept': req.get('accept'),
+        'origin': req.get('origin'),
+      },
+    };
+    
+    // Log to console in development
+    if (envConfig.env === 'development') {
+      console.log(JSON.stringify(logData, null, 2));
+    }
+    
+    // Log to file/database in production
+    if (envConfig.logging.enabled) {
+      createRequestLog(logData).catch(error => {
+        console.error('Failed to save request log:', error);
+      });
+    }
+  });
+  
+  next();
+};
 
 // Morgan format string
 const format = '[:date[iso]] :method :url :status :response-time-ms ms - :res[content-length] - :user@:remote-addr - :user-agent';
@@ -74,14 +97,17 @@ const format = '[:date[iso]] :method :url :status :response-time-ms ms - :res[co
 const morganMiddleware = morgan(format, {
   stream: {
     write: (message) => {
-      logger.info(message.trim());
-    }
+      if (envConfig.env !== 'test') {
+        console.log(message.trim());
+      }
+    },
   },
   skip: (req) => {
-    // Skip health check logs in production
+    // Skip health check logging in production
     return envConfig.env === 'production' && req.originalUrl === '/health';
-  }
+  },
 });
 
 export { requestLogger, morganMiddleware };
+
 export default requestLogger;

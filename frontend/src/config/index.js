@@ -6,8 +6,10 @@
 const config = {
   // API Configuration
   api: {
-    // Base URL for API requests
-    baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api',
+    // Base URL for API requests - using the Vite proxy in development
+    baseURL: import.meta.env.DEV 
+      ? '/api' // This will be proxied to http://127.0.0.1:5000/api/v1
+      : import.meta.env.VITE_API_URL || 'http://localhost:5000/api/v1',
     
     // Default request timeout in milliseconds
     timeout: 30000, // 30 seconds

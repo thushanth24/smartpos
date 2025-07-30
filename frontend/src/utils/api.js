@@ -3,16 +3,16 @@ import { getToken, removeToken, removeUser } from './auth';
 import { handleApiError, handleAuthError } from './errorHandler';
 import config from '../config';
 
-// Create axios instance
+// Create axios instance with minimal configuration
 const api = axios.create({
   baseURL: config.api.baseURL,
   headers: {
     'Content-Type': 'application/json',
     'Accept': 'application/json',
-    'X-Requested-With': 'XMLHttpRequest',
   },
-  withCredentials: true,
+  withCredentials: true,  // Important for sending cookies with requests
   timeout: config.api.timeout,
+  responseType: 'json',
 });
 
 // Add request interceptor to add auth token
@@ -22,10 +22,69 @@ api.interceptors.request.use(
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }
+    
+    // Log the request
+    console.log('[API] Request:', {
+      url: config.url,
+      method: config.method,
+      headers: config.headers,
+      data: config.data,
+      params: config.params
+    });
+    
     return config;
   },
   (error) => {
+    console.error('[API] Request error:', error);
     return Promise.reject(error);
+  }
+);
+
+// Add response interceptor
+api.interceptors.response.use(
+  (response) => {
+    // Log the full response for debugging
+    console.log('[API] Full response received:', {
+      status: response.status,
+      statusText: response.statusText,
+      headers: response.headers,
+      config: {
+        url: response.config.url,
+        method: response.config.method,
+      },
+      data: response.data
+    });
+    
+    // Return the full response to preserve all data
+    return response;
+  },
+  (error) => {
+    // For errors, log them and rethrow
+    const errorInfo = {
+      message: error.message,
+      config: {
+        url: error.config?.url,
+        method: error.config?.method,
+      },
+    };
+
+    if (error.response) {
+      // The request was made and the server responded with a status code
+      // that falls out of the range of 2xx
+      errorInfo.response = {
+        status: error.response.status,
+        statusText: error.response.statusText,
+        data: error.response.data,
+      };
+    } else if (error.request) {
+      // The request was made but no response was received
+      errorInfo.request = 'No response received';
+    }
+
+    console.error('[API] Request failed:', errorInfo);
+    
+    // Return a rejected promise with the error
+    return Promise.reject(error.response?.data || error.message);
   }
 );
 

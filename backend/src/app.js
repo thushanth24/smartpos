@@ -65,17 +65,45 @@ if (envConfig.security.helmet) {
   }));
 }
 
-// Enable CORS
+// Enable CORS with enhanced options
 const corsOptions = {
-  origin: envConfig.cors.origin,
-  methods: envConfig.cors.methods,
-  allowedHeaders: envConfig.cors.allowedHeaders,
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+    
+    const allowedOrigins = Array.isArray(envConfig.cors.origin) 
+      ? envConfig.cors.origin 
+      : [envConfig.cors.origin];
+      
+    if (allowedOrigins.includes(origin) || allowedOrigins.includes('*')) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  methods: envConfig.cors.methods || ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  allowedHeaders: envConfig.cors.allowedHeaders || [
+    'Content-Type', 
+    'Authorization', 
+    'X-Requested-With', 
+    'Accept', 
+    'Origin',
+    'Access-Control-Allow-Headers',
+    'Access-Control-Allow-Methods',
+    'Access-Control-Allow-Credentials'
+  ],
   exposedHeaders: ['Authorization', 'X-Request-Id'],
-  credentials: envConfig.cors.credentials,
-  maxAge: envConfig.cors.maxAge,
+  credentials: true, // Enable credentials
+  maxAge: envConfig.cors.maxAge || 86400, // 24 hours
+  preflightContinue: false,
+  optionsSuccessStatus: 204
 };
+
+// Apply CORS middleware
 app.use(cors(corsOptions));
-app.options('*', cors(corsOptions)); // Enable pre-flight across-the-board
+
+// Enable pre-flight across-the-board for all routes
+app.options('*', cors(corsOptions));
 
 // Parse JSON request body
 app.use(express.json({ limit: '10kb' }));
