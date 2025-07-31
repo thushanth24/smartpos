@@ -104,7 +104,7 @@ const UserTable = ({ users, onEdit, onToggleStatus, onResetPassword, onViewActiv
                 <td className="p-4">
                   <div className="flex items-center gap-2">
                     <Icon name="Shield" size={16} className="text-muted-foreground" />
-                    <span className="text-sm text-foreground">{user.permissions.length}</span>
+                    <span className="text-sm text-foreground">{Array.isArray(user.permissions) ? user.permissions.length : 0}</span>
                   </div>
                 </td>
                 <td className="p-4">

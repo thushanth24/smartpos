@@ -15,93 +15,47 @@ export function AuthProvider({ children }) {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Initialize authentication state
-  const initializeAuth = useCallback(async () => {
-    try {
-      setLoading(true);
-      setError(null);
-      
-      const storedToken = getToken();
-      const storedUser = getUser();
-      
-      // If no token or user in storage, clear auth state
-      if (!storedToken || !storedUser) {
-        setUser(null);
-        setToken(null);
-        return false;
-      }
-      
-      // Check if token is expired
-      if (isTokenExpired(storedToken)) {
-        // Attempt to refresh token if possible
-        const refreshed = await refreshToken();
-        if (!refreshed) {
-          // If refresh fails, clear auth state
-          clearAuth();
-          return false;
+    // Refresh token
+    const refreshToken = useCallback(async () => {
+      try {
+        const result = await authService.refreshToken();
+        if (result.success) {
+          setToken(result.data.token);
+          setUser(result.data.user);
+          setStoredUser(result.data.user);
+          return true;
         }
-        return true;
-      }
-      
-      // Set user and token from storage
-      setUser(storedUser);
-      setToken(storedToken);
-      
-      // Fetch fresh user data
-      await fetchUserProfile();
-      
-      return true;
-    } catch (error) {
-      console.error('Auth initialization error:', error);
-      setError('Failed to initialize authentication');
-      clearAuth();
-      return false;
-    } finally {
-      setLoading(false);
-    }
-  }, []);
-  
-  // Fetch user profile
-  const fetchUserProfile = useCallback(async () => {
-    try {
-      const result = await authService.getUserProfile();
-      if (result.success) {
-        setUser(prev => ({
-          ...prev,
-          ...result.data
-        }));
-        setStoredUser({
-          ...user,
-          ...result.data
-        });
-        return true;
-      } else {
-        setError(result.error || 'Failed to load user profile');
+        return false;
+      } catch (error) {
+        console.error('Error refreshing token:', error);
         return false;
       }
-    } catch (error) {
-      console.error('Error fetching user profile:', error);
-      setError('Failed to load user profile');
-      return false;
-    }
-  }, [user]);
+    }, []);
+
+
   
-  // Refresh token
-  const refreshToken = useCallback(async () => {
-    try {
-      const result = await authService.refreshToken();
-      if (result.success) {
-        setToken(result.data.token);
-        setUser(result.data.user);
-        setStoredUser(result.data.user);
-        return true;
+    const fetchUserProfile = useCallback(async () => {
+      try {
+        const result = await authService.getUserProfile();
+        if (result.success) {
+          const updatedUser = (prevUser) => {
+            const merged = { ...prevUser, ...result.data };
+            setStoredUser(merged);
+            return merged;
+          };
+    
+          setUser(updatedUser); // pass updater function
+          return true;
+        }
+      } catch (error) {
+        console.error('Error fetching user profile:', error);
+        setError('Failed to load user profile');
+        return false;
       }
-      return false;
-    } catch (error) {
-      console.error('Error refreshing token:', error);
-      return false;
-    }
-  }, []);
+    }, []); // ✅ no user dependency
+    
+  
+
   
   // Clear authentication state
   const clearAuth = useCallback(() => {
@@ -112,7 +66,49 @@ export function AuthProvider({ children }) {
     setError(null);
   }, []);
   
-
+  // Initialize authentication state
+  const initializeAuth = useCallback(async () => {
+    try {
+      setLoading(true);
+      setError(null);
+  
+      const storedToken = getToken();
+      const storedUser = getUser();
+  
+      if (!storedToken || !storedUser) {
+        clearAuth(); // ✅ Clear old junk
+        return false;
+      }
+  
+      if (isTokenExpired(storedToken)) {
+        const refreshed = await refreshToken();
+        if (!refreshed) {
+          clearAuth();
+          return false;
+        }
+        return true; // ✅ Stop here if token was refreshed & user already set
+      }
+  
+      // Token is valid — set initial state
+      setUser(storedUser);
+      setToken(storedToken);
+  
+      const profileFetched = await fetchUserProfile();
+      if (!profileFetched) {
+        clearAuth(); // ✅ Clear state on failure
+        return false;
+      }
+  
+      return true;
+    } catch (error) {
+      console.error('[AuthContext] Error during init:', error);
+      clearAuth(); // ✅ Reset everything
+      return false;
+    } finally {
+      setLoading(false);
+    }
+  }, [refreshToken, fetchUserProfile, clearAuth]);
+  
 
   // Login function
   const login = useCallback(

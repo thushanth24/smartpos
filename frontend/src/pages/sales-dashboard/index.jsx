@@ -6,7 +6,7 @@ import MainSidebar from '../../components/ui/MainSidebar';
 import SalesMetricCard from './components/SalesMetricCard';
 import RecentTransactionsList from './components/RecentTransactionsList';
 import TopSellingProducts from './components/TopSellingProducts';
-import LowStockAlerts from './components/LowStockAlerts';
+
 import QuickActionCards from './components/QuickActionCards';
 import SalesChart from './components/SalesChart';
 import Button from '../../components/ui/Button';
@@ -17,7 +17,8 @@ import productService from '../../utils/productService';
 
 const SalesDashboard = () => {
   const navigate = useNavigate();
-  const { userProfile } = useAuth();
+  const { user } = useAuth();
+  console.log('user:', user);
   const [currentTime, setCurrentTime] = useState(new Date());
   const [refreshing, setRefreshing] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -31,7 +32,7 @@ const SalesDashboard = () => {
   });
   const [recentTransactions, setRecentTransactions] = useState([]);
   const [topSellingProducts, setTopSellingProducts] = useState([]);
-  const [lowStockProducts, setLowStockProducts] = useState([]);
+
   const [salesChartData, setSalesChartData] = useState([]);
 
   useEffect(() => {
@@ -54,12 +55,10 @@ const SalesDashboard = () => {
           analyticsResult,
           transactionsResult,
           topProductsResult,
-          lowStockResult
         ] = await Promise.all([
           salesService.getSalesAnalytics('today'),
           salesService.getRecentTransactions(10),
-          salesService.getTopSellingProducts(5, 'week'),
-          productService.getLowStockProducts()
+          salesService.getTopSellingProducts(5, 'week')
         ]);
 
         if (isMounted) {
@@ -98,17 +97,7 @@ const SalesDashboard = () => {
             })) || []);
           }
 
-          // Update low stock products
-          if (lowStockResult?.success) {
-            setLowStockProducts(lowStockResult.data?.map(product => ({
-              id: product.id,
-              name: product.name,
-              category: product.category?.name || 'Uncategorized',
-              image: product.image_url || `https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=400`,
-              currentStock: product.stock_quantity,
-              minStock: product.min_stock_level
-            })) || []);
-          }
+
 
           // Generate mock chart data (in real app, this would come from analytics)
           setSalesChartData([
@@ -146,12 +135,10 @@ const SalesDashboard = () => {
         analyticsResult,
         transactionsResult,
         topProductsResult,
-        lowStockResult
       ] = await Promise.all([
         salesService.getSalesAnalytics('today'),
         salesService.getRecentTransactions(10),
-        salesService.getTopSellingProducts(5, 'week'),
-        productService.getLowStockProducts()
+        salesService.getTopSellingProducts(5, 'week')
       ]);
 
       // Update data (same logic as useEffect)
@@ -165,37 +152,30 @@ const SalesDashboard = () => {
       }
 
       if (transactionsResult?.success) {
-        setRecentTransactions(transactionsResult.data?.map(transaction => ({
-          id: transaction.id,
-          customerName: transaction.customer?.name || null,
-          total: parseFloat(transaction.total_amount),
-          paymentMethod: transaction.payment_method,
-          itemCount: transaction.sale_items?.length || 0,
-          receiptNumber: transaction.receipt_number,
-          timestamp: new Date(transaction.created_at)
-        })) || []);
+        setRecentTransactions(Array.isArray(transactionsResult.data)
+          ? transactionsResult.data.map(transaction => ({
+            id: transaction.id,
+            customerName: transaction.customer?.name || null,
+            total: parseFloat(transaction.total_amount),
+            paymentMethod: transaction.payment_method,
+            itemCount: transaction.sale_items?.length || 0,
+            receiptNumber: transaction.receipt_number,
+            timestamp: new Date(transaction.created_at)
+          }))
+          : []);
       }
 
       if (topProductsResult?.success) {
-        setTopSellingProducts(topProductsResult.data?.map(product => ({
-          id: product.id,
-          name: product.name,
-          image: `https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=400`,
-          soldQuantity: product.soldQuantity,
-          price: product.price,
-          revenue: product.revenue
-        })) || []);
-      }
-
-      if (lowStockResult?.success) {
-        setLowStockProducts(lowStockResult.data?.map(product => ({
-          id: product.id,
-          name: product.name,
-          category: product.category?.name || 'Uncategorized',
-          image: product.image_url || `https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=400`,
-          currentStock: product.stock_quantity,
-          minStock: product.min_stock_level
-        })) || []);
+        setTopSellingProducts(Array.isArray(topProductsResult.data)
+          ? topProductsResult.data.map(product => ({
+            id: product.id,
+            name: product.name,
+            image: `https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=400`,
+            soldQuantity: product.soldQuantity,
+            price: product.price,
+            revenue: product.revenue
+          }))
+          : []);
       }
     } catch (error) {
       console.log('Dashboard refresh error:', error);
@@ -240,7 +220,7 @@ const SalesDashboard = () => {
 
   if (loading) {
     return (
-      <NavigationProvider userRole={userProfile?.role || "admin"}>
+      <NavigationProvider userRole={user?.role || "admin"}>
         <div className="min-h-screen bg-background">
           <TopHeader />
           <MainSidebar />
@@ -258,7 +238,7 @@ const SalesDashboard = () => {
   }
 
   return (
-    <NavigationProvider userRole={userProfile?.role || "admin"}>
+    <NavigationProvider userRole={user?.role || "admin"}>
       <div className="min-h-screen bg-background">
         <TopHeader />
         <MainSidebar />
@@ -302,7 +282,7 @@ const SalesDashboard = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
               <SalesMetricCard
                 title="Today's Sales"
-                value={`$${salesMetrics.totalSales.toLocaleString()}`}
+                value={`$${(salesMetrics.totalSales ?? 0).toLocaleString()}`}
                 change="+12.5%"
                 changeType="positive"
                 icon="DollarSign"
@@ -310,7 +290,7 @@ const SalesDashboard = () => {
               />
               <SalesMetricCard
                 title="Transactions"
-                value={salesMetrics.transactionCount.toString()}
+                value={(salesMetrics.transactionCount ?? 0).toString()}
                 change="+8.2%"
                 changeType="positive"
                 icon="Receipt"
@@ -318,7 +298,7 @@ const SalesDashboard = () => {
               />
               <SalesMetricCard
                 title="Avg. Transaction"
-                value={`$${salesMetrics.averageTransaction.toFixed(2)}`}
+                value={`$${(salesMetrics.averageTransaction ?? 0).toFixed(2)}`}
                 change="+3.1%"
                 changeType="positive"
                 icon="TrendingUp"
@@ -326,7 +306,7 @@ const SalesDashboard = () => {
               />
               <SalesMetricCard
                 title="Active Cashiers"
-                value={salesMetrics.cashierCount.toString()}
+                value={(salesMetrics.cashierCount ?? 0).toString()}
                 change="0"
                 changeType="neutral"
                 icon="Users"
@@ -364,13 +344,7 @@ const SalesDashboard = () => {
                 <RecentTransactionsList transactions={recentTransactions} />
               </div>
               
-              {/* Low Stock Alerts */}
-              <div>
-                <LowStockAlerts 
-                  products={lowStockProducts} 
-                  onViewInventory={handleViewInventory}
-                />
-              </div>
+
             </div>
           </div>
         </main>

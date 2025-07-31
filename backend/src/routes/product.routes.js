@@ -22,4 +22,7 @@ router.delete('/:id', productController.deleteProduct);
 // Stock management routes
 router.patch('/:id/stock', productController.updateProductStock);
 
+// Low stock products route
+router.get('/low-stock', productController.getLowStockProducts);
+
 export default router;

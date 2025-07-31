@@ -55,7 +55,7 @@ const salesService = {
       const response = await http.get('/sales/transactions', { params: filters });
       return { 
         success: true, 
-        data: response 
+        data: response.data 
       };
     } catch (error) {
       return { 
@@ -74,7 +74,7 @@ const salesService = {
       });
       return { 
         success: true, 
-        data: response 
+        data: response.data 
       };
     } catch (error) {
       return { 
@@ -93,7 +93,7 @@ const salesService = {
       });
       return { 
         success: true, 
-        data: response 
+        data: response.data 
       };
     } catch (error) {
       return { 
@@ -112,7 +112,7 @@ const salesService = {
       });
       return { 
         success: true, 
-        data: response 
+        data: response.data 
       };
     } catch (error) {
       return { 

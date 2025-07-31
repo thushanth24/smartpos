@@ -27,124 +27,42 @@ const UserManagement = () => {
   const [showEditModal, setShowEditModal] = useState(false);
   const [editingUser, setEditingUser] = useState(null);
 
-  // Mock data
+  // Fetch users from backend
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
   useEffect(() => {
-    const mockUsers = [
-      {
-        id: 1,
-        name: "Sarah Johnson",
-        email: "sarah.johnson@modernpos.com",
-        phone: "+1 (555) 123-4567",
-        role: "admin",
-        status: "active",
-        lastLogin: "2025-01-28 14:30",
-        createdAt: "2024-12-15",
-        permissions: ["pos_access", "inventory_view", "inventory_edit", "reports_view", "reports_export", "customer_manage", "discount_apply", "refund_process"]
-      },
-      {
-        id: 2,
-        name: "Michael Chen",
-        email: "michael.chen@modernpos.com",
-        phone: "+1 (555) 234-5678",
-        role: "cashier",
-        status: "active",
-        lastLogin: "2025-01-28 16:15",
-        createdAt: "2025-01-10",
-        permissions: ["pos_access", "inventory_view", "customer_manage", "discount_apply"]
-      },
-      {
-        id: 3,
-        name: "Emily Rodriguez",
-        email: "emily.rodriguez@modernpos.com",
-        phone: "+1 (555) 345-6789",
-        role: "cashier",
-        status: "active",
-        lastLogin: "2025-01-28 12:45",
-        createdAt: "2025-01-05",
-        permissions: ["pos_access", "inventory_view", "customer_manage"]
-      },
-      {
-        id: 4,
-        name: "David Thompson",
-        email: "david.thompson@modernpos.com",
-        phone: "+1 (555) 456-7890",
-        role: "admin",
-        status: "inactive",
-        lastLogin: "2025-01-25 09:20",
-        createdAt: "2024-11-20",
-        permissions: ["pos_access", "inventory_view", "inventory_edit", "reports_view", "customer_manage", "discount_apply", "refund_process"]
-      },
-      {
-        id: 5,
-        name: "Lisa Wang",
-        email: "lisa.wang@modernpos.com",
-        phone: "+1 (555) 567-8901",
-        role: "cashier",
-        status: "active",
-        lastLogin: "2025-01-28 15:10",
-        createdAt: "2025-01-15",
-        permissions: ["pos_access", "inventory_view", "discount_apply"]
-      }
-    ];
-
-    const mockActivities = [
-      {
-        id: 1,
-        userId: 2,
-        type: "login",
-        action: "User Login",
-        description: "Logged into POS terminal",
-        timestamp: "2025-01-28 16:15",
-        details: "IP: 192.168.1.100, Device: Chrome/Windows"
-      },
-      {
-        id: 2,
-        userId: 2,
-        type: "sale",
-        action: "Sale Transaction",
-        description: "Processed sale #TXN-2025-0128-001",
-        timestamp: "2025-01-28 16:10",
-        details: "Amount: $45.99, Items: 3, Payment: Card"
-      },
-      {
-        id: 3,
-        userId: 2,
-        type: "inventory",
-        action: "Inventory Check",
-        description: "Checked stock levels for Coffee Beans",
-        timestamp: "2025-01-28 15:45",
-        details: "Product: Premium Coffee Beans, Current Stock: 25 units"
-      },
-      {
-        id: 4,
-        userId: 2,
-        type: "refund",
-        action: "Refund Processed",
-        description: "Processed refund for order #ORD-001234",
-        timestamp: "2025-01-28 14:30",
-        details: "Amount: $12.50, Reason: Defective item"
-      },
-      {
-        id: 5,
-        userId: 2,
-        type: "logout",
-        action: "User Logout",
-        description: "Logged out from POS terminal",
-        timestamp: "2025-01-28 13:00",
-        details: "Session duration: 4h 15m"
-      }
-    ];
-
-    setUsers(mockUsers);
-    setFilteredUsers(mockUsers);
-    setActivities(mockActivities);
+    let isMounted = true;
+    setLoading(true);
+    setError('');
+    import('../../utils/userService').then(({ default: userService }) => {
+      userService.getUsers().then(result => {
+        if (!isMounted) return;
+        if (result.success && Array.isArray(result.data.users || result.data)) {
+          // Support both {users: []} and []
+          const userArr = result.data.users || result.data;
+          setUsers(userArr);
+          setFilteredUsers(userArr);
+        } else {
+          setError(result.error || 'Failed to load users');
+        }
+        setLoading(false);
+      }).catch(err => {
+        if (isMounted) {
+          setError('Failed to load users');
+          setLoading(false);
+        }
+      });
+    });
+    return () => { isMounted = false; };
   }, []);
 
   // Filter and search functionality
   useEffect(() => {
     let filtered = users.filter(user => {
-      const matchesSearch = user.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                           user.email.toLowerCase().includes(searchTerm.toLowerCase());
+      const name = user.name || user.full_name || '';
+      const email = user.email || '';
+      const matchesSearch = name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                           email.toLowerCase().includes(searchTerm.toLowerCase());
       const matchesRole = roleFilter === 'all' || user.role === roleFilter;
       const matchesStatus = statusFilter === 'all' || user.status === statusFilter;
       
@@ -173,16 +91,29 @@ const UserManagement = () => {
     }));
   };
 
-  const handleAddUser = (userData) => {
-    const newUser = {
-      ...userData,
-      id: users.length + 1,
-      status: 'active',
-      lastLogin: 'Never',
-      createdAt: new Date().toISOString().split('T')[0]
-    };
-    setUsers(prev => [...prev, newUser]);
-    setShowAddModal(false);
+  const handleAddUser = async (userData) => {
+    setLoading(true);
+    setError('');
+    try {
+      const userService = (await import('../../utils/userService')).default;
+      const result = await userService.addUser(userData);
+      if (result.success) {
+        // Reload user list
+        const usersResult = await userService.getUsers();
+        if (usersResult.success && Array.isArray(usersResult.data.users || usersResult.data)) {
+          const userArr = usersResult.data.users || usersResult.data;
+          setUsers(userArr);
+          setFilteredUsers(userArr);
+        }
+        setShowAddModal(false);
+      } else {
+        setError(result.error || 'Failed to add user');
+      }
+    } catch (err) {
+      setError('Failed to add user');
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleEditUser = (user) => {

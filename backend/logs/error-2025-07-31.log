@@ -1,0 +1,1276 @@
+2025-07-31 23:33:30 [ERROR]: [2025-07-31T18:03:30.815Z] Error: Incorrect email or password
+    at login (file:///E:/Personal/important/smartpos/backend/src/controllers/auth.controller.js:105:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+{
+  service: 'smartpos-backend',
+  env: 'development',
+  [Symbol(level)]: 'error',
+  [Symbol(message)]: '{"env":"development","level":"error","message":"[2025-07-31T18:03:30.815Z] Error: Incorrect email or password\\n    at login (file:///E:/Personal/important/smartpos/backend/src/controllers/auth.controller.js:105:19)\\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)","service":"smartpos-backend","timestamp":"2025-07-31 23:33:30"}'
+}
+2025-07-31 23:38:13 [ERROR]: Failed to create request log: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+{
+  service: 'smartpos-backend',
+  env: 'development',
+  name: 'SequelizeHostNotFoundError',
+  parent: Error: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech'
+  },
+  original: Error: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech'
+  },
+  [Symbol(level)]: 'error',
+  [Symbol(splat)]: [
+    HostNotFoundError [SequelizeHostNotFoundError]: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+        at Client._connectionCallback (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\postgres\connection-manager.js:136:24)
+        at Client._handleErrorWhileConnecting (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:336:19)
+        at Client._handleErrorEvent (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:346:19)
+        at Connection.emit (node:events:518:28)
+        at Socket.reportStreamError (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:57:12)
+        at Socket.emit (node:events:518:28)
+        at emitErrorNT (node:internal/streams/destroy:169:8)
+        at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+        at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+      parent: Error: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+          at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+        errno: -3008,
+        code: 'ENOTFOUND',
+        syscall: 'getaddrinfo',
+        hostname: 'ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech'
+      },
+      original: Error: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+          at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+        errno: -3008,
+        code: 'ENOTFOUND',
+        syscall: 'getaddrinfo',
+        hostname: 'ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech'
+      }
+    }
+  ],
+  [Symbol(message)]: '{"env":"development","level":"error","message":"Failed to create request log: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech","name":"SequelizeHostNotFoundError","original":{"code":"ENOTFOUND","errno":-3008,"hostname":"ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech","syscall":"getaddrinfo"},"parent":{"code":"ENOTFOUND","errno":-3008,"hostname":"ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech","syscall":"getaddrinfo"},"service":"smartpos-backend","stack":"SequelizeHostNotFoundError: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech\\n    at Client._connectionCallback (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\dialects\\\\postgres\\\\connection-manager.js:136:24)\\n    at Client._handleErrorWhileConnecting (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\pg\\\\lib\\\\client.js:336:19)\\n    at Client._handleErrorEvent (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\pg\\\\lib\\\\client.js:346:19)\\n    at Connection.emit (node:events:518:28)\\n    at Socket.reportStreamError (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\pg\\\\lib\\\\connection.js:57:12)\\n    at Socket.emit (node:events:518:28)\\n    at emitErrorNT (node:internal/streams/destroy:169:8)\\n    at emitErrorCloseNT (node:internal/streams/destroy:128:3)\\n    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)","timestamp":"2025-07-31 23:38:13"}'
+}
+SequelizeHostNotFoundError: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+    at Client._connectionCallback (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\postgres\connection-manager.js:136:24)
+    at Client._handleErrorWhileConnecting (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:336:19)
+    at Client._handleErrorEvent (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:346:19)
+    at Connection.emit (node:events:518:28)
+    at Socket.reportStreamError (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:57:12)
+    at Socket.emit (node:events:518:28)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+2025-07-31 23:38:13 [ERROR]: Unhandled Rejection: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+{
+  service: 'smartpos-backend',
+  env: 'development',
+  name: 'SequelizeHostNotFoundError',
+  parent: Error: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech'
+  },
+  original: Error: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech'
+  },
+  [Symbol(level)]: 'error',
+  [Symbol(splat)]: [
+    HostNotFoundError [SequelizeHostNotFoundError]: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+        at Client._connectionCallback (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\postgres\connection-manager.js:136:24)
+        at Client._handleErrorWhileConnecting (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:336:19)
+        at Client._handleErrorEvent (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:346:19)
+        at Connection.emit (node:events:518:28)
+        at Socket.reportStreamError (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:57:12)
+        at Socket.emit (node:events:518:28)
+        at emitErrorNT (node:internal/streams/destroy:169:8)
+        at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+        at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+      parent: Error: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+          at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+        errno: -3008,
+        code: 'ENOTFOUND',
+        syscall: 'getaddrinfo',
+        hostname: 'ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech'
+      },
+      original: Error: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+          at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+        errno: -3008,
+        code: 'ENOTFOUND',
+        syscall: 'getaddrinfo',
+        hostname: 'ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech'
+      }
+    }
+  ],
+  [Symbol(message)]: '{"env":"development","level":"error","message":"Unhandled Rejection: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech","name":"SequelizeHostNotFoundError","original":{"code":"ENOTFOUND","errno":-3008,"hostname":"ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech","syscall":"getaddrinfo"},"parent":{"code":"ENOTFOUND","errno":-3008,"hostname":"ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech","syscall":"getaddrinfo"},"service":"smartpos-backend","stack":"SequelizeHostNotFoundError: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech\\n    at Client._connectionCallback (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\dialects\\\\postgres\\\\connection-manager.js:136:24)\\n    at Client._handleErrorWhileConnecting (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\pg\\\\lib\\\\client.js:336:19)\\n    at Client._handleErrorEvent (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\pg\\\\lib\\\\client.js:346:19)\\n    at Connection.emit (node:events:518:28)\\n    at Socket.reportStreamError (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\pg\\\\lib\\\\connection.js:57:12)\\n    at Socket.emit (node:events:518:28)\\n    at emitErrorNT (node:internal/streams/destroy:169:8)\\n    at emitErrorCloseNT (node:internal/streams/destroy:128:3)\\n    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)","timestamp":"2025-07-31 23:38:13"}'
+}
+SequelizeHostNotFoundError: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+    at Client._connectionCallback (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\postgres\connection-manager.js:136:24)
+    at Client._handleErrorWhileConnecting (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:336:19)
+    at Client._handleErrorEvent (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:346:19)
+    at Connection.emit (node:events:518:28)
+    at Socket.reportStreamError (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:57:12)
+    at Socket.emit (node:events:518:28)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+2025-07-31 23:38:13 [ERROR]: Unhandled Rejection at: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+{
+  service: 'smartpos-backend',
+  env: 'development',
+  name: 'SequelizeHostNotFoundError',
+  parent: Error: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech'
+  },
+  original: Error: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech'
+  },
+  [Symbol(level)]: 'error',
+  [Symbol(splat)]: [
+    HostNotFoundError [SequelizeHostNotFoundError]: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+        at Client._connectionCallback (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\postgres\connection-manager.js:136:24)
+        at Client._handleErrorWhileConnecting (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:336:19)
+        at Client._handleErrorEvent (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:346:19)
+        at Connection.emit (node:events:518:28)
+        at Socket.reportStreamError (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:57:12)
+        at Socket.emit (node:events:518:28)
+        at emitErrorNT (node:internal/streams/destroy:169:8)
+        at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+        at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+      parent: Error: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+          at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+        errno: -3008,
+        code: 'ENOTFOUND',
+        syscall: 'getaddrinfo',
+        hostname: 'ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech'
+      },
+      original: Error: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+          at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+        errno: -3008,
+        code: 'ENOTFOUND',
+        syscall: 'getaddrinfo',
+        hostname: 'ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech'
+      }
+    }
+  ],
+  [Symbol(message)]: '{"env":"development","level":"error","message":"Unhandled Rejection at: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech","name":"SequelizeHostNotFoundError","original":{"code":"ENOTFOUND","errno":-3008,"hostname":"ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech","syscall":"getaddrinfo"},"parent":{"code":"ENOTFOUND","errno":-3008,"hostname":"ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech","syscall":"getaddrinfo"},"service":"smartpos-backend","stack":"SequelizeHostNotFoundError: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech\\n    at Client._connectionCallback (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\dialects\\\\postgres\\\\connection-manager.js:136:24)\\n    at Client._handleErrorWhileConnecting (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\pg\\\\lib\\\\client.js:336:19)\\n    at Client._handleErrorEvent (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\pg\\\\lib\\\\client.js:346:19)\\n    at Connection.emit (node:events:518:28)\\n    at Socket.reportStreamError (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\pg\\\\lib\\\\connection.js:57:12)\\n    at Socket.emit (node:events:518:28)\\n    at emitErrorNT (node:internal/streams/destroy:169:8)\\n    at emitErrorCloseNT (node:internal/streams/destroy:128:3)\\n    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)","timestamp":"2025-07-31 23:38:13"}'
+}
+SequelizeHostNotFoundError: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+    at Client._connectionCallback (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\postgres\connection-manager.js:136:24)
+    at Client._handleErrorWhileConnecting (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:336:19)
+    at Client._handleErrorEvent (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:346:19)
+    at Connection.emit (node:events:518:28)
+    at Socket.reportStreamError (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:57:12)
+    at Socket.emit (node:events:518:28)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+2025-07-31 23:38:13 [ERROR]: Unhandled Rejection at:
+{
+  service: 'smartpos-backend',
+  env: 'development',
+  [Symbol(level)]: 'error',
+  [Symbol(splat)]: [
+    Promise {
+      <rejected> HostNotFoundError [SequelizeHostNotFoundError]: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+          at Client._connectionCallback (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\postgres\connection-manager.js:136:24)
+          at Client._handleErrorWhileConnecting (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:336:19)
+          at Client._handleErrorEvent (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:346:19)
+          at Connection.emit (node:events:518:28)
+          at Socket.reportStreamError (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:57:12)
+          at Socket.emit (node:events:518:28)
+          at emitErrorNT (node:internal/streams/destroy:169:8)
+          at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+          at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+        parent: Error: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+            at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+          errno: -3008,
+          code: 'ENOTFOUND',
+          syscall: 'getaddrinfo',
+          hostname: 'ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech'
+        },
+        original: Error: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+            at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+          errno: -3008,
+          code: 'ENOTFOUND',
+          syscall: 'getaddrinfo',
+          hostname: 'ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech'
+        }
+      }
+    },
+    'reason:',
+    HostNotFoundError [SequelizeHostNotFoundError]: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+        at Client._connectionCallback (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\postgres\connection-manager.js:136:24)
+        at Client._handleErrorWhileConnecting (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:336:19)
+        at Client._handleErrorEvent (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:346:19)
+        at Connection.emit (node:events:518:28)
+        at Socket.reportStreamError (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:57:12)
+        at Socket.emit (node:events:518:28)
+        at emitErrorNT (node:internal/streams/destroy:169:8)
+        at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+        at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+      parent: Error: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+          at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+        errno: -3008,
+        code: 'ENOTFOUND',
+        syscall: 'getaddrinfo',
+        hostname: 'ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech'
+      },
+      original: Error: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+          at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+        errno: -3008,
+        code: 'ENOTFOUND',
+        syscall: 'getaddrinfo',
+        hostname: 'ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech'
+      }
+    }
+  ],
+  [Symbol(message)]: '{"env":"development","level":"error","message":"Unhandled Rejection at:","service":"smartpos-backend","timestamp":"2025-07-31 23:38:13"}'
+}
+2025-07-31 23:38:13 [ERROR]: Unhandled Rejection at:
+{
+  service: 'smartpos-backend',
+  env: 'development',
+  [Symbol(level)]: 'error',
+  [Symbol(splat)]: [
+    Promise {
+      <rejected> HostNotFoundError [SequelizeHostNotFoundError]: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+          at Client._connectionCallback (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\postgres\connection-manager.js:136:24)
+          at Client._handleErrorWhileConnecting (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:336:19)
+          at Client._handleErrorEvent (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:346:19)
+          at Connection.emit (node:events:518:28)
+          at Socket.reportStreamError (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:57:12)
+          at Socket.emit (node:events:518:28)
+          at emitErrorNT (node:internal/streams/destroy:169:8)
+          at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+          at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+        parent: Error: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+            at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+          errno: -3008,
+          code: 'ENOTFOUND',
+          syscall: 'getaddrinfo',
+          hostname: 'ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech'
+        },
+        original: Error: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+            at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+          errno: -3008,
+          code: 'ENOTFOUND',
+          syscall: 'getaddrinfo',
+          hostname: 'ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech'
+        }
+      }
+    },
+    'reason:',
+    HostNotFoundError [SequelizeHostNotFoundError]: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+        at Client._connectionCallback (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\postgres\connection-manager.js:136:24)
+        at Client._handleErrorWhileConnecting (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:336:19)
+        at Client._handleErrorEvent (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:346:19)
+        at Connection.emit (node:events:518:28)
+        at Socket.reportStreamError (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:57:12)
+        at Socket.emit (node:events:518:28)
+        at emitErrorNT (node:internal/streams/destroy:169:8)
+        at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+        at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+      parent: Error: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+          at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+        errno: -3008,
+        code: 'ENOTFOUND',
+        syscall: 'getaddrinfo',
+        hostname: 'ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech'
+      },
+      original: Error: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+          at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+        errno: -3008,
+        code: 'ENOTFOUND',
+        syscall: 'getaddrinfo',
+        hostname: 'ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech'
+      }
+    }
+  ],
+  [Symbol(message)]: '{"env":"development","level":"error","message":"Unhandled Rejection at:","service":"smartpos-backend","timestamp":"2025-07-31 23:38:13"}'
+}
+2025-07-31 23:38:13 [ERROR]: Failed to create request log: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+{
+  service: 'smartpos-backend',
+  env: 'development',
+  name: 'SequelizeHostNotFoundError',
+  parent: Error: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech'
+  },
+  original: Error: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech'
+  },
+  [Symbol(level)]: 'error',
+  [Symbol(splat)]: [
+    HostNotFoundError [SequelizeHostNotFoundError]: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+        at Client._connectionCallback (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\postgres\connection-manager.js:136:24)
+        at Client._handleErrorWhileConnecting (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:336:19)
+        at Client._handleErrorEvent (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:346:19)
+        at Connection.emit (node:events:518:28)
+        at Socket.reportStreamError (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:57:12)
+        at Socket.emit (node:events:518:28)
+        at emitErrorNT (node:internal/streams/destroy:169:8)
+        at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+        at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+      parent: Error: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+          at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+        errno: -3008,
+        code: 'ENOTFOUND',
+        syscall: 'getaddrinfo',
+        hostname: 'ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech'
+      },
+      original: Error: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+          at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+        errno: -3008,
+        code: 'ENOTFOUND',
+        syscall: 'getaddrinfo',
+        hostname: 'ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech'
+      }
+    }
+  ],
+  [Symbol(message)]: '{"env":"development","level":"error","message":"Failed to create request log: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech","name":"SequelizeHostNotFoundError","original":{"code":"ENOTFOUND","errno":-3008,"hostname":"ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech","syscall":"getaddrinfo"},"parent":{"code":"ENOTFOUND","errno":-3008,"hostname":"ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech","syscall":"getaddrinfo"},"service":"smartpos-backend","stack":"SequelizeHostNotFoundError: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech\\n    at Client._connectionCallback (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\dialects\\\\postgres\\\\connection-manager.js:136:24)\\n    at Client._handleErrorWhileConnecting (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\pg\\\\lib\\\\client.js:336:19)\\n    at Client._handleErrorEvent (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\pg\\\\lib\\\\client.js:346:19)\\n    at Connection.emit (node:events:518:28)\\n    at Socket.reportStreamError (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\pg\\\\lib\\\\connection.js:57:12)\\n    at Socket.emit (node:events:518:28)\\n    at emitErrorNT (node:internal/streams/destroy:169:8)\\n    at emitErrorCloseNT (node:internal/streams/destroy:128:3)\\n    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)","timestamp":"2025-07-31 23:38:13"}'
+}
+SequelizeHostNotFoundError: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+    at Client._connectionCallback (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\postgres\connection-manager.js:136:24)
+    at Client._handleErrorWhileConnecting (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:336:19)
+    at Client._handleErrorEvent (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:346:19)
+    at Connection.emit (node:events:518:28)
+    at Socket.reportStreamError (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:57:12)
+    at Socket.emit (node:events:518:28)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+2025-07-31 23:38:13 [ERROR]: Unhandled Rejection: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+{
+  service: 'smartpos-backend',
+  env: 'development',
+  name: 'SequelizeHostNotFoundError',
+  parent: Error: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech'
+  },
+  original: Error: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech'
+  },
+  [Symbol(level)]: 'error',
+  [Symbol(splat)]: [
+    HostNotFoundError [SequelizeHostNotFoundError]: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+        at Client._connectionCallback (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\postgres\connection-manager.js:136:24)
+        at Client._handleErrorWhileConnecting (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:336:19)
+        at Client._handleErrorEvent (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:346:19)
+        at Connection.emit (node:events:518:28)
+        at Socket.reportStreamError (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:57:12)
+        at Socket.emit (node:events:518:28)
+        at emitErrorNT (node:internal/streams/destroy:169:8)
+        at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+        at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+      parent: Error: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+          at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+        errno: -3008,
+        code: 'ENOTFOUND',
+        syscall: 'getaddrinfo',
+        hostname: 'ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech'
+      },
+      original: Error: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+          at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+        errno: -3008,
+        code: 'ENOTFOUND',
+        syscall: 'getaddrinfo',
+        hostname: 'ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech'
+      }
+    }
+  ],
+  [Symbol(message)]: '{"env":"development","level":"error","message":"Unhandled Rejection: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech","name":"SequelizeHostNotFoundError","original":{"code":"ENOTFOUND","errno":-3008,"hostname":"ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech","syscall":"getaddrinfo"},"parent":{"code":"ENOTFOUND","errno":-3008,"hostname":"ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech","syscall":"getaddrinfo"},"service":"smartpos-backend","stack":"SequelizeHostNotFoundError: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech\\n    at Client._connectionCallback (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\dialects\\\\postgres\\\\connection-manager.js:136:24)\\n    at Client._handleErrorWhileConnecting (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\pg\\\\lib\\\\client.js:336:19)\\n    at Client._handleErrorEvent (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\pg\\\\lib\\\\client.js:346:19)\\n    at Connection.emit (node:events:518:28)\\n    at Socket.reportStreamError (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\pg\\\\lib\\\\connection.js:57:12)\\n    at Socket.emit (node:events:518:28)\\n    at emitErrorNT (node:internal/streams/destroy:169:8)\\n    at emitErrorCloseNT (node:internal/streams/destroy:128:3)\\n    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)","timestamp":"2025-07-31 23:38:13"}'
+}
+SequelizeHostNotFoundError: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+    at Client._connectionCallback (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\postgres\connection-manager.js:136:24)
+    at Client._handleErrorWhileConnecting (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:336:19)
+    at Client._handleErrorEvent (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:346:19)
+    at Connection.emit (node:events:518:28)
+    at Socket.reportStreamError (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:57:12)
+    at Socket.emit (node:events:518:28)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+2025-07-31 23:38:13 [ERROR]: Unhandled Rejection at: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+{
+  service: 'smartpos-backend',
+  env: 'development',
+  name: 'SequelizeHostNotFoundError',
+  parent: Error: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech'
+  },
+  original: Error: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech'
+  },
+  [Symbol(level)]: 'error',
+  [Symbol(splat)]: [
+    HostNotFoundError [SequelizeHostNotFoundError]: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+        at Client._connectionCallback (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\postgres\connection-manager.js:136:24)
+        at Client._handleErrorWhileConnecting (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:336:19)
+        at Client._handleErrorEvent (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:346:19)
+        at Connection.emit (node:events:518:28)
+        at Socket.reportStreamError (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:57:12)
+        at Socket.emit (node:events:518:28)
+        at emitErrorNT (node:internal/streams/destroy:169:8)
+        at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+        at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+      parent: Error: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+          at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+        errno: -3008,
+        code: 'ENOTFOUND',
+        syscall: 'getaddrinfo',
+        hostname: 'ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech'
+      },
+      original: Error: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+          at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+        errno: -3008,
+        code: 'ENOTFOUND',
+        syscall: 'getaddrinfo',
+        hostname: 'ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech'
+      }
+    }
+  ],
+  [Symbol(message)]: '{"env":"development","level":"error","message":"Unhandled Rejection at: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech","name":"SequelizeHostNotFoundError","original":{"code":"ENOTFOUND","errno":-3008,"hostname":"ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech","syscall":"getaddrinfo"},"parent":{"code":"ENOTFOUND","errno":-3008,"hostname":"ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech","syscall":"getaddrinfo"},"service":"smartpos-backend","stack":"SequelizeHostNotFoundError: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech\\n    at Client._connectionCallback (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\dialects\\\\postgres\\\\connection-manager.js:136:24)\\n    at Client._handleErrorWhileConnecting (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\pg\\\\lib\\\\client.js:336:19)\\n    at Client._handleErrorEvent (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\pg\\\\lib\\\\client.js:346:19)\\n    at Connection.emit (node:events:518:28)\\n    at Socket.reportStreamError (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\pg\\\\lib\\\\connection.js:57:12)\\n    at Socket.emit (node:events:518:28)\\n    at emitErrorNT (node:internal/streams/destroy:169:8)\\n    at emitErrorCloseNT (node:internal/streams/destroy:128:3)\\n    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)","timestamp":"2025-07-31 23:38:13"}'
+}
+SequelizeHostNotFoundError: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+    at Client._connectionCallback (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\postgres\connection-manager.js:136:24)
+    at Client._handleErrorWhileConnecting (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:336:19)
+    at Client._handleErrorEvent (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:346:19)
+    at Connection.emit (node:events:518:28)
+    at Socket.reportStreamError (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:57:12)
+    at Socket.emit (node:events:518:28)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+2025-07-31 23:38:13 [ERROR]: Unhandled Rejection at:
+{
+  service: 'smartpos-backend',
+  env: 'development',
+  [Symbol(level)]: 'error',
+  [Symbol(splat)]: [
+    Promise {
+      <rejected> HostNotFoundError [SequelizeHostNotFoundError]: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+          at Client._connectionCallback (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\postgres\connection-manager.js:136:24)
+          at Client._handleErrorWhileConnecting (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:336:19)
+          at Client._handleErrorEvent (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:346:19)
+          at Connection.emit (node:events:518:28)
+          at Socket.reportStreamError (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:57:12)
+          at Socket.emit (node:events:518:28)
+          at emitErrorNT (node:internal/streams/destroy:169:8)
+          at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+          at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+        parent: Error: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+            at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+          errno: -3008,
+          code: 'ENOTFOUND',
+          syscall: 'getaddrinfo',
+          hostname: 'ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech'
+        },
+        original: Error: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+            at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+          errno: -3008,
+          code: 'ENOTFOUND',
+          syscall: 'getaddrinfo',
+          hostname: 'ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech'
+        }
+      }
+    },
+    'reason:',
+    HostNotFoundError [SequelizeHostNotFoundError]: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+        at Client._connectionCallback (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\postgres\connection-manager.js:136:24)
+        at Client._handleErrorWhileConnecting (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:336:19)
+        at Client._handleErrorEvent (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:346:19)
+        at Connection.emit (node:events:518:28)
+        at Socket.reportStreamError (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:57:12)
+        at Socket.emit (node:events:518:28)
+        at emitErrorNT (node:internal/streams/destroy:169:8)
+        at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+        at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+      parent: Error: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+          at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+        errno: -3008,
+        code: 'ENOTFOUND',
+        syscall: 'getaddrinfo',
+        hostname: 'ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech'
+      },
+      original: Error: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+          at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+        errno: -3008,
+        code: 'ENOTFOUND',
+        syscall: 'getaddrinfo',
+        hostname: 'ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech'
+      }
+    }
+  ],
+  [Symbol(message)]: '{"env":"development","level":"error","message":"Unhandled Rejection at:","service":"smartpos-backend","timestamp":"2025-07-31 23:38:13"}'
+}
+2025-07-31 23:38:13 [ERROR]: Unhandled Rejection at:
+{
+  service: 'smartpos-backend',
+  env: 'development',
+  [Symbol(level)]: 'error',
+  [Symbol(splat)]: [
+    Promise {
+      <rejected> HostNotFoundError [SequelizeHostNotFoundError]: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+          at Client._connectionCallback (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\postgres\connection-manager.js:136:24)
+          at Client._handleErrorWhileConnecting (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:336:19)
+          at Client._handleErrorEvent (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:346:19)
+          at Connection.emit (node:events:518:28)
+          at Socket.reportStreamError (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:57:12)
+          at Socket.emit (node:events:518:28)
+          at emitErrorNT (node:internal/streams/destroy:169:8)
+          at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+          at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+        parent: Error: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+            at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+          errno: -3008,
+          code: 'ENOTFOUND',
+          syscall: 'getaddrinfo',
+          hostname: 'ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech'
+        },
+        original: Error: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+            at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+          errno: -3008,
+          code: 'ENOTFOUND',
+          syscall: 'getaddrinfo',
+          hostname: 'ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech'
+        }
+      }
+    },
+    'reason:',
+    HostNotFoundError [SequelizeHostNotFoundError]: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+        at Client._connectionCallback (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\postgres\connection-manager.js:136:24)
+        at Client._handleErrorWhileConnecting (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:336:19)
+        at Client._handleErrorEvent (E:\Personal\important\smartpos\backend\node_modules\pg\lib\client.js:346:19)
+        at Connection.emit (node:events:518:28)
+        at Socket.reportStreamError (E:\Personal\important\smartpos\backend\node_modules\pg\lib\connection.js:57:12)
+        at Socket.emit (node:events:518:28)
+        at emitErrorNT (node:internal/streams/destroy:169:8)
+        at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+        at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+      parent: Error: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+          at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+        errno: -3008,
+        code: 'ENOTFOUND',
+        syscall: 'getaddrinfo',
+        hostname: 'ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech'
+      },
+      original: Error: getaddrinfo ENOTFOUND ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech
+          at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+        errno: -3008,
+        code: 'ENOTFOUND',
+        syscall: 'getaddrinfo',
+        hostname: 'ep-gentle-sound-a1qdwivm-pooler.ap-southeast-1.aws.neon.tech'
+      }
+    }
+  ],
+  [Symbol(message)]: '{"env":"development","level":"error","message":"Unhandled Rejection at:","service":"smartpos-backend","timestamp":"2025-07-31 23:38:13"}'
+}
+2025-07-31 23:39:10 [ERROR]: [2025-07-31T18:09:10.145Z] TypeError: Product.findById is not a function
+    at getProduct (file:///E:/Personal/important/smartpos/backend/src/controllers/product.controller.js:35:35)
+    at Layer.handle [as handle_request] (E:\Personal\important\smartpos\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (E:\Personal\important\smartpos\backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (E:\Personal\important\smartpos\backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (E:\Personal\important\smartpos\backend\node_modules\express\lib\router\layer.js:95:5)
+    at E:\Personal\important\smartpos\backend\node_modules\express\lib\router\index.js:284:15
+    at param (E:\Personal\important\smartpos\backend\node_modules\express\lib\router\index.js:365:14)
+    at param (E:\Personal\important\smartpos\backend\node_modules\express\lib\router\index.js:376:14)
+    at Function.process_params (E:\Personal\important\smartpos\backend\node_modules\express\lib\router\index.js:421:3)
+    at next (E:\Personal\important\smartpos\backend\node_modules\express\lib\router\index.js:280:10)
+{
+  service: 'smartpos-backend',
+  env: 'development',
+  [Symbol(level)]: 'error',
+  [Symbol(message)]: '{"env":"development","level":"error","message":"[2025-07-31T18:09:10.145Z] TypeError: Product.findById is not a function\\n    at getProduct (file:///E:/Personal/important/smartpos/backend/src/controllers/product.controller.js:35:35)\\n    at Layer.handle [as handle_request] (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\express\\\\lib\\\\router\\\\layer.js:95:5)\\n    at next (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\express\\\\lib\\\\router\\\\route.js:149:13)\\n    at Route.dispatch (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\express\\\\lib\\\\router\\\\route.js:119:3)\\n    at Layer.handle [as handle_request] (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\express\\\\lib\\\\router\\\\layer.js:95:5)\\n    at E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\express\\\\lib\\\\router\\\\index.js:284:15\\n    at param (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\express\\\\lib\\\\router\\\\index.js:365:14)\\n    at param (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\express\\\\lib\\\\router\\\\index.js:376:14)\\n    at Function.process_params (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\express\\\\lib\\\\router\\\\index.js:421:3)\\n    at next (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\express\\\\lib\\\\router\\\\index.js:280:10)","service":"smartpos-backend","timestamp":"2025-07-31 23:39:10"}'
+}
+2025-07-31 23:39:53 [ERROR]: [2025-07-31T18:09:53.594Z] TypeError: Product.findById is not a function
+    at getProduct (file:///E:/Personal/important/smartpos/backend/src/controllers/product.controller.js:35:35)
+    at Layer.handle [as handle_request] (E:\Personal\important\smartpos\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (E:\Personal\important\smartpos\backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (E:\Personal\important\smartpos\backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (E:\Personal\important\smartpos\backend\node_modules\express\lib\router\layer.js:95:5)
+    at E:\Personal\important\smartpos\backend\node_modules\express\lib\router\index.js:284:15
+    at param (E:\Personal\important\smartpos\backend\node_modules\express\lib\router\index.js:365:14)
+    at param (E:\Personal\important\smartpos\backend\node_modules\express\lib\router\index.js:376:14)
+    at Function.process_params (E:\Personal\important\smartpos\backend\node_modules\express\lib\router\index.js:421:3)
+    at next (E:\Personal\important\smartpos\backend\node_modules\express\lib\router\index.js:280:10)
+{
+  service: 'smartpos-backend',
+  env: 'development',
+  [Symbol(level)]: 'error',
+  [Symbol(message)]: '{"env":"development","level":"error","message":"[2025-07-31T18:09:53.594Z] TypeError: Product.findById is not a function\\n    at getProduct (file:///E:/Personal/important/smartpos/backend/src/controllers/product.controller.js:35:35)\\n    at Layer.handle [as handle_request] (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\express\\\\lib\\\\router\\\\layer.js:95:5)\\n    at next (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\express\\\\lib\\\\router\\\\route.js:149:13)\\n    at Route.dispatch (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\express\\\\lib\\\\router\\\\route.js:119:3)\\n    at Layer.handle [as handle_request] (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\express\\\\lib\\\\router\\\\layer.js:95:5)\\n    at E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\express\\\\lib\\\\router\\\\index.js:284:15\\n    at param (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\express\\\\lib\\\\router\\\\index.js:365:14)\\n    at param (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\express\\\\lib\\\\router\\\\index.js:376:14)\\n    at Function.process_params (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\express\\\\lib\\\\router\\\\index.js:421:3)\\n    at next (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\express\\\\lib\\\\router\\\\index.js:280:10)","service":"smartpos-backend","timestamp":"2025-07-31 23:39:53"}'
+}
+2025-07-31 23:40:52 [ERROR]: [2025-07-31T18:10:52.647Z] Error
+    at Query.run (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+    at E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async PostgresQueryInterface.select (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\abstract\query-interface.js:407:12)
+    at async Product.findAll (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\model.js:1140:21)
+    at async Product.findOne (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\model.js:1240:12)
+    at async Product.findByPk (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\model.js:1221:12)
+    at async getProduct (file:///E:/Personal/important/smartpos/backend/src/controllers/product.controller.js:35:21)
+{
+  service: 'smartpos-backend',
+  env: 'development',
+  [Symbol(level)]: 'error',
+  [Symbol(message)]: '{"env":"development","level":"error","message":"[2025-07-31T18:10:52.647Z] Error\\n    at Query.run (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\dialects\\\\postgres\\\\query.js:50:25)\\n    at E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\sequelize.js:315:28\\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\\n    at async PostgresQueryInterface.select (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\dialects\\\\abstract\\\\query-interface.js:407:12)\\n    at async Product.findAll (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\model.js:1140:21)\\n    at async Product.findOne (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\model.js:1240:12)\\n    at async Product.findByPk (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\model.js:1221:12)\\n    at async getProduct (file:///E:/Personal/important/smartpos/backend/src/controllers/product.controller.js:35:21)","service":"smartpos-backend","timestamp":"2025-07-31 23:40:52"}'
+}
+2025-07-31 23:52:09 [ERROR]: ❌ Error synchronizing database: default for column "status" cannot be cast automatically to type enum_users_status
+{
+  service: 'smartpos-backend',
+  env: 'development',
+  name: 'SequelizeDatabaseError',
+  parent: error: default for column "status" cannot be cast automatically to type enum_users_status
+      at Parser.parseErrorMessage (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\parser.js:285:98)
+      at Parser.handlePacket (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\parser.js:122:29)
+      at Parser.parse (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\parser.js:35:38)
+      at TLSSocket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\index.js:11:42)
+      at TLSSocket.emit (node:events:518:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Readable.push (node:internal/streams/readable:392:5)
+      at TLSWrap.onStreamRead (node:internal/stream_base_commons:191:23) {
+    length: 153,
+    severity: 'ERROR',
+    code: '42804',
+    detail: undefined,
+    hint: undefined,
+    position: undefined,
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'tablecmds.c',
+    line: '13243',
+    routine: 'ATExecAlterColumnType',
+    sql: `ALTER TABLE "users" ALTER COLUMN "status" DROP NOT NULL;ALTER TABLE "users" ALTER COLUMN "status" SET DEFAULT 'active';DO 'BEGIN CREATE TYPE "public"."enum_users_status" AS ENUM(''active'', ''inactive'', ''suspended''); EXCEPTION WHEN duplicate_object THEN null; END';ALTER TABLE "users" ALTER COLUMN "status" TYPE "public"."enum_users_status" USING ("status"::"public"."enum_users_status");`,
+    parameters: undefined
+  },
+  original: error: default for column "status" cannot be cast automatically to type enum_users_status
+      at Parser.parseErrorMessage (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\parser.js:285:98)
+      at Parser.handlePacket (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\parser.js:122:29)
+      at Parser.parse (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\parser.js:35:38)
+      at TLSSocket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\index.js:11:42)
+      at TLSSocket.emit (node:events:518:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Readable.push (node:internal/streams/readable:392:5)
+      at TLSWrap.onStreamRead (node:internal/stream_base_commons:191:23) {
+    length: 153,
+    severity: 'ERROR',
+    code: '42804',
+    detail: undefined,
+    hint: undefined,
+    position: undefined,
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'tablecmds.c',
+    line: '13243',
+    routine: 'ATExecAlterColumnType',
+    sql: `ALTER TABLE "users" ALTER COLUMN "status" DROP NOT NULL;ALTER TABLE "users" ALTER COLUMN "status" SET DEFAULT 'active';DO 'BEGIN CREATE TYPE "public"."enum_users_status" AS ENUM(''active'', ''inactive'', ''suspended''); EXCEPTION WHEN duplicate_object THEN null; END';ALTER TABLE "users" ALTER COLUMN "status" TYPE "public"."enum_users_status" USING ("status"::"public"."enum_users_status");`,
+    parameters: undefined
+  },
+  sql: `ALTER TABLE "users" ALTER COLUMN "status" DROP NOT NULL;ALTER TABLE "users" ALTER COLUMN "status" SET DEFAULT 'active';DO 'BEGIN CREATE TYPE "public"."enum_users_status" AS ENUM(''active'', ''inactive'', ''suspended''); EXCEPTION WHEN duplicate_object THEN null; END';ALTER TABLE "users" ALTER COLUMN "status" TYPE "public"."enum_users_status" USING ("status"::"public"."enum_users_status");`,
+  parameters: {},
+  [Symbol(level)]: 'error',
+  [Symbol(splat)]: [
+    Error
+        at Query.run (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+        at E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\sequelize.js:315:28
+        at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+        at async User.sync (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\model.js:984:11)
+        at async Sequelize.sync (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\sequelize.js:377:9)
+        at async syncDatabase (file:///E:/Personal/important/smartpos/backend/src/config/db.js:78:5)
+        at async initializeApp (file:///E:/Personal/important/smartpos/backend/src/server.js:18:5)
+        at async startServer (file:///E:/Personal/important/smartpos/backend/src/server.js:69:5) {
+      name: 'SequelizeDatabaseError',
+      parent: error: default for column "status" cannot be cast automatically to type enum_users_status
+          at Parser.parseErrorMessage (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\parser.js:285:98)
+          at Parser.handlePacket (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\parser.js:122:29)
+          at Parser.parse (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\parser.js:35:38)
+          at TLSSocket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\index.js:11:42)
+          at TLSSocket.emit (node:events:518:28)
+          at addChunk (node:internal/streams/readable:561:12)
+          at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+          at Readable.push (node:internal/streams/readable:392:5)
+          at TLSWrap.onStreamRead (node:internal/stream_base_commons:191:23) {
+        length: 153,
+        severity: 'ERROR',
+        code: '42804',
+        detail: undefined,
+        hint: undefined,
+        position: undefined,
+        internalPosition: undefined,
+        internalQuery: undefined,
+        where: undefined,
+        schema: undefined,
+        table: undefined,
+        column: undefined,
+        dataType: undefined,
+        constraint: undefined,
+        file: 'tablecmds.c',
+        line: '13243',
+        routine: 'ATExecAlterColumnType',
+        sql: `ALTER TABLE "users" ALTER COLUMN "status" DROP NOT NULL;ALTER TABLE "users" ALTER COLUMN "status" SET DEFAULT 'active';DO 'BEGIN CREATE TYPE "public"."enum_users_status" AS ENUM(''active'', ''inactive'', ''suspended''); EXCEPTION WHEN duplicate_object THEN null; END';ALTER TABLE "users" ALTER COLUMN "status" TYPE "public"."enum_users_status" USING ("status"::"public"."enum_users_status");`,
+        parameters: undefined
+      },
+      original: error: default for column "status" cannot be cast automatically to type enum_users_status
+          at Parser.parseErrorMessage (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\parser.js:285:98)
+          at Parser.handlePacket (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\parser.js:122:29)
+          at Parser.parse (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\parser.js:35:38)
+          at TLSSocket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\index.js:11:42)
+          at TLSSocket.emit (node:events:518:28)
+          at addChunk (node:internal/streams/readable:561:12)
+          at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+          at Readable.push (node:internal/streams/readable:392:5)
+          at TLSWrap.onStreamRead (node:internal/stream_base_commons:191:23) {
+        length: 153,
+        severity: 'ERROR',
+        code: '42804',
+        detail: undefined,
+        hint: undefined,
+        position: undefined,
+        internalPosition: undefined,
+        internalQuery: undefined,
+        where: undefined,
+        schema: undefined,
+        table: undefined,
+        column: undefined,
+        dataType: undefined,
+        constraint: undefined,
+        file: 'tablecmds.c',
+        line: '13243',
+        routine: 'ATExecAlterColumnType',
+        sql: `ALTER TABLE "users" ALTER COLUMN "status" DROP NOT NULL;ALTER TABLE "users" ALTER COLUMN "status" SET DEFAULT 'active';DO 'BEGIN CREATE TYPE "public"."enum_users_status" AS ENUM(''active'', ''inactive'', ''suspended''); EXCEPTION WHEN duplicate_object THEN null; END';ALTER TABLE "users" ALTER COLUMN "status" TYPE "public"."enum_users_status" USING ("status"::"public"."enum_users_status");`,
+        parameters: undefined
+      },
+      sql: `ALTER TABLE "users" ALTER COLUMN "status" DROP NOT NULL;ALTER TABLE "users" ALTER COLUMN "status" SET DEFAULT 'active';DO 'BEGIN CREATE TYPE "public"."enum_users_status" AS ENUM(''active'', ''inactive'', ''suspended''); EXCEPTION WHEN duplicate_object THEN null; END';ALTER TABLE "users" ALTER COLUMN "status" TYPE "public"."enum_users_status" USING ("status"::"public"."enum_users_status");`,
+      parameters: {}
+    }
+  ],
+  [Symbol(message)]: `{"env":"development","level":"error","message":"❌ Error synchronizing database: default for column \\"status\\" cannot be cast automatically to type enum_users_status","name":"SequelizeDatabaseError","original":{"code":"42804","file":"tablecmds.c","length":153,"line":"13243","name":"error","routine":"ATExecAlterColumnType","severity":"ERROR","sql":"ALTER TABLE \\"users\\" ALTER COLUMN \\"status\\" DROP NOT NULL;ALTER TABLE \\"users\\" ALTER COLUMN \\"status\\" SET DEFAULT 'active';DO 'BEGIN CREATE TYPE \\"public\\".\\"enum_users_status\\" AS ENUM(''active'', ''inactive'', ''suspended''); EXCEPTION WHEN duplicate_object THEN null; END';ALTER TABLE \\"users\\" ALTER COLUMN \\"status\\" TYPE \\"public\\".\\"enum_users_status\\" USING (\\"status\\"::\\"public\\".\\"enum_users_status\\");"},"parameters":{},"parent":{"code":"42804","file":"tablecmds.c","length":153,"line":"13243","name":"error","routine":"ATExecAlterColumnType","severity":"ERROR","sql":"ALTER TABLE \\"users\\" ALTER COLUMN \\"status\\" DROP NOT NULL;ALTER TABLE \\"users\\" ALTER COLUMN \\"status\\" SET DEFAULT 'active';DO 'BEGIN CREATE TYPE \\"public\\".\\"enum_users_status\\" AS ENUM(''active'', ''inactive'', ''suspended''); EXCEPTION WHEN duplicate_object THEN null; END';ALTER TABLE \\"users\\" ALTER COLUMN \\"status\\" TYPE \\"public\\".\\"enum_users_status\\" USING (\\"status\\"::\\"public\\".\\"enum_users_status\\");"},"service":"smartpos-backend","sql":"ALTER TABLE \\"users\\" ALTER COLUMN \\"status\\" DROP NOT NULL;ALTER TABLE \\"users\\" ALTER COLUMN \\"status\\" SET DEFAULT 'active';DO 'BEGIN CREATE TYPE \\"public\\".\\"enum_users_status\\" AS ENUM(''active'', ''inactive'', ''suspended''); EXCEPTION WHEN duplicate_object THEN null; END';ALTER TABLE \\"users\\" ALTER COLUMN \\"status\\" TYPE \\"public\\".\\"enum_users_status\\" USING (\\"status\\"::\\"public\\".\\"enum_users_status\\");","stack":"Error\\n    at Query.run (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\dialects\\\\postgres\\\\query.js:50:25)\\n    at E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\sequelize.js:315:28\\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\\n    at async User.sync (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\model.js:984:11)\\n    at async Sequelize.sync (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\sequelize.js:377:9)\\n    at async syncDatabase (file:///E:/Personal/important/smartpos/backend/src/config/db.js:78:5)\\n    at async initializeApp (file:///E:/Personal/important/smartpos/backend/src/server.js:18:5)\\n    at async startServer (file:///E:/Personal/important/smartpos/backend/src/server.js:69:5)","timestamp":"2025-07-31 23:52:09"}`
+}
+Error
+    at Query.run (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+    at E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async User.sync (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\model.js:984:11)
+    at async Sequelize.sync (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\sequelize.js:377:9)
+    at async syncDatabase (file:///E:/Personal/important/smartpos/backend/src/config/db.js:78:5)
+    at async initializeApp (file:///E:/Personal/important/smartpos/backend/src/server.js:18:5)
+    at async startServer (file:///E:/Personal/important/smartpos/backend/src/server.js:69:5)
+2025-07-31 23:55:26 [ERROR]: ❌ Error synchronizing database: default for column "status" cannot be cast automatically to type enum_users_status
+{
+  service: 'smartpos-backend',
+  env: 'development',
+  name: 'SequelizeDatabaseError',
+  parent: error: default for column "status" cannot be cast automatically to type enum_users_status
+      at Parser.parseErrorMessage (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\parser.js:285:98)
+      at Parser.handlePacket (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\parser.js:122:29)
+      at Parser.parse (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\parser.js:35:38)
+      at TLSSocket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\index.js:11:42)
+      at TLSSocket.emit (node:events:518:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Readable.push (node:internal/streams/readable:392:5)
+      at TLSWrap.onStreamRead (node:internal/stream_base_commons:191:23) {
+    length: 153,
+    severity: 'ERROR',
+    code: '42804',
+    detail: undefined,
+    hint: undefined,
+    position: undefined,
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'tablecmds.c',
+    line: '13243',
+    routine: 'ATExecAlterColumnType',
+    sql: `ALTER TABLE "users" ALTER COLUMN "status" DROP NOT NULL;ALTER TABLE "users" ALTER COLUMN "status" SET DEFAULT 'active';DO 'BEGIN CREATE TYPE "public"."enum_users_status" AS ENUM(''active'', ''inactive'', ''suspended''); EXCEPTION WHEN duplicate_object THEN null; END';ALTER TABLE "users" ALTER COLUMN "status" TYPE "public"."enum_users_status" USING ("status"::"public"."enum_users_status");`,
+    parameters: undefined
+  },
+  original: error: default for column "status" cannot be cast automatically to type enum_users_status
+      at Parser.parseErrorMessage (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\parser.js:285:98)
+      at Parser.handlePacket (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\parser.js:122:29)
+      at Parser.parse (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\parser.js:35:38)
+      at TLSSocket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\index.js:11:42)
+      at TLSSocket.emit (node:events:518:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Readable.push (node:internal/streams/readable:392:5)
+      at TLSWrap.onStreamRead (node:internal/stream_base_commons:191:23) {
+    length: 153,
+    severity: 'ERROR',
+    code: '42804',
+    detail: undefined,
+    hint: undefined,
+    position: undefined,
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'tablecmds.c',
+    line: '13243',
+    routine: 'ATExecAlterColumnType',
+    sql: `ALTER TABLE "users" ALTER COLUMN "status" DROP NOT NULL;ALTER TABLE "users" ALTER COLUMN "status" SET DEFAULT 'active';DO 'BEGIN CREATE TYPE "public"."enum_users_status" AS ENUM(''active'', ''inactive'', ''suspended''); EXCEPTION WHEN duplicate_object THEN null; END';ALTER TABLE "users" ALTER COLUMN "status" TYPE "public"."enum_users_status" USING ("status"::"public"."enum_users_status");`,
+    parameters: undefined
+  },
+  sql: `ALTER TABLE "users" ALTER COLUMN "status" DROP NOT NULL;ALTER TABLE "users" ALTER COLUMN "status" SET DEFAULT 'active';DO 'BEGIN CREATE TYPE "public"."enum_users_status" AS ENUM(''active'', ''inactive'', ''suspended''); EXCEPTION WHEN duplicate_object THEN null; END';ALTER TABLE "users" ALTER COLUMN "status" TYPE "public"."enum_users_status" USING ("status"::"public"."enum_users_status");`,
+  parameters: {},
+  [Symbol(level)]: 'error',
+  [Symbol(splat)]: [
+    Error
+        at Query.run (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+        at E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\sequelize.js:315:28
+        at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+        at async User.sync (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\model.js:984:11)
+        at async Sequelize.sync (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\sequelize.js:377:9)
+        at async syncDatabase (file:///E:/Personal/important/smartpos/backend/src/config/db.js:78:5)
+        at async initializeApp (file:///E:/Personal/important/smartpos/backend/src/server.js:18:5)
+        at async startServer (file:///E:/Personal/important/smartpos/backend/src/server.js:69:5) {
+      name: 'SequelizeDatabaseError',
+      parent: error: default for column "status" cannot be cast automatically to type enum_users_status
+          at Parser.parseErrorMessage (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\parser.js:285:98)
+          at Parser.handlePacket (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\parser.js:122:29)
+          at Parser.parse (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\parser.js:35:38)
+          at TLSSocket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\index.js:11:42)
+          at TLSSocket.emit (node:events:518:28)
+          at addChunk (node:internal/streams/readable:561:12)
+          at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+          at Readable.push (node:internal/streams/readable:392:5)
+          at TLSWrap.onStreamRead (node:internal/stream_base_commons:191:23) {
+        length: 153,
+        severity: 'ERROR',
+        code: '42804',
+        detail: undefined,
+        hint: undefined,
+        position: undefined,
+        internalPosition: undefined,
+        internalQuery: undefined,
+        where: undefined,
+        schema: undefined,
+        table: undefined,
+        column: undefined,
+        dataType: undefined,
+        constraint: undefined,
+        file: 'tablecmds.c',
+        line: '13243',
+        routine: 'ATExecAlterColumnType',
+        sql: `ALTER TABLE "users" ALTER COLUMN "status" DROP NOT NULL;ALTER TABLE "users" ALTER COLUMN "status" SET DEFAULT 'active';DO 'BEGIN CREATE TYPE "public"."enum_users_status" AS ENUM(''active'', ''inactive'', ''suspended''); EXCEPTION WHEN duplicate_object THEN null; END';ALTER TABLE "users" ALTER COLUMN "status" TYPE "public"."enum_users_status" USING ("status"::"public"."enum_users_status");`,
+        parameters: undefined
+      },
+      original: error: default for column "status" cannot be cast automatically to type enum_users_status
+          at Parser.parseErrorMessage (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\parser.js:285:98)
+          at Parser.handlePacket (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\parser.js:122:29)
+          at Parser.parse (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\parser.js:35:38)
+          at TLSSocket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\index.js:11:42)
+          at TLSSocket.emit (node:events:518:28)
+          at addChunk (node:internal/streams/readable:561:12)
+          at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+          at Readable.push (node:internal/streams/readable:392:5)
+          at TLSWrap.onStreamRead (node:internal/stream_base_commons:191:23) {
+        length: 153,
+        severity: 'ERROR',
+        code: '42804',
+        detail: undefined,
+        hint: undefined,
+        position: undefined,
+        internalPosition: undefined,
+        internalQuery: undefined,
+        where: undefined,
+        schema: undefined,
+        table: undefined,
+        column: undefined,
+        dataType: undefined,
+        constraint: undefined,
+        file: 'tablecmds.c',
+        line: '13243',
+        routine: 'ATExecAlterColumnType',
+        sql: `ALTER TABLE "users" ALTER COLUMN "status" DROP NOT NULL;ALTER TABLE "users" ALTER COLUMN "status" SET DEFAULT 'active';DO 'BEGIN CREATE TYPE "public"."enum_users_status" AS ENUM(''active'', ''inactive'', ''suspended''); EXCEPTION WHEN duplicate_object THEN null; END';ALTER TABLE "users" ALTER COLUMN "status" TYPE "public"."enum_users_status" USING ("status"::"public"."enum_users_status");`,
+        parameters: undefined
+      },
+      sql: `ALTER TABLE "users" ALTER COLUMN "status" DROP NOT NULL;ALTER TABLE "users" ALTER COLUMN "status" SET DEFAULT 'active';DO 'BEGIN CREATE TYPE "public"."enum_users_status" AS ENUM(''active'', ''inactive'', ''suspended''); EXCEPTION WHEN duplicate_object THEN null; END';ALTER TABLE "users" ALTER COLUMN "status" TYPE "public"."enum_users_status" USING ("status"::"public"."enum_users_status");`,
+      parameters: {}
+    }
+  ],
+  [Symbol(message)]: `{"env":"development","level":"error","message":"❌ Error synchronizing database: default for column \\"status\\" cannot be cast automatically to type enum_users_status","name":"SequelizeDatabaseError","original":{"code":"42804","file":"tablecmds.c","length":153,"line":"13243","name":"error","routine":"ATExecAlterColumnType","severity":"ERROR","sql":"ALTER TABLE \\"users\\" ALTER COLUMN \\"status\\" DROP NOT NULL;ALTER TABLE \\"users\\" ALTER COLUMN \\"status\\" SET DEFAULT 'active';DO 'BEGIN CREATE TYPE \\"public\\".\\"enum_users_status\\" AS ENUM(''active'', ''inactive'', ''suspended''); EXCEPTION WHEN duplicate_object THEN null; END';ALTER TABLE \\"users\\" ALTER COLUMN \\"status\\" TYPE \\"public\\".\\"enum_users_status\\" USING (\\"status\\"::\\"public\\".\\"enum_users_status\\");"},"parameters":{},"parent":{"code":"42804","file":"tablecmds.c","length":153,"line":"13243","name":"error","routine":"ATExecAlterColumnType","severity":"ERROR","sql":"ALTER TABLE \\"users\\" ALTER COLUMN \\"status\\" DROP NOT NULL;ALTER TABLE \\"users\\" ALTER COLUMN \\"status\\" SET DEFAULT 'active';DO 'BEGIN CREATE TYPE \\"public\\".\\"enum_users_status\\" AS ENUM(''active'', ''inactive'', ''suspended''); EXCEPTION WHEN duplicate_object THEN null; END';ALTER TABLE \\"users\\" ALTER COLUMN \\"status\\" TYPE \\"public\\".\\"enum_users_status\\" USING (\\"status\\"::\\"public\\".\\"enum_users_status\\");"},"service":"smartpos-backend","sql":"ALTER TABLE \\"users\\" ALTER COLUMN \\"status\\" DROP NOT NULL;ALTER TABLE \\"users\\" ALTER COLUMN \\"status\\" SET DEFAULT 'active';DO 'BEGIN CREATE TYPE \\"public\\".\\"enum_users_status\\" AS ENUM(''active'', ''inactive'', ''suspended''); EXCEPTION WHEN duplicate_object THEN null; END';ALTER TABLE \\"users\\" ALTER COLUMN \\"status\\" TYPE \\"public\\".\\"enum_users_status\\" USING (\\"status\\"::\\"public\\".\\"enum_users_status\\");","stack":"Error\\n    at Query.run (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\dialects\\\\postgres\\\\query.js:50:25)\\n    at E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\sequelize.js:315:28\\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\\n    at async User.sync (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\model.js:984:11)\\n    at async Sequelize.sync (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\sequelize.js:377:9)\\n    at async syncDatabase (file:///E:/Personal/important/smartpos/backend/src/config/db.js:78:5)\\n    at async initializeApp (file:///E:/Personal/important/smartpos/backend/src/server.js:18:5)\\n    at async startServer (file:///E:/Personal/important/smartpos/backend/src/server.js:69:5)","timestamp":"2025-07-31 23:55:26"}`
+}
+Error
+    at Query.run (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+    at E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async User.sync (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\model.js:984:11)
+    at async Sequelize.sync (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\sequelize.js:377:9)
+    at async syncDatabase (file:///E:/Personal/important/smartpos/backend/src/config/db.js:78:5)
+    at async initializeApp (file:///E:/Personal/important/smartpos/backend/src/server.js:18:5)
+    at async startServer (file:///E:/Personal/important/smartpos/backend/src/server.js:69:5)
+2025-07-31 23:58:19 [ERROR]: ❌ Error synchronizing database: default for column "status" cannot be cast automatically to type enum_users_status
+{
+  service: 'smartpos-backend',
+  env: 'development',
+  name: 'SequelizeDatabaseError',
+  parent: error: default for column "status" cannot be cast automatically to type enum_users_status
+      at Parser.parseErrorMessage (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\parser.js:285:98)
+      at Parser.handlePacket (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\parser.js:122:29)
+      at Parser.parse (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\parser.js:35:38)
+      at TLSSocket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\index.js:11:42)
+      at TLSSocket.emit (node:events:518:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Readable.push (node:internal/streams/readable:392:5)
+      at TLSWrap.onStreamRead (node:internal/stream_base_commons:191:23) {
+    length: 153,
+    severity: 'ERROR',
+    code: '42804',
+    detail: undefined,
+    hint: undefined,
+    position: undefined,
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'tablecmds.c',
+    line: '13243',
+    routine: 'ATExecAlterColumnType',
+    sql: `ALTER TABLE "users" ALTER COLUMN "status" DROP NOT NULL;ALTER TABLE "users" ALTER COLUMN "status" SET DEFAULT 'active';DO 'BEGIN CREATE TYPE "public"."enum_users_status" AS ENUM(''active'', ''inactive'', ''suspended''); EXCEPTION WHEN duplicate_object THEN null; END';ALTER TABLE "users" ALTER COLUMN "status" TYPE "public"."enum_users_status" USING ("status"::"public"."enum_users_status");`,
+    parameters: undefined
+  },
+  original: error: default for column "status" cannot be cast automatically to type enum_users_status
+      at Parser.parseErrorMessage (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\parser.js:285:98)
+      at Parser.handlePacket (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\parser.js:122:29)
+      at Parser.parse (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\parser.js:35:38)
+      at TLSSocket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\index.js:11:42)
+      at TLSSocket.emit (node:events:518:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Readable.push (node:internal/streams/readable:392:5)
+      at TLSWrap.onStreamRead (node:internal/stream_base_commons:191:23) {
+    length: 153,
+    severity: 'ERROR',
+    code: '42804',
+    detail: undefined,
+    hint: undefined,
+    position: undefined,
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'tablecmds.c',
+    line: '13243',
+    routine: 'ATExecAlterColumnType',
+    sql: `ALTER TABLE "users" ALTER COLUMN "status" DROP NOT NULL;ALTER TABLE "users" ALTER COLUMN "status" SET DEFAULT 'active';DO 'BEGIN CREATE TYPE "public"."enum_users_status" AS ENUM(''active'', ''inactive'', ''suspended''); EXCEPTION WHEN duplicate_object THEN null; END';ALTER TABLE "users" ALTER COLUMN "status" TYPE "public"."enum_users_status" USING ("status"::"public"."enum_users_status");`,
+    parameters: undefined
+  },
+  sql: `ALTER TABLE "users" ALTER COLUMN "status" DROP NOT NULL;ALTER TABLE "users" ALTER COLUMN "status" SET DEFAULT 'active';DO 'BEGIN CREATE TYPE "public"."enum_users_status" AS ENUM(''active'', ''inactive'', ''suspended''); EXCEPTION WHEN duplicate_object THEN null; END';ALTER TABLE "users" ALTER COLUMN "status" TYPE "public"."enum_users_status" USING ("status"::"public"."enum_users_status");`,
+  parameters: {},
+  [Symbol(level)]: 'error',
+  [Symbol(splat)]: [
+    Error
+        at Query.run (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+        at E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\sequelize.js:315:28
+        at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+        at async User.sync (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\model.js:984:11)
+        at async Sequelize.sync (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\sequelize.js:377:9)
+        at async syncDatabase (file:///E:/Personal/important/smartpos/backend/src/config/db.js:78:5)
+        at async initializeApp (file:///E:/Personal/important/smartpos/backend/src/server.js:18:5)
+        at async startServer (file:///E:/Personal/important/smartpos/backend/src/server.js:69:5) {
+      name: 'SequelizeDatabaseError',
+      parent: error: default for column "status" cannot be cast automatically to type enum_users_status
+          at Parser.parseErrorMessage (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\parser.js:285:98)
+          at Parser.handlePacket (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\parser.js:122:29)
+          at Parser.parse (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\parser.js:35:38)
+          at TLSSocket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\index.js:11:42)
+          at TLSSocket.emit (node:events:518:28)
+          at addChunk (node:internal/streams/readable:561:12)
+          at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+          at Readable.push (node:internal/streams/readable:392:5)
+          at TLSWrap.onStreamRead (node:internal/stream_base_commons:191:23) {
+        length: 153,
+        severity: 'ERROR',
+        code: '42804',
+        detail: undefined,
+        hint: undefined,
+        position: undefined,
+        internalPosition: undefined,
+        internalQuery: undefined,
+        where: undefined,
+        schema: undefined,
+        table: undefined,
+        column: undefined,
+        dataType: undefined,
+        constraint: undefined,
+        file: 'tablecmds.c',
+        line: '13243',
+        routine: 'ATExecAlterColumnType',
+        sql: `ALTER TABLE "users" ALTER COLUMN "status" DROP NOT NULL;ALTER TABLE "users" ALTER COLUMN "status" SET DEFAULT 'active';DO 'BEGIN CREATE TYPE "public"."enum_users_status" AS ENUM(''active'', ''inactive'', ''suspended''); EXCEPTION WHEN duplicate_object THEN null; END';ALTER TABLE "users" ALTER COLUMN "status" TYPE "public"."enum_users_status" USING ("status"::"public"."enum_users_status");`,
+        parameters: undefined
+      },
+      original: error: default for column "status" cannot be cast automatically to type enum_users_status
+          at Parser.parseErrorMessage (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\parser.js:285:98)
+          at Parser.handlePacket (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\parser.js:122:29)
+          at Parser.parse (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\parser.js:35:38)
+          at TLSSocket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\index.js:11:42)
+          at TLSSocket.emit (node:events:518:28)
+          at addChunk (node:internal/streams/readable:561:12)
+          at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+          at Readable.push (node:internal/streams/readable:392:5)
+          at TLSWrap.onStreamRead (node:internal/stream_base_commons:191:23) {
+        length: 153,
+        severity: 'ERROR',
+        code: '42804',
+        detail: undefined,
+        hint: undefined,
+        position: undefined,
+        internalPosition: undefined,
+        internalQuery: undefined,
+        where: undefined,
+        schema: undefined,
+        table: undefined,
+        column: undefined,
+        dataType: undefined,
+        constraint: undefined,
+        file: 'tablecmds.c',
+        line: '13243',
+        routine: 'ATExecAlterColumnType',
+        sql: `ALTER TABLE "users" ALTER COLUMN "status" DROP NOT NULL;ALTER TABLE "users" ALTER COLUMN "status" SET DEFAULT 'active';DO 'BEGIN CREATE TYPE "public"."enum_users_status" AS ENUM(''active'', ''inactive'', ''suspended''); EXCEPTION WHEN duplicate_object THEN null; END';ALTER TABLE "users" ALTER COLUMN "status" TYPE "public"."enum_users_status" USING ("status"::"public"."enum_users_status");`,
+        parameters: undefined
+      },
+      sql: `ALTER TABLE "users" ALTER COLUMN "status" DROP NOT NULL;ALTER TABLE "users" ALTER COLUMN "status" SET DEFAULT 'active';DO 'BEGIN CREATE TYPE "public"."enum_users_status" AS ENUM(''active'', ''inactive'', ''suspended''); EXCEPTION WHEN duplicate_object THEN null; END';ALTER TABLE "users" ALTER COLUMN "status" TYPE "public"."enum_users_status" USING ("status"::"public"."enum_users_status");`,
+      parameters: {}
+    }
+  ],
+  [Symbol(message)]: `{"env":"development","level":"error","message":"❌ Error synchronizing database: default for column \\"status\\" cannot be cast automatically to type enum_users_status","name":"SequelizeDatabaseError","original":{"code":"42804","file":"tablecmds.c","length":153,"line":"13243","name":"error","routine":"ATExecAlterColumnType","severity":"ERROR","sql":"ALTER TABLE \\"users\\" ALTER COLUMN \\"status\\" DROP NOT NULL;ALTER TABLE \\"users\\" ALTER COLUMN \\"status\\" SET DEFAULT 'active';DO 'BEGIN CREATE TYPE \\"public\\".\\"enum_users_status\\" AS ENUM(''active'', ''inactive'', ''suspended''); EXCEPTION WHEN duplicate_object THEN null; END';ALTER TABLE \\"users\\" ALTER COLUMN \\"status\\" TYPE \\"public\\".\\"enum_users_status\\" USING (\\"status\\"::\\"public\\".\\"enum_users_status\\");"},"parameters":{},"parent":{"code":"42804","file":"tablecmds.c","length":153,"line":"13243","name":"error","routine":"ATExecAlterColumnType","severity":"ERROR","sql":"ALTER TABLE \\"users\\" ALTER COLUMN \\"status\\" DROP NOT NULL;ALTER TABLE \\"users\\" ALTER COLUMN \\"status\\" SET DEFAULT 'active';DO 'BEGIN CREATE TYPE \\"public\\".\\"enum_users_status\\" AS ENUM(''active'', ''inactive'', ''suspended''); EXCEPTION WHEN duplicate_object THEN null; END';ALTER TABLE \\"users\\" ALTER COLUMN \\"status\\" TYPE \\"public\\".\\"enum_users_status\\" USING (\\"status\\"::\\"public\\".\\"enum_users_status\\");"},"service":"smartpos-backend","sql":"ALTER TABLE \\"users\\" ALTER COLUMN \\"status\\" DROP NOT NULL;ALTER TABLE \\"users\\" ALTER COLUMN \\"status\\" SET DEFAULT 'active';DO 'BEGIN CREATE TYPE \\"public\\".\\"enum_users_status\\" AS ENUM(''active'', ''inactive'', ''suspended''); EXCEPTION WHEN duplicate_object THEN null; END';ALTER TABLE \\"users\\" ALTER COLUMN \\"status\\" TYPE \\"public\\".\\"enum_users_status\\" USING (\\"status\\"::\\"public\\".\\"enum_users_status\\");","stack":"Error\\n    at Query.run (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\dialects\\\\postgres\\\\query.js:50:25)\\n    at E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\sequelize.js:315:28\\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\\n    at async User.sync (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\model.js:984:11)\\n    at async Sequelize.sync (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\sequelize.js:377:9)\\n    at async syncDatabase (file:///E:/Personal/important/smartpos/backend/src/config/db.js:78:5)\\n    at async initializeApp (file:///E:/Personal/important/smartpos/backend/src/server.js:18:5)\\n    at async startServer (file:///E:/Personal/important/smartpos/backend/src/server.js:69:5)","timestamp":"2025-07-31 23:58:19"}`
+}
+Error
+    at Query.run (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+    at E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async User.sync (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\model.js:984:11)
+    at async Sequelize.sync (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\sequelize.js:377:9)
+    at async syncDatabase (file:///E:/Personal/important/smartpos/backend/src/config/db.js:78:5)
+    at async initializeApp (file:///E:/Personal/important/smartpos/backend/src/server.js:18:5)
+    at async startServer (file:///E:/Personal/important/smartpos/backend/src/server.js:69:5)
+2025-07-31 23:58:39 [ERROR]: ❌ Error synchronizing database: default for column "status" cannot be cast automatically to type enum_users_status
+{
+  service: 'smartpos-backend',
+  env: 'development',
+  name: 'SequelizeDatabaseError',
+  parent: error: default for column "status" cannot be cast automatically to type enum_users_status
+      at Parser.parseErrorMessage (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\parser.js:285:98)
+      at Parser.handlePacket (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\parser.js:122:29)
+      at Parser.parse (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\parser.js:35:38)
+      at TLSSocket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\index.js:11:42)
+      at TLSSocket.emit (node:events:518:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Readable.push (node:internal/streams/readable:392:5)
+      at TLSWrap.onStreamRead (node:internal/stream_base_commons:191:23) {
+    length: 153,
+    severity: 'ERROR',
+    code: '42804',
+    detail: undefined,
+    hint: undefined,
+    position: undefined,
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'tablecmds.c',
+    line: '13243',
+    routine: 'ATExecAlterColumnType',
+    sql: `ALTER TABLE "users" ALTER COLUMN "status" DROP NOT NULL;ALTER TABLE "users" ALTER COLUMN "status" SET DEFAULT 'active';DO 'BEGIN CREATE TYPE "public"."enum_users_status" AS ENUM(''active'', ''inactive'', ''suspended''); EXCEPTION WHEN duplicate_object THEN null; END';ALTER TABLE "users" ALTER COLUMN "status" TYPE "public"."enum_users_status" USING ("status"::"public"."enum_users_status");`,
+    parameters: undefined
+  },
+  original: error: default for column "status" cannot be cast automatically to type enum_users_status
+      at Parser.parseErrorMessage (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\parser.js:285:98)
+      at Parser.handlePacket (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\parser.js:122:29)
+      at Parser.parse (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\parser.js:35:38)
+      at TLSSocket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\index.js:11:42)
+      at TLSSocket.emit (node:events:518:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Readable.push (node:internal/streams/readable:392:5)
+      at TLSWrap.onStreamRead (node:internal/stream_base_commons:191:23) {
+    length: 153,
+    severity: 'ERROR',
+    code: '42804',
+    detail: undefined,
+    hint: undefined,
+    position: undefined,
+    internalPosition: undefined,
+    internalQuery: undefined,
+    where: undefined,
+    schema: undefined,
+    table: undefined,
+    column: undefined,
+    dataType: undefined,
+    constraint: undefined,
+    file: 'tablecmds.c',
+    line: '13243',
+    routine: 'ATExecAlterColumnType',
+    sql: `ALTER TABLE "users" ALTER COLUMN "status" DROP NOT NULL;ALTER TABLE "users" ALTER COLUMN "status" SET DEFAULT 'active';DO 'BEGIN CREATE TYPE "public"."enum_users_status" AS ENUM(''active'', ''inactive'', ''suspended''); EXCEPTION WHEN duplicate_object THEN null; END';ALTER TABLE "users" ALTER COLUMN "status" TYPE "public"."enum_users_status" USING ("status"::"public"."enum_users_status");`,
+    parameters: undefined
+  },
+  sql: `ALTER TABLE "users" ALTER COLUMN "status" DROP NOT NULL;ALTER TABLE "users" ALTER COLUMN "status" SET DEFAULT 'active';DO 'BEGIN CREATE TYPE "public"."enum_users_status" AS ENUM(''active'', ''inactive'', ''suspended''); EXCEPTION WHEN duplicate_object THEN null; END';ALTER TABLE "users" ALTER COLUMN "status" TYPE "public"."enum_users_status" USING ("status"::"public"."enum_users_status");`,
+  parameters: {},
+  [Symbol(level)]: 'error',
+  [Symbol(splat)]: [
+    Error
+        at Query.run (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+        at E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\sequelize.js:315:28
+        at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+        at async User.sync (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\model.js:984:11)
+        at async Sequelize.sync (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\sequelize.js:377:9)
+        at async syncDatabase (file:///E:/Personal/important/smartpos/backend/src/config/db.js:78:5)
+        at async initializeApp (file:///E:/Personal/important/smartpos/backend/src/server.js:18:5)
+        at async startServer (file:///E:/Personal/important/smartpos/backend/src/server.js:69:5) {
+      name: 'SequelizeDatabaseError',
+      parent: error: default for column "status" cannot be cast automatically to type enum_users_status
+          at Parser.parseErrorMessage (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\parser.js:285:98)
+          at Parser.handlePacket (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\parser.js:122:29)
+          at Parser.parse (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\parser.js:35:38)
+          at TLSSocket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\index.js:11:42)
+          at TLSSocket.emit (node:events:518:28)
+          at addChunk (node:internal/streams/readable:561:12)
+          at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+          at Readable.push (node:internal/streams/readable:392:5)
+          at TLSWrap.onStreamRead (node:internal/stream_base_commons:191:23) {
+        length: 153,
+        severity: 'ERROR',
+        code: '42804',
+        detail: undefined,
+        hint: undefined,
+        position: undefined,
+        internalPosition: undefined,
+        internalQuery: undefined,
+        where: undefined,
+        schema: undefined,
+        table: undefined,
+        column: undefined,
+        dataType: undefined,
+        constraint: undefined,
+        file: 'tablecmds.c',
+        line: '13243',
+        routine: 'ATExecAlterColumnType',
+        sql: `ALTER TABLE "users" ALTER COLUMN "status" DROP NOT NULL;ALTER TABLE "users" ALTER COLUMN "status" SET DEFAULT 'active';DO 'BEGIN CREATE TYPE "public"."enum_users_status" AS ENUM(''active'', ''inactive'', ''suspended''); EXCEPTION WHEN duplicate_object THEN null; END';ALTER TABLE "users" ALTER COLUMN "status" TYPE "public"."enum_users_status" USING ("status"::"public"."enum_users_status");`,
+        parameters: undefined
+      },
+      original: error: default for column "status" cannot be cast automatically to type enum_users_status
+          at Parser.parseErrorMessage (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\parser.js:285:98)
+          at Parser.handlePacket (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\parser.js:122:29)
+          at Parser.parse (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\parser.js:35:38)
+          at TLSSocket.<anonymous> (E:\Personal\important\smartpos\backend\node_modules\pg-protocol\dist\index.js:11:42)
+          at TLSSocket.emit (node:events:518:28)
+          at addChunk (node:internal/streams/readable:561:12)
+          at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+          at Readable.push (node:internal/streams/readable:392:5)
+          at TLSWrap.onStreamRead (node:internal/stream_base_commons:191:23) {
+        length: 153,
+        severity: 'ERROR',
+        code: '42804',
+        detail: undefined,
+        hint: undefined,
+        position: undefined,
+        internalPosition: undefined,
+        internalQuery: undefined,
+        where: undefined,
+        schema: undefined,
+        table: undefined,
+        column: undefined,
+        dataType: undefined,
+        constraint: undefined,
+        file: 'tablecmds.c',
+        line: '13243',
+        routine: 'ATExecAlterColumnType',
+        sql: `ALTER TABLE "users" ALTER COLUMN "status" DROP NOT NULL;ALTER TABLE "users" ALTER COLUMN "status" SET DEFAULT 'active';DO 'BEGIN CREATE TYPE "public"."enum_users_status" AS ENUM(''active'', ''inactive'', ''suspended''); EXCEPTION WHEN duplicate_object THEN null; END';ALTER TABLE "users" ALTER COLUMN "status" TYPE "public"."enum_users_status" USING ("status"::"public"."enum_users_status");`,
+        parameters: undefined
+      },
+      sql: `ALTER TABLE "users" ALTER COLUMN "status" DROP NOT NULL;ALTER TABLE "users" ALTER COLUMN "status" SET DEFAULT 'active';DO 'BEGIN CREATE TYPE "public"."enum_users_status" AS ENUM(''active'', ''inactive'', ''suspended''); EXCEPTION WHEN duplicate_object THEN null; END';ALTER TABLE "users" ALTER COLUMN "status" TYPE "public"."enum_users_status" USING ("status"::"public"."enum_users_status");`,
+      parameters: {}
+    }
+  ],
+  [Symbol(message)]: `{"env":"development","level":"error","message":"❌ Error synchronizing database: default for column \\"status\\" cannot be cast automatically to type enum_users_status","name":"SequelizeDatabaseError","original":{"code":"42804","file":"tablecmds.c","length":153,"line":"13243","name":"error","routine":"ATExecAlterColumnType","severity":"ERROR","sql":"ALTER TABLE \\"users\\" ALTER COLUMN \\"status\\" DROP NOT NULL;ALTER TABLE \\"users\\" ALTER COLUMN \\"status\\" SET DEFAULT 'active';DO 'BEGIN CREATE TYPE \\"public\\".\\"enum_users_status\\" AS ENUM(''active'', ''inactive'', ''suspended''); EXCEPTION WHEN duplicate_object THEN null; END';ALTER TABLE \\"users\\" ALTER COLUMN \\"status\\" TYPE \\"public\\".\\"enum_users_status\\" USING (\\"status\\"::\\"public\\".\\"enum_users_status\\");"},"parameters":{},"parent":{"code":"42804","file":"tablecmds.c","length":153,"line":"13243","name":"error","routine":"ATExecAlterColumnType","severity":"ERROR","sql":"ALTER TABLE \\"users\\" ALTER COLUMN \\"status\\" DROP NOT NULL;ALTER TABLE \\"users\\" ALTER COLUMN \\"status\\" SET DEFAULT 'active';DO 'BEGIN CREATE TYPE \\"public\\".\\"enum_users_status\\" AS ENUM(''active'', ''inactive'', ''suspended''); EXCEPTION WHEN duplicate_object THEN null; END';ALTER TABLE \\"users\\" ALTER COLUMN \\"status\\" TYPE \\"public\\".\\"enum_users_status\\" USING (\\"status\\"::\\"public\\".\\"enum_users_status\\");"},"service":"smartpos-backend","sql":"ALTER TABLE \\"users\\" ALTER COLUMN \\"status\\" DROP NOT NULL;ALTER TABLE \\"users\\" ALTER COLUMN \\"status\\" SET DEFAULT 'active';DO 'BEGIN CREATE TYPE \\"public\\".\\"enum_users_status\\" AS ENUM(''active'', ''inactive'', ''suspended''); EXCEPTION WHEN duplicate_object THEN null; END';ALTER TABLE \\"users\\" ALTER COLUMN \\"status\\" TYPE \\"public\\".\\"enum_users_status\\" USING (\\"status\\"::\\"public\\".\\"enum_users_status\\");","stack":"Error\\n    at Query.run (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\dialects\\\\postgres\\\\query.js:50:25)\\n    at E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\sequelize.js:315:28\\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\\n    at async User.sync (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\model.js:984:11)\\n    at async Sequelize.sync (E:\\\\Personal\\\\important\\\\smartpos\\\\backend\\\\node_modules\\\\sequelize\\\\lib\\\\sequelize.js:377:9)\\n    at async syncDatabase (file:///E:/Personal/important/smartpos/backend/src/config/db.js:78:5)\\n    at async initializeApp (file:///E:/Personal/important/smartpos/backend/src/server.js:18:5)\\n    at async startServer (file:///E:/Personal/important/smartpos/backend/src/server.js:69:5)","timestamp":"2025-07-31 23:58:39"}`
+}
+Error
+    at Query.run (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+    at E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async User.sync (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\model.js:984:11)
+    at async Sequelize.sync (E:\Personal\important\smartpos\backend\node_modules\sequelize\lib\sequelize.js:377:9)
+    at async syncDatabase (file:///E:/Personal/important/smartpos/backend/src/config/db.js:78:5)
+    at async initializeApp (file:///E:/Personal/important/smartpos/backend/src/server.js:18:5)
+    at async startServer (file:///E:/Personal/important/smartpos/backend/src/server.js:69:5)

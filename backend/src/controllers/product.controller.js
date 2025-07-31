@@ -32,7 +32,7 @@ export const getProducts = async (req, res, next) => {
 // @access  Public
 export const getProduct = async (req, res, next) => {
   try {
-    const product = await Product.findById(req.params.id);
+    const product = await Product.findByPk(req.params.id);
     
     res.status(200).json({
       status: 'success',
@@ -117,6 +117,27 @@ export const updateProductStock = async (req, res, next) => {
       }
     });
   } catch (error) {
+    next(error);
+  }
+};
+
+// @desc    Get products with low stock
+// @route   GET /api/products/low-stock
+// @access  Private/Admin
+import { Op } from 'sequelize';
+import sequelize from '../config/db.js';
+
+export const getLowStockProducts = async (req, res, next) => {
+  try {
+    // Find products where stock_quantity <= min_stock_level
+    // Use raw SQL query for compatibility
+    const [lowStockProducts] = await sequelize.query(
+      "SELECT * FROM products WHERE stock_quantity <= min_stock_level AND status = 'active' ORDER BY stock_quantity ASC"
+    );
+    res.json({ success: true, data: lowStockProducts });
+  } catch (error) {
+    console.error('Low stock error:', error);
+    if (error.parent) console.error('SQL error:', error.parent);
     next(error);
   }
 };

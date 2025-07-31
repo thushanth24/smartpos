@@ -32,6 +32,7 @@ import authRoutes from './routes/auth.routes.js';
 import productRoutes from './routes/product.routes.js';
 import userRoutes from './routes/user.routes.js';
 import healthRoutes from './routes/health.routes.js';
+import salesRoutes from './routes/sales.routes.js';
 
 // Initialize express app
 const app = express();
@@ -188,6 +189,13 @@ app.use(authenticate);
 // Role-based routes (protected)
 app.use(`${envConfig.api.prefix}/products`, productRoutes);
 app.use(`${envConfig.api.prefix}/users`, userRoutes);
+app.use(`${envConfig.api.prefix}/sales`, salesRoutes);
+
+// New routes for categories and customers
+import categoriesRoutes from './routes/categories.routes.js';
+import customersRoutes from './routes/customers.routes.js';
+app.use(`${envConfig.api.prefix}/categories`, categoriesRoutes);
+app.use(`${envConfig.api.prefix}/customers`, customersRoutes);
 
 // Handle 404 - Not Found
 app.use((req, res, next) => {

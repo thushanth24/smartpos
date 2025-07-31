@@ -1,17 +1,24 @@
 import api from './api';
-import { setToken, setUser, clearAuth, getToken } from './auth';
+import {
+  setToken,
+  setRefreshToken,
+  setUser,
+  clearAuth,
+  getToken,
+  getRefreshToken
+} from './auth';
 import { isTokenExpired } from './authUtils';
 
 const authService = {
-  getSession: async () => {
+  getUserProfile: async () => {
     try {
-      const data = await api.get('/auth/me');
-      return { success: true, data };
-    } catch (error) {
-      clearAuth();
+      const response = await api.get('/users/me');
+      return { success: true, data: response.data };
+    } catch (err) {
+      console.warn('[authService] getUserProfile failed:', err.response?.status, err.message);
       return {
         success: false,
-        error: error.message || 'Failed to get session',
+        error: err.response?.data?.message || 'Failed to fetch user profile'
       };
     }
   },
@@ -21,69 +28,34 @@ const authService = {
     console.log('[AuthService] Email:', email);
 
     try {
-      console.log('[AuthService] Sending login request to /auth/login');
-      const responseData = await api.post('/auth/login', { email, password });
+      const response = await api.post('/auth/login', { email, password });
+      console.log('[AuthService] Response data:', response);
 
-      console.log('[AuthService] Response data:', responseData);
-
-      if (!responseData || Object.keys(responseData).length === 0) {
-        console.error('[AuthService] Empty response data');
-        return {
-          success: false,
-          error: 'No data received from server',
-        };
-      }
-
-      const { token, user, success } = responseData;
-
-      if (!success) {
-        console.error('[AuthService] Login failed:', responseData.message || 'Unknown error');
-        return {
-          success: false,
-          error: responseData.message || 'Login failed',
-          data: responseData,
-        };
-      }
-
-      if (!token || !user) {
-        console.error('[AuthService] Missing token or user data');
+      // ✅ Check if token and user exist
+      if (!response.token || !response.user) {
+        console.error('[AuthService] Missing token, user data');
         return {
           success: false,
           error: 'Authentication failed: Invalid response format',
-          data: responseData,
+          data: response
         };
       }
 
-      setToken(token);
-      setUser(user);
-
-      console.log('[AuthService] Successfully authenticated user:', {
-        userId: user.id,
-        email: user.email,
-        role: user.role,
-      });
-
+      // ✅ Return token and user in expected structure
       return {
         success: true,
-        token,
-        user,
-        data: responseData,
+        token: response.token,
+        user: response.user
       };
     } catch (error) {
-      console.error('[AuthService] Sign in error:', {
-        message: error.message,
-        response: error.response,
-        status: error.status,
-      });
-
+      console.error('[AuthService] Sign in error:', error);
       return {
         success: false,
-        error: error.message || 'Failed to sign in',
-        details: error,
+        error: error?.userMessage || error?.message || 'Login failed',
+        data: error
       };
     }
   },
-
   signUp: async (email, password, userData = {}) => {
     try {
       const data = await api.post('/auth/register', {
@@ -93,9 +65,10 @@ const authService = {
         ...userData,
       });
 
-      const { token, user } = data;
+      const { token, refreshToken, user } = data;
 
       setToken(token);
+      setRefreshToken(refreshToken);
       setUser(user);
 
       return { success: true, data: user };
@@ -173,12 +146,19 @@ const authService = {
 
   refreshToken: async () => {
     try {
-      const token = getToken();
-      if (!token) return { success: false, error: 'No token found' };
+      const refreshToken = getRefreshToken(); // ✅ Get correct token
+      if (!refreshToken) {
+        return { success: false, error: 'No refresh token found' };
+      }
 
-      const data = await api.post('/auth/refresh-token', { token });
+      const data = await api.post('/auth/refresh-token', { refreshToken }); // ✅ Correct payload
+
       if (data?.token) {
         setToken(data.token);
+        if (data.refreshToken) {
+          setRefreshToken(data.refreshToken); // optional: update if new one issued
+        }
+
         return { success: true, token: data.token };
       }
 

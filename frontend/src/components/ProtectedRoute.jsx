@@ -35,12 +35,18 @@ const ProtectedRoute = ({
   }
 
   // Check if user has required roles if specified
-  const hasRequiredRole = requiredRoles.length === 0 || 
-    requiredRoles.some(role => user.roles?.includes(role));
-  
-  // Check if admin access is required and user is admin
-  const isAdmin = user.roles?.includes('admin');
-  const hasAdminAccess = !requireAdmin || isAdmin;
+  const hasRequiredRole =
+  requiredRoles.length === 0 ||
+  requiredRoles.some(role =>
+    (Array.isArray(user.roles) && user.roles.includes(role)) ||
+    user.role === role
+  );
+
+// Check if admin access is required and user is admin
+const isAdmin =
+  (Array.isArray(user.roles) && user.roles.includes('admin')) ||
+  user.role === 'admin';
+const hasAdminAccess = !requireAdmin || isAdmin;
 
   // Redirect to unauthorized if user doesn't have required role or admin access
   if (!hasRequiredRole || !hasAdminAccess) {

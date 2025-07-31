@@ -7,7 +7,7 @@ const customerService = {
       const response = await http.get('/customers');
       return { 
         success: true, 
-        data: response 
+        data: response.data // Return only the data array/object
       };
     } catch (error) {
       return { 
@@ -29,7 +29,7 @@ const customerService = {
       
       return { 
         success: true, 
-        data: response 
+        data: response.data // Return only the data array/object
       };
     } catch (error) {
       return { 
@@ -46,7 +46,7 @@ const customerService = {
       const response = await http.get(`/customers/${customerId}`);
       return { 
         success: true, 
-        data: response 
+        data: response.data // Return only the data object
       };
     } catch (error) {
       return { 
@@ -115,7 +115,7 @@ const customerService = {
       const response = await http.get(`/customers/${customerId}/stats`);
       return { 
         success: true, 
-        data: response 
+        data: response.data // Return only the data object
       };
     } catch (error) {
       return { 
@@ -135,7 +135,7 @@ const customerService = {
       
       return { 
         success: true, 
-        data: response 
+        data: response.data // Return only the data array/object
       };
     } catch (error) {
       return { 

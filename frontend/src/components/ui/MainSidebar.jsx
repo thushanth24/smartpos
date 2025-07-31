@@ -19,28 +19,28 @@ const MainSidebar = () => {
     },
     {
       label: 'POS Terminal',
-      path: '/point-of-sale-terminal',
+      path: '/pos-terminal',
       icon: 'ShoppingCart',
       roles: ['admin', 'cashier'],
       tooltip: 'Process transactions and sales'
     },
     {
       label: 'Products',
-      path: '/product-management',
+      path: '/products',
       icon: 'Package',
       roles: ['admin'],
       tooltip: 'Manage product catalog'
     },
     {
       label: 'Inventory',
-      path: '/inventory-management',
+      path: '/inventory',
       icon: 'Warehouse',
       roles: ['admin'],
       tooltip: 'Track stock levels and orders'
     },
     {
       label: 'Users',
-      path: '/user-management',
+      path: '/users',
       icon: 'Users',
       roles: ['admin'],
       tooltip: 'Manage staff and permissions'

@@ -19,6 +19,11 @@
             "date": 1753900644796,
             "name": "E:\\Personal\\important\\smartpos\\backend\\logs\\error-2025-07-31.log",
             "hash": "8d4fbc1fa91889dc38a9cc23a5a4e825c98423c1899f02b14d271bab8d7f60fd"
+        },
+        {
+            "date": 1753986730342,
+            "name": "E:\\Personal\\important\\smartpos\\backend\\logs\\error-2025-08-01.log",
+            "hash": "f815b54edd25f8fe6b0323154b07320729fd98fc58f1601816a18e9549af8db6"
         }
     ],
     "hashType": "sha256"

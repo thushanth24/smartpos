@@ -6,15 +6,23 @@ import ApiError from '../utils/ApiError.js';
 // @access  Private/Admin
 export const getAllUsers = async (req, res, next) => {
   try {
-    // In a real app, you would fetch users from the database
-    // This is a simplified example
-    const users = [];
-    
+    // Fetch all users from the database, exclude sensitive fields
+    const users = await User.findAll({
+      attributes: { exclude: ['password', 'refresh_token'] }
+    });
+    // Ensure permissions is always an array
+    const usersWithPermissions = users.map(user => {
+      const plainUser = user.get ? user.get({ plain: true }) : user;
+      return {
+        ...plainUser,
+        permissions: Array.isArray(plainUser.permissions) ? plainUser.permissions : []
+      };
+    });
     res.status(200).json({
       status: 'success',
-      results: users.length,
+      results: usersWithPermissions.length,
       data: {
-        users
+        users: usersWithPermissions
       }
     });
   } catch (error) {
@@ -45,21 +53,45 @@ export const getUser = async (req, res, next) => {
 // @access  Private/Admin
 export const createUser = async (req, res, next) => {
   try {
-    const { email, password, full_name, role } = req.body;
-    
-    // Create user
-    const user = await User.create({
+    // Accept all relevant fields from frontend
+    const {
       email,
       password,
-      full_name,
-      role: role || 'cashier'
+      name,
+      phone,
+      role = 'cashier',
+      status = 'active',
+      permissions = [],
+      lastLogin,
+      createdAt
+    } = req.body;
+
+    // Map frontend 'name' to backend 'full_name'
+    const userData = {
+      email,
+      password,
+      full_name: name,
+      phone,
+      role,
+      status,
+      permissions,
+      last_login: lastLogin,
+      created_at: createdAt
+    };
+
+    // Remove undefined/null fields
+    Object.keys(userData).forEach(key => {
+      if (userData[key] === undefined || userData[key] === null || userData[key] === '') {
+        delete userData[key];
+      }
     });
-    
+
+    // Create user in DB
+    const user = await User.create(userData);
+
     res.status(201).json({
       status: 'success',
-      data: {
-        user
-      }
+      data: { user }
     });
   } catch (error) {
     next(error);

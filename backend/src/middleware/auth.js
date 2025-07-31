@@ -37,7 +37,7 @@ export const authenticate = async (req, res, next) => {
     }
 
     // Check if user is active
-    if (!user.is_active) {
+    if (user.status !== 'active') {
       return res.status(403).json({ 
         success: false, 
         message: 'Your account has been deactivated' 
